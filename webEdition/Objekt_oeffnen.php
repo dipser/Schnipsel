@@ -19,9 +19,9 @@ $obj->Path = $objpath.'/'.$obj->Text;
 $obj->getElement('NameObjektFeld');
 $obj->setElement('NameObjektFeld', 'Wert');
 $obj->setElement('ObjektFelder', serialize(array(
-			'class'   => 9, // Klassen-ID / SQL-Tabellen-Nummer
-			'max'     => 0,
-			'objects' => array(1,2,3) // Alle IDs auf die verwiesen werden soll
+	'class'   => 9, // Klassen-ID / SQL-Tabellen-Nummer
+	'max'     => 0,
+	'objects' => array(1,2,3) // Alle IDs auf die verwiesen werden soll
 )));
 $obj->we_save();
 $obj->we_publish();
