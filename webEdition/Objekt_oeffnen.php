@@ -16,6 +16,8 @@ $obj->setRootDirID(true);
 $obj>restoreDefaults();
 //$obj->add_workspace($wsid);
 //$obj->del_workspace($wsid);
+//$obj->Workspaces = ''; // Reset
+//$obj->Templates = '';
 $obj->Text = 'Objektname';
 $obj->Path = $objpath.'/'.$obj->Text;
 $obj->getElement('NameObjektFeld');
@@ -28,8 +30,7 @@ $obj->setElement('ObjektFelder', serialize(array(
 $obj->we_save();
 $obj->we_publish();
 $createdID = $obj->ID;
-//$obj->Workspaces
-//$obj->Templates
+
 //$obj->Published // 0 oder time()
 
 
