@@ -1,0 +1,168 @@
+table {
+	margin: 0 auto;
+}
+label + br + table {
+	margin: 0 0;
+	width: 100%;
+	border: 1px solid #006db8 !important;
+}
+
+.weNoCenter {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.weNoCenter > table {
+	width: auto;
+	margin: 0 0 !important;
+}
+
+.weHidden {
+	opacity: 0.75;
+}
+
+
+.weGroup {
+	display: block;
+	margin-bottom: 20px;
+	padding: 10px 10px ;
+  border: 1px solid silver;
+}
+
+
+.weSubGroup {
+	display: block;
+	margin-bottom: 20px;
+	padding: 0 0 20px 0;
+  border: 1px solid #006db8;
+}
+
+.weText2 {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 2px 5px;
+	margin-bottom: 0;
+  background: #eee;
+  color: #333;
+  border: none;
+	border-bottom: 1px solid #006db8;
+}
+
+
+.weInfotext { color: #333; font-size: 12px !important; font-style: italic !important; }
+
+.weHrefLink {
+	color: #006699 !important;
+	font-size: 10px;
+	font-weight: bold;
+	font-family: Verdana,Arial,sans-serif;
+	
+	&:hover {
+		color: #006DB8;
+	}
+}
+
+.weImgFolder {
+	display: inline-block;
+	vertical-align: middle;
+	background: url('/webEdition/images/tree/icons/folder.gif') no-repeat scroll center center;
+	width: 16px;
+	height: 16px;
+}
+
+
+.weSelect {
+  display: block;
+  font-size: 12px;
+}
+.weSelect select {
+  font-size: 12px;
+	width: 100%;
+}
+
+
+.weType {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+	text-align: center;
+  background-color: #006db8;
+  color: #FFF;
+	margin: -10px;
+	padding: 10px;
+}
+
+.weText {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 2px 5px;
+	margin-bottom: 0;
+  background: #eee;
+  color: #333;
+  border-left: 1px solid #006db8;
+}
+
+input.wetextinput,
+.weEditmodeStyle input[type='text'],
+.weSelect select,
+textarea.wetextarea {
+  border: 1px solid #006db8 !important;
+  box-shadow: none;
+}
+.weTextareaInline > table {
+	width: 100% !important;
+	textarea {
+		width: 100% !important;
+	}
+}
+
+.weIntLink td[nowrap='nowrap'] { display: none; }
+.weIntLink input[type='text'] {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  padding: 2px;
+}
+.weIntLink > table { width: 100% !important; }
+.weIntLink > table > tbody > tr > td:nth-child(5) { display: none; }
+.weIntLink > table > tbody > tr > td:nth-child(2) input[type='text'] { width: 175px !important; }
+
+
+/**
+ * webEdition Tags
+ *
+ * Benutzung: Einfach eine gleichnamige CSS-Klasse um das webEdition-Tag setzen.
+ * Beispiel: <div class="weObject"><we:object name="NAME" classid="6" size="10"></we:object></div>
+ */
+.weObject > table > tbody > tr {
+	> td:nth-child(1) {
+		display: none !important; // NAME wird ausgeblendet
+	}
+	> td:nth-child(2) {
+		display: none; // Hidden-Input
+	}
+	> td:nth-child(3) {
+		display: none; // Nicht editierbares input-Feld wird ausgeblendet
+	}
+	> td:nth-child(4) {
+		display: none; // Leeres td
+	}
+}
+
+/* Links */
+.weLinks > table {
+	width: 100%;
+	> tbody > tr {
+		> td:nth-child(2) {
+			width: 45px;
+			//border: 1px solid red !important;
+			padding-right: 0px !important;
+		}
+		> td:nth-child(3) {
+			width: 35px;
+			//border: 1px solid red !important;
+		}
+	}
+}
+
