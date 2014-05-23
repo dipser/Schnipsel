@@ -53,4 +53,22 @@ $obj->we_publish();
 // Kopieren
 $obj->makeSameNew();
 
+
+
+
+
+$obj = new we_objectFile();
+$obj->initByID(497);
+$object->we_new();
+$object->TableID = 19;
+$object->setRootDirID(true);
+$object->resetParentID();
+$object->restoreDefaults();
+$object->Text = $rechnungsnummer;
+$object->Path=$object->getParentPath()
+// ...
+$object->we_save();
+$object->we_publish();
+
+
 ?>
