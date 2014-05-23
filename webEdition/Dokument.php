@@ -23,7 +23,7 @@ Beispiel #2 - Der Pfad der Vorlage auf der das webEdition-Dokument basiert
 <?php echo $GLOBALS['we_doc']->TemplatePath; ?>
 
 Beispiel #3 - Die ID des webEdition-Dokuments
-
+// <we:did/>
 <?php echo $GLOBALS['we_doc']->ID; ?>
 
 Beispiel #4 - Die ID des Verzeichnisses in dem sich das webEdition-Dokument befindet
