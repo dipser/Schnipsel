@@ -71,4 +71,17 @@ $object->we_save();
 $object->we_publish();
 
 
+
+
+
+// Objekt löschen
+$GLOBALS['NOT_PROTECT'] = (bool) true; // Sicherheitssperre aufheben, damit keine webEdition-Session benötigt wird
+include_once $_SERVER['DOCUMENT_ROOT'].'/webEdition/we/include/we.inc.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/webEdition/we/include/we_delete_fn.inc.php';
+deleteEntry($id, OBJECT_FILES_TABLE); // Objekt mit der angegebenen ID löschen
+if (isset($deletedItems)) { print_r($deletedItems); } // Ausgabe aller gelöschten Objekte
+
+
+
+
 ?>
