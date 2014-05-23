@@ -28,6 +28,10 @@ $id = f('SELECT ID FROM '. FILE_TABLE .' WHERE Path="'. $GLOBALS['DB_WE']->escap
 
 // Print Array mit Formatierung
 p_r($we_doc);
+p_r($GLOBALS['we_doc']);
+
+// Daten der Überseite in der <we:include type="document" id="" /> steht
+p_r($GLOBALS['WE_MAIN_DOC']);
 
 
 // <we:... />
