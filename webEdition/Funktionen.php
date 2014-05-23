@@ -16,6 +16,9 @@ weFile::getUniqueId()
 // Dateinamen für webEdition anpassen
 importFunctions::correctFilename($filename)
 
+// 
+$text = asciiOnly('äüö_-as');
+
 
 // IDs und Pfade ermitteln
 // <we:url id="9" />
