@@ -1,7 +1,8 @@
 <?php
 
 
-$db = new DB_WE();
+//$db = new DB_WE();
+$db = $GLOBALS['DB_WE'];
 $db->escape($unsafe_variable); // Sanitizing data
 $db->query("SELECT Path FROM " . FILE_TABLE . " WHERE IsFolder=0 ORDER By ID");
 print "Anzahl Zeilen: " . $db->num_rows() . "<br>";
