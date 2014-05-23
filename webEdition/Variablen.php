@@ -5,10 +5,13 @@ $taCommands = (DEV?'forecolor,':'').'bold,italic,underline,formatblock,removefor
 $tinyAttr = "theme_advanced_blockformats:'p,h2,h3,h4'";
 
 
+
+// Anzahl Blöcke
+$anzahl = count(unserialize($GLOBALS['we_doc']->getElement('meinBlock')));
+
+
+// Anzahl innerhalb eines listviews
 //<we:listviewRows /> 
 <? echo $lv->anz_all; ?>
-
-
-
 
 ?>
