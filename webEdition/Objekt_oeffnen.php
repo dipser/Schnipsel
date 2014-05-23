@@ -47,4 +47,10 @@ $obj->setElement('NameObjektFeld', 'Wert');
 $obj->we_save();
 $obj->we_publish(); 
 
+
+
+
+// Kopieren
+$obj->makeSameNew();
+
 ?>
