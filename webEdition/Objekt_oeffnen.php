@@ -15,6 +15,7 @@ $obj->TableID = 10; //ID der Klasse
 $obj->setRootDirID(true);
 $obj>restoreDefaults();
 //$obj->add_workspace($wsid);
+//$obj->del_workspace($wsid);
 $obj->Text = 'Objektname';
 $obj->Path = $objpath.'/'.$obj->Text;
 $obj->getElement('NameObjektFeld');
