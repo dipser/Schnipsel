@@ -3,26 +3,30 @@
 /**
  * webEdition Objekt öffnen
  */
+ 
 
-// INIT OBJECT
+// Neues Objekt öffnen
+include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
+include_once($_SERVER "DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
 $obj = new we_objectFile();
 $obj->we_new();
 $obj->TableID = 10; //ID der Klasse
 $obj->setRootDirID(true);
 $obj>restoreDefaults();
 $obj->setElement('NameObjektFeld', 'Wert');
-$obj->setElement('NameObjektFeld2', 'Wert');
-// webEdition-Seite speichern
 $obj->we_save();
-// webEdition-Seite veröffentlichen
 $obj->we_publish();
 
 
-> $obj = new we_objectFile();
-> $obj->initByID($eineID);
-> $obj->setElement('Veroeffentlicht', '1');
-> $obj->setElement('LetzterBeitrag', $zeitstempel);
-> $obj->we_save();
-> $obj->we_publish(); 
+
+// Vorhandenes Objekt öffnen
+$id = 123;
+include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
+include_once($_SERVER "DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
+$obj = new we_objectFile();
+$obj->initByID($id);
+$obj->setElement('Titel', 'Hallo Welt');
+$obj->we_save();
+$obj->we_publish(); 
 
 ?>
