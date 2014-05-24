@@ -58,8 +58,15 @@ getHTTP($server, $url, $port="", $username="", $password="")
  * - error_log2($variable) // Schreibt beliebige Variablen, Arrays und Objekte, auch verschachtelt, in die PHP-Error-Log-Datei. 
  * - removePHP( string $val )
  * - removeHTML($val)
-
  */
+ 
+ 
+
+    weFile::load($filename, $flags="rb", $rsize=8192)
+    weFile::save($filename, $content, $flags="wb", $create_path=false)
+    weFile::delete($filename)
+    weFile::saveTemp($content, $filename="", $flags="wb"
+
 
 
 ?>
