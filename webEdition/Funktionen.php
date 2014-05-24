@@ -33,6 +33,10 @@ $id = f('SELECT ID FROM '. FILE_TABLE .' WHERE Path="'. $GLOBALS['DB_WE']->escap
 p_r($we_doc);
 p_r($GLOBALS['we_doc']);
 
+    <?php $GLOBALS['we_doc']->setElement('Headline', 'Das ist ein Beispieltext.'); ?>
+    <we:input type="text" name="Headline"/>
+    $GLOBALS['we_doc']->setElement('Headline');
+
 // Daten der Überseite in der <we:include type="document" id="" /> steht
 p_r($GLOBALS['WE_MAIN_DOC']);
 
