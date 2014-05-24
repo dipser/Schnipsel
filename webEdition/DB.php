@@ -15,6 +15,7 @@ while ($db->next_record()) {
 
 
 getHash($query, $DB_WE, MYSQL_ASSOC)
+f($query, $field, $DB_WE)
 
 
 ?>
