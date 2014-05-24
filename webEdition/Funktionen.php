@@ -47,12 +47,18 @@ $GLOBALS['we_doc']->setElement('Headline', 'Das ist ein Beispieltext.');
 $GLOBALS['we_doc']->getElement('Headline')
 
 
+
+makeArrayFromCSV($csv)
+makeCSVFromArray($arr, $prePostKomma=false, $sep=",")
+
+ 
+getHTTP($server, $url, $port="", $username="", $password="")
+
 /**
  * - error_log2($variable) // Schreibt beliebige Variablen, Arrays und Objekte, auch verschachtelt, in die PHP-Error-Log-Datei. 
  * - removePHP( string $val )
  * - removeHTML($val)
- * - makeArrayFromCSV($csv)
- * - makeCSVFromArray($arr, $prePostKomma=false, $sep=",")
+
  */
 
 
