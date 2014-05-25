@@ -1,0 +1,13 @@
+/**
+ * user-select
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.user-select(@val: none) { // Values: none | text | toggle | element | elements | all | inherit
+	-webkit-touch-callout: @val;
+	-webkit-user-select: @val;
+	user-select: @val;
+}

@@ -1,0 +1,304 @@
+/**
+ * border-radius
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.border-radius(@radius) {
+	border-radius: @radius;
+}
+
+.border-top-radius(@radius) {
+	border-top-right-radius: @radius;
+	border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+	border-top-right-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+	border-bottom-right-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+	border-top-left-radius: @radius;
+	border-bottom-left-radius: @radius;
+}/**
+ * box-shadow
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+	box-shadow: @shadow;
+}/**
+ * box-sizing
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+  -moz-box-sizing: @boxmodel;
+  box-sizing: @boxmodel;
+}/**
+ * hyphens
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+.clearfix() {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+	&:after {
+		clear: both;
+	}
+}/**
+ * filter-blur
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.filter-blur(@val: 20px) {
+    -webkit-filter: blur(@val);
+    -moz-filter: blur(@val);
+    -ms-filter: blur(@val);
+    -o-filter: blur(@val);
+    filter: blur(@val);
+}/* 
+ * flex
+ *
+ * History
+ * 31.03.2014 - Aurel Hermand (Vegvisir) - .justifyContent() and .alignItems()
+ * 08.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+.displayFlex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex(@values) {
+  -webkit-box-flex: @values;
+  -moz-box-flex: @values;
+  -webkit-flex: @values;
+  -ms-flex: @values;
+  flex: @values;
+}
+.flexNone {
+  .flex(0 0 auto);
+}
+.flexAuto {
+  .flex(1 1 auto);
+}
+.flexInitial {
+  .flex(0 1 auto);
+}
+
+.flexDirection(@value) {
+  -webkit-flex-direction: @value;
+  flex-direction: @value;
+}
+.flexDirectionRow { // Horizontal
+  .flexDirection(row);
+}
+.flexDirectionColumn { // Vertical
+  .flexDirection(column);
+}
+
+.alignContent(@value) {
+  -webkit-align-content: @value;
+  align-content: @value;
+}
+.justifyContent(@value) {
+  -webkit-box-pack: @value;
+  -ms-flex-pack: @value;
+  -webkit-justify-content: @value;
+  justify-content: @value;
+}
+.alignItems(@value) {
+  -webkit-box-align: @value;
+  -ms-flex-align: @value;
+  -webkit-align-items: @value;
+  align-items: @value;
+}
+
+
+
+
+.flexGrid {
+  .displayFlex;
+  //.flexDirectionRow; // Horizontal
+}
+.flexItem {
+  .flexAuto;
+}/**
+ * hyphens
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.hyphens(@mode: auto) { // auto | none
+	word-wrap: break-word;
+	-webkit-hyphens: @mode;
+	-moz-hyphens: @mode;
+	-ms-hyphens: @mode; // IE10+
+	-o-hyphens: @mode;
+	hyphens: @mode;
+}/**
+ * img-responsive
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.img-responsive(@display: block;) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+.img-full-responsive(@display: block;) {
+  display: @display;
+  width: 100%;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}/**
+ * opacity
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+// Source: Bootstrap 3
+.opacity(@opacity) {
+	opacity: @opacity;
+	// IE8 filter
+	@opacity-ie: (@opacity * 100);
+	filter: ~"alpha(opacity=@{opacity-ie})";
+}/**
+ * placeholder
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+
+// Source Bootstrap3
+.placeholder(@color) {
+  &:-moz-placeholder            { color: @color; } // Firefox 4-18
+  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}/**
+ * tab-size
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.tab-size(@val: 4) {
+	-webkit-tab-size: @val;
+	-moz-tab-size: @val;
+	-o-tab-size: @val;
+	tab-size: @val;
+}/**
+ * table
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.table {
+	display: table;
+	border-collapse: collapse;
+	box-sizing: border-box;
+
+	.tr {
+		display: table-row;
+		box-sizing: border-box;
+		
+		.th {
+			display: table-cell;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		.td {
+			display: table-cell;
+			box-sizing: border-box;
+		}
+	}
+}/**
+ * transition
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+  transition: @transition;
+}
+
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+  -moz-transition: -moz-transform @transition;
+  -o-transition: -o-transform @transition;
+  transition: transform @transition;
+}/**
+ * user-select
+ *
+ * History
+ * 05.03.2014 - Aurel Hermand (Vegvisir) - Initial version
+ */
+
+
+.user-select(@val: none) { // Values: none | text | toggle | element | elements | all | inherit
+	-webkit-touch-callout: @val;
+	-webkit-user-select: @val;
+	user-select: @val;
+}
