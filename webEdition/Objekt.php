@@ -82,6 +82,22 @@ deleteEntry($id, OBJECT_FILES_TABLE); // Objekt mit der angegebenen ID löschen
 if (isset($deletedItems)) { print_r($deletedItems); } // Ausgabe aller gelöschten Objekte
 
 
-
-
 ?>
+
+
+
+
+<?php
+// Objekt ändern
+?>
+<?php
+	$_REQUEST['edit_object'] = 1; // Achtung WebEdition, es soll ein Objekt geändert werden!
+	$_REQUEST['we_editObject_ID'] = $hier_deine_objekt_id; // ID des zu ändernden Objekts - gaht natürlich auch dynamisch
+	$_REQUEST['we_ui_we_global_form']['MeinFeld'] = $_REQUEST['we_ui_we_global_form']['MeinFeld'] - 1; // der Rest wie oben
+?>
+<we:write type="object" publish="true" classid="XXX" forceedit="true" />
+<we:ifWritten type="object">Objekt gespeichert!</we:ifWritten>
+
+
+
+
