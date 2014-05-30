@@ -18,9 +18,11 @@ $doc->we_publish();
 
 
 
+echo $GLOBALS['we_doc']->getElement("Title");
+echo $GLOBALS['we_doc']->getElement("Description");
 
-
-
+echo $GLOBALS['we_doc']->OF_ID;
+echo $GLOBALS['we_doc']->TableID;
 
 
 // Die ID der Vorlage auf der das webEdition-Dokument basiert

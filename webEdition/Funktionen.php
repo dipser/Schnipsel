@@ -34,7 +34,7 @@ p_r($we_doc);
 p_r($GLOBALS['we_doc']);
 
     <?php $GLOBALS['we_doc']->setElement('Headline', 'Das ist ein Beispieltext.'); ?>
-    <we:input type="text" name="Headline"/>
+    //<we:input type="text" name="Headline"/>
     $GLOBALS['we_doc']->setElement('Headline');
 
 // Daten der Überseite in der <we:include type="document" id="" /> steht
@@ -47,16 +47,24 @@ we_tag( string $name , array $attribs [, string $content] );
 
 //
 $GLOBALS['we_doc']->setElement('Headline', 'Das ist ein Beispieltext.');
-<we:input type="text" name="Headline"/>
-$GLOBALS['we_doc']->getElement('Headline')
+//<we:input type="text" name="Headline"/>
+$GLOBALS['we_doc']->getElement('Headline');
 
 
 
-makeArrayFromCSV($csv)
+makeArrayFromCSV($csv);
 makeCSVFromArray($arr, $prePostKomma=false, $sep=",")
 
- 
-getHTTP($server, $url, $port="", $username="", $password="")
+
+// Seite laden 
+$content = getHTTP($server, $url, $port="", $username="", $password="");
+
+
+
+
+// Glossa-Ersetzung
+$content = we_glossary_replace::doReplace($content, $GLOBALS['we_doc']->Language);
+
 
 /**
  * - error_log2($variable) // Schreibt beliebige Variablen, Arrays und Objekte, auch verschachtelt, in die PHP-Error-Log-Datei. 
