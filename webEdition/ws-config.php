@@ -4,22 +4,25 @@
  *
  * Verwendung als: $ws_BEGRIFF
  */
-$ws = array('DE'=>array(), 'EN'=>array(), 'NL'=>array());
-
+$ws = array();
 $ws['DE'] = array(
 	'langName' => 'English',
-	'index' => 3160,
-	'navMain' => 105
+	'index' => 1, // Startseite
+	'navMain' => 1, // Hauptnavigation
+	'tag' => array("", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"),
+	'tagAbk' => array("", "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"),
+	'monat' => array("", "Januar","Februar","M&auml;rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"),
+	'monatAbk' => array("", "Jan","Feb","M&auml;r","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez")
 );
 $ws['EN'] = array(
 	'langName' => 'English',
-	'index' => 3160,
-	'navMain' => 105
+	'index' => 2,
+	'navMain' => 2
 );
 $ws['NL'] = array(
 	'langName' => 'Nederlands',
-	'index' => 3180,
-	'navMain' => 106
+	'index' => 3,
+	'navMain' => 3
 );
 
 $ws['DE']['Startseite'] = 'Startseite';
@@ -61,11 +64,10 @@ function glossar($wort) {
 	return $wort;
 }
 
-// Workspaces
+// Workspaces / Sprachen
 foreach ($ws[strtoupper($lng)] as $key => $val) {
 	${'ws_'.$key} = $val; // => $ws_index
 }
+unset($ws);
 
 ?>
-<we:ifWorkspace id="2421" comment="EN"><? $isLng = true; ?></we:ifWorkspace>
-<we:ifWorkspace id="2422" comment="NL"><? $isLng = true; ?></we:ifWorkspace>
