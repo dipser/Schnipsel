@@ -72,6 +72,8 @@ $content = we_glossary_replace::doReplace($content, $GLOBALS['we_doc']->Language
  * - removeHTML($val)
  */
  
+##################################################################
+###### NOCH TESTEN...
  
 
     weFile::load($filename, $flags="rb", $rsize=8192)
@@ -79,6 +81,27 @@ $content = we_glossary_replace::doReplace($content, $GLOBALS['we_doc']->Language
     weFile::delete($filename)
     weFile::saveTemp($content, $filename="", $flags="wb"
 
+
+//returns array of directory IDs of all directories which are located inside $folderID (recursive)
+we_util::getFoldersInFolder($folderID, $table = FILE_TABLE, $db = '')
+
+
+//we_global.inc.php
+
+in_parentID($id, $pid, $table = FILE_TABLE, $db = '')
+
+in_workspace($IDs, $wsIDs, $table = FILE_TABLE, $db = '', $objcheck = false)
+
+getHrefForObject($id, $pid, $path = '', $DB_WE = '', $hidedirindex = false, $objectseourls = false)
+
+we_getDocumentByID($id, $includepath = '', $we_getDocumentByIDdb = '', &$charset = '')
+we_getObjectFileByID($id, $includepath = '')
+
+getServerProtocol($slash = false)
+
+
+// This function creates the given path in the repository and returns the id of the last created folder
+function makePath($path, $table, &$pathids, $owner = 0)
 
 
 ?>
