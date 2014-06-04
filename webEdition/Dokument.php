@@ -13,6 +13,29 @@ $doc->we_publish();
 
 
 
+$newpath = '/xyz';
+$table = FILE_TABLE;
+$owner = 0;
+$id = path_to_id($newpath, $table);
+if(!$id){
+	$new = new we_folder();
+	$new->Text = $elem;
+	$new->Filename = $elem;
+	$new->ParentID = $pid;
+	$new->Path = $newpath;
+	$new->Table = $table;
+	$new->CreatorID = $owner;
+	$new->ModifierID = $owner;
+	$new->Owners = ',' . $owner . ',';
+	$new->OwnersReadOnly = serialize(array(
+		$owner => 0
+	));
+	$new->we_save();
+	$id = $new->ID;
+}
+
+
+
 
 
 
