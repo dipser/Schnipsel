@@ -11,6 +11,7 @@ $ws['DE'] = array(
 	'navMain' => 1, // Hauptnavigation
 	'heute' => strtotime(date('Y-m-d')), // Heutiger Tag ab Stunde 0
 	'editmode' => $GLOBALS['we_editmode'],
+	'inwebedition' => $GLOBALS['we_doc']->InWebEdition,
 	'tag' => array("", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"),
 	'tagAbk' => array("", "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"),
 	'monat' => array("", "Januar","Februar","M&auml;rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"),
