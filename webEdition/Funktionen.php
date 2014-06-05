@@ -103,5 +103,10 @@ getServerProtocol($slash = false)
 // This function creates the given path in the repository and returns the id of the last created folder
 function makePath($path, $table, &$pathids, $owner = 0)
 
+//This function clears path from double slashes and back slashes
+clearPath($path)
+
+we_isHttps()
+
 
 ?>
