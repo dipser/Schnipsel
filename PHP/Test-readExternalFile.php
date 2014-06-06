@@ -1,6 +1,6 @@
 <?php
 
-// Testprogramm
+// Testprogramm -ah2014
 
 
 $url = "http://api.openweathermap.org/data/2.5/forecast/daily?id=2950159&mode=json&units=metric&cnt=1&lang=de";
@@ -33,7 +33,7 @@ if ($_GET['type']==1) {
 echo '<h2><a href="?type=2">2. cURL</a></h2>';
 if ($_GET['type']==2) {
 	$ch = curl_init();
-	curl_setopt ($ch, CURLOPT_URL, "http://www.google.de/");
+	curl_setopt ($ch, CURLOPT_URL, $url);
 	curl_setopt ($ch, CURLOPT_HEADER, 0);
 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 	$content = curl_exec ($ch);
