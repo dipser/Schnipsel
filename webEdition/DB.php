@@ -18,4 +18,12 @@ getHash($query, $DB_WE, MYSQL_ASSOC)
 f($query, $field, $DB_WE)
 
 
+
+$tableInfo = $DB_WE->metadata($table);
+	$fn = array();
+	foreach($tableInfo as $t){
+		$fieldName = $t['name'];
+		$fn[$fieldName] = isset($hash[$fieldName . '_autobr']) ? nl2br($hash[$fieldName]) : $hash[$fieldName];
+	}
+
 ?>
