@@ -14,7 +14,7 @@ weFile::getUniqueId()
 
 
 // Passwort
-$p = new rndConditionPass(12, array())->PassGen();
+$p = new rndConditionPass(12, array());
 echo $p->PassGen();
 
 
