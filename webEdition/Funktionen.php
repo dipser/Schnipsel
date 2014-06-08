@@ -13,6 +13,11 @@ $we_ContentType = getContentTypeFromFile($filename);
 weFile::getUniqueId()
 
 
+// Passwort
+$p = new rndConditionPass(12, array())->PassGen();
+echo $p->PassGen();
+
+
 // Dateinamen für webEdition anpassen
 importFunctions::correctFilename($filename)
 
