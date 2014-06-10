@@ -13,7 +13,7 @@ $obj = new we_objectFile();
 $obj->we_new();
 $obj->TableID = 10; //ID der Klasse
 $obj->setRootDirID(true);
-$obj>restoreDefaults();
+$obj->restoreDefaults();
 //$obj->add_workspace($wsid);
 //$obj->del_workspace($wsid);
 //$obj->Workspaces = ''; // Reset
