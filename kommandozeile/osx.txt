@@ -1,0 +1,7 @@
+
+# Finder .DS_Store löschen
+find -x "/Pfad/zum/durchsuchen" -type f -name ".DS_Store" -delete
+
+
+# Finder beenden
+osascript -e "tell app \"Finder\" to quit"
