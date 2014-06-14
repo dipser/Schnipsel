@@ -10,6 +10,15 @@
 
 
 
+
+<we:block name="meinBlock">
+</we:block>
+<?php
+$anzahl = count(unserialize($GLOBALS['we_doc']->getElement('meinBlock')));
+?>
+
+
+
     $em=$GLOBALS['we_editmode'];
     $GLOBALS['we_editmode']=false;
     $block=we_tag('block',array("name"=>"test"));
