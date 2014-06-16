@@ -1,0 +1,6 @@
+
+RewriteEngine On
+RewriteBase /
+
+
+RewriteRule ^manifest.appcache$ /manifest.appcache.php [L]
