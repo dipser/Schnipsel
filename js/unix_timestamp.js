@@ -7,5 +7,5 @@ function unix_timestamp(y, m, d, h, i, s) {
   if (h==false) { now.setHours(0); }
   if (i==false) { now.setMinutes(0); }
   if (s==false) { now.setSeconds(0); }
-  return now / 1000;
+  return Math.round(now.getTime() / 1000);
 }
