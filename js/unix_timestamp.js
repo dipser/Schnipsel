@@ -1,13 +1,11 @@
 // Unix Zeitstempel (=ohne ms) mit der Möglichkeit Werte auf 0 zu setzen
-function unix_timestamp(y=true, m=true, d=true, h=true, i=true, s=true) {
+function unix_timestamp(y, m, d, h, i, s) {
   var now = new Date();
-  var start = new Date(
-    (y ? now.getFullYear() : 0),
-    (m ? now.getMonth() : 0),
-    (d ? now.getDate() : 0),
-    (h ? now.getHours() : 0),
-    (i ? now.getMinutes() : 0),
-    (s ? now.getSeconds() : 0)
-  );
-  return start / 1000;
-};
+  if (y==false) { now.setFullYear(0); }
+  if (m==false) { now.setMonth(0); }
+  if (d==false) { now.setDate(0); }
+  if (h==false) { now.setHours(0); }
+  if (i==false) { now.setMinutes(0); }
+  if (s==false) { now.setSeconds(0); }
+  return now / 1000;
+}
