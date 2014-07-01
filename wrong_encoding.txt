@@ -13,3 +13,4 @@
 
 
 http://bueltge.de/wp-content/download/wk/utf-8_kodierungen.pdf
+http://code-n-fold.com/2012/04/12/fix-wrong-utf-8-encodings-in-mysql-table/ (Noch testen)
