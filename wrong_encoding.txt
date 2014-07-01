@@ -7,3 +7,9 @@
 ü = Ã¼
 
 ß = ÃŸ
+
+é = Ã©
+
+
+
+http://bueltge.de/wp-content/download/wk/utf-8_kodierungen.pdf
