@@ -2,7 +2,7 @@ function date(format, timestamp) { // format: http://php.net/manual/de/function.
 	format = typeof format !== 'undefined' ? format : '';
 	timestamp = typeof timestamp !== 'undefined' ? timestamp : new Date();
   
-  	var pad = function(i) { return (i < 10) ? "0" + i : "" + i; };
+  	var _pad = function(i) { return (i < 10) ? "0" + i : "" + i; };
   	var days = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 	var months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 	var d = new Date(timestamp);
@@ -10,13 +10,13 @@ function date(format, timestamp) { // format: http://php.net/manual/de/function.
 	return format.replace(/\\?[a-zA-Z]{1,1}/g, function(m) {
 		if (m[0]=='\\') { return m[1]; }
 		// Tag
-		if (m[0]=='d') { return pad(d.getDate()); }
+		if (m[0]=='d') { return _pad(d.getDate()); }
 		if (m[0]=='D') { return days[d.getDay()].slice(0, 3); }
 		if (m[0]=='j') { return d.getDate(); }
 		if (m[0]=='l') { return days[d.getDay()]; }
 		// Monate
 		if (m[0]=='F') { return months[d.getMonth()]; }
-		if (m[0]=='m') { return pad(d.getMonth() + 1); }
+		if (m[0]=='m') { return _pad(d.getMonth() + 1); }
 		if (m[0]=='M') { return months[d.getMonth()].slice(0, 3); }
 		if (m[0]=='n') { return d.getMonth() + 1; }
 		if (m[0]=='t') { return new Date(d.getFullYear(), d.getMonth()+1, 0).getDate(); }
