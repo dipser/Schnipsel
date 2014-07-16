@@ -38,15 +38,9 @@ function date2(format, timestamp) {
 	var tomorrow = new Date( new Date().setDate(new Date().getDate() + 1) );
 	var dayaftertomorrow = new Date( new Date().setDate(new Date().getDate() + 2) );
 	
-	if (d.toDateString() == today.toDateString()) {
-		return 'Heute';
-	}
-	if (d.toDateString() == tomorrow.toDateString()) {
-		return 'Morgen';
-	}
-	if (d.toDateString() == dayaftertomorrow.toDateString()) {
-		return 'Übermorgen';
-	}
+	if (d.toDateString() == today.toDateString()) { return 'Heute'; }
+	if (d.toDateString() == tomorrow.toDateString()) { return 'Morgen'; }
+	if (d.toDateString() == dayaftertomorrow.toDateString()) { return 'Übermorgen'; }
 	
 	return date(format, timestamp);
 }
