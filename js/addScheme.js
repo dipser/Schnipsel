@@ -3,5 +3,5 @@ function addScheme(url, scheme) {
   if (url.match(/^(https?|ftp|tel|mailto)/i)) {
     return url;
   }
-  return scheme + url;
+  return url.length > 0 ? scheme + url : '';
 }
