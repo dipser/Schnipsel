@@ -46,23 +46,3 @@ function date2(format, timestamp) {
 }
 
 
-
-
-
-function dateToday(date) { // date: "2012-02-20"
-  date = typeof date !== 'undefined' ? date : new Date(); // Default
-  var d = new Date(date);
-  return d.getDate();
-}
-
-function dateTomorrow(date) { // date: "2012-02-20"
-  date = typeof date !== 'undefined' ? date : new Date(); // Default
-  var d = new Date(date);
-  return d.setDate(d.getDate() + 1);
-}
-
-function dateDayaftertomorrow(date) { // date: "2012-02-20"
-  date = typeof date !== 'undefined' ? date : new Date(); // Default
-  var d = new Date(date);
-  return d.setDate(d.getDate() + 2);
-}
