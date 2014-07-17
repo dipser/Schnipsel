@@ -33,7 +33,7 @@
 	
 	
 	// Template bearbeiten
-	$tmpl = new we_template( );
+	$tmpl = new we_template();
 	$tmpl->initByID( $ID, TEMPLATES_TABLE );
 	$tmpl->setElement('data', '<?php echo "Hallo Welt."; ?>', "txt");
 	$tmpl->we_save();
