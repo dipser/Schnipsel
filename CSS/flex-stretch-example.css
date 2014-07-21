@@ -1,0 +1,14 @@
+.flexcontainer {
+    display: flex;
+    flex-direction: column; /* =vertical */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+flexcontainer > div {
+	order: 0;
+	flex: 1 1 auto;
+	align-self: stretch;
+}
