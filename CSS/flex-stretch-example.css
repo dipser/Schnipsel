@@ -7,7 +7,7 @@
     align-items: flex-start;
 }
 
-flexcontainer > div {
+.flexcontainer > div {
 	order: 0;
 	flex: 1 1 auto;
 	align-self: stretch;
