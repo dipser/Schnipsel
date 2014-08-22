@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+INSERT INTO ${1:table} VALUES (${2:value1}, ${3:value2})
+]]></content>
+    <tabTrigger>sqlinsert</tabTrigger>
+    <!-- <scope>source.js</scope> -->
+    <description>SQL INSERT</description>
+</snippet>

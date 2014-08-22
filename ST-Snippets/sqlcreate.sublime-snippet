@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+CREATE TABLE IF NOT EXISTS `${1:name}` (
+    `${2:pfx}_id` INT NOT NULL AUTO_INCREMENT,
+    `${2:pfx}_name` VARCHAR(255) NOT NULL,
+    PRIMARY KEY(`${2:pfx}_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>sqlcreate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>SQL CREATE</description>
+</snippet>

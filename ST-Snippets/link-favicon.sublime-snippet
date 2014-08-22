@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+<link rel="shortcut icon" type="image/x-icon" href="${1:/favicon}.ico" />
+<link rel="apple-touch-icon" href="${2:/apple-touch-icon}.png">$0
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>link-favicon</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Link: Favicon / Shortcut-Icon</description>
+</snippet>

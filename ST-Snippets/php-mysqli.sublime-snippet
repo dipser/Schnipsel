@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+\$db = @new mysqli(${1:\$dbhost}, ${2:\$dbuser}, ${3:\$dbpass}, ${4:\$dbname});
+if (mysqli_connect_errno()) {
+    die ('Unnable to connect to database server: '.mysqli_connect_error().'('.mysqli_connect_errno().')');
+}
+\$sql = '${5:SELECT * FROM Table}';
+\$result = \$db->query(\$sql);
+if (!\$result) {
+    die ('Something is wrong with the query: '.\$db->error);
+}
+echo 'The table has '.\$result->num_rows." data records.<br />\n";
+while (\$row = \$result->fetch_assoc()) { // NULL is equivalent to false
+    echo \$row['id']."<br />\n";
+}
+\$result->close();
+unset(\$result); // delete object reference
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>php-mysqli</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>PHP: MySQLi-Connection</description>
+</snippet>

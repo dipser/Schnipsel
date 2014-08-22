@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+UPDATE ${1:Table} SET ${2:Column} = ${3:Value} WHERE id = ${4:0}
+]]></content>
+    <tabTrigger>sqlupdate</tabTrigger>
+    <!-- <scope>source.js</scope> -->
+    <description>SQL UPDATE</description>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+/* decide what the content should be up here .... */
+\$content = get_content(); //generic function;
+/* AJAX check  */
+if(!empty(\$_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower(\$_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    /* special ajax here */
+    die(\$content);
+}
+/* not ajax, do more.... */
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>php-ajax</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>PHP: AJAX Check</description>
+</snippet>

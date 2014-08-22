@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+.animate({
+        width: "toggle",
+        height: "toggle"
+    }, {
+        duration: 5000,
+        specialEasing: {
+            width: "linear",
+            height: "easeOutBounce"
+        },
+        complete: function() {
+            //\$(this).after("<div>Animation complete.</div>");
+        }
+    }
+);
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>animate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>jQuery: .animate()</description>
+</snippet>

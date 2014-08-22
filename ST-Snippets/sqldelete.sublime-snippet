@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+DELETE FROM ${1:Table} WHERE id = ${2:0} 
+]]></content>
+    <tabTrigger>sqldelete</tabTrigger>
+    <!-- <scope>source.js</scope> -->
+    <description>SQL DELETE</description>
+</snippet>

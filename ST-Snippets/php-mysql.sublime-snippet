@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+\$link = @mysql_connect(${1:\$dbhost}, ${2:\$dbuser}, ${3:\$dbpass}) or die("Unable to connect to mysql server.");
+@mysql_select_db(${4:\$dbname}, \$link) or die("Unable to select database.");
+mysql_query("Set names 'utf8'");
+\$query = "$0";
+mysql_query(\$query, \$link);
+mysql_close();
+]]></content>
+    <tabTrigger>php-mysql</tabTrigger>
+    <!-- <scope>source.js</scope> -->
+    <description>PHP: MySQL</description>
+</snippet>

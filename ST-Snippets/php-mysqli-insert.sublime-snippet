@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+\$stmt = \$mysqli->prepare("INSERT INTO ${1:Table} VALUES (${2:?, ?, ?})");
+\$stmt->bind_param('${3:isd}', ${4:\$intVar, \$strVar, \$dblVar});
+
+${5:\$intVar = 9;
+\$strVar = 'Emden';
+\$dblVar = 11.2;}
+
+\$stmt->execute(); // execute prepared statement
+//printf("%d Row inserted.\n", \$stmt->affected_rows);
+\$stmt->close(); // close statement and connection
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>php-mysqli-insert</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>PHP: MySQLi-INSERT</description>
+</snippet>
+

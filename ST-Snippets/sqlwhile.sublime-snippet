@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+while (${1:\$row} = mysql_fetch_array(${2:\$result})) {
+	$3
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>php-mysql-while</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>PHP: While-loop for MySQL-Results</description>
+</snippet>
