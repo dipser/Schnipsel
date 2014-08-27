@@ -100,4 +100,15 @@ if (isset($deletedItems)) { print_r($deletedItems); } // Ausgabe aller gelöscht
 
 
 
+// Alle Klassen zurückgeben:
+function getAllClassesByPath() {
+	$classes = array();
+	$db = $GLOBALS['DB_WE'];
+	$db->query("SELECT ID,Path FROM " . OBJECT_TABLE . " ORDER By ID");
+	while ($db->next_record()) {
+		$classes[] = array('ID'=>$db->f("ID"), 'Path'=>$db->f("Path"));
+	}
+	return $classes;
+}
+p_r(getAllClassesByPath());
 
