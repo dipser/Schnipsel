@@ -111,4 +111,15 @@ function getAllClassesByPath() {
 	return $classes;
 }
 p_r(getAllClassesByPath());
+
+
+
+
+// Meta
+	$db->query("SELECT DefaultValues,Path FROM ". OBJECT_TABLE ." WHERE ID = ".$ID);
+	$db->next_record();
+	$Meta = unserialize($db->f("DefaultValues"));
+	$Meta = $Meta['meta_Kategorie']['meta'];
+	$Path = $db->f("Path");
+
 ?>
