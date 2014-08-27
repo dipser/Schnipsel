@@ -99,7 +99,7 @@ if (isset($deletedItems)) { print_r($deletedItems); } // Ausgabe aller gelöscht
 <we:ifWritten type="object">Objekt gespeichert!</we:ifWritten>
 
 
-
+<?php
 // Alle Klassen zurückgeben:
 function getAllClassesByPath() {
 	$classes = array();
@@ -111,4 +111,4 @@ function getAllClassesByPath() {
 	return $classes;
 }
 p_r(getAllClassesByPath());
-
+?>
