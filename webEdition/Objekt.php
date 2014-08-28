@@ -121,5 +121,8 @@ p_r(getAllClassesByPath());
 	$Meta = unserialize($db->f("DefaultValues"));
 	$Meta = $Meta['meta_Kategorie']['meta'];
 	$Path = $db->f("Path");
+	
+// Klassen-Ordner
+$root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/POI'", 'ID', $GLOBALS['DB_WE']);
 
 ?>
