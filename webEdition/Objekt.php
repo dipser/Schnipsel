@@ -126,4 +126,24 @@ p_r(getAllClassesByPath());
 // Klassen-Ordner
 $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/POI'", 'ID', $GLOBALS['DB_WE']);
 
+
+
+
+
+
+
+	// Objekt erstellen (Kurzversion)
+	$objfields = array(
+		'Titel' 		=> $title, 
+		'Beschreibung'		=> $text
+	);
+	$rcd_name 		= 	importFunctions::correctFilename($title); // der Name des neuen Objektes, in diesem Beispiel das, was in $fields[0] steht
+	$collision		=	"replace"; // überschreibt vorhandene Objekte
+	$categories		=	""; // weiß nicht, wie man die angibt
+	importFunctions::importObject($classid, $objfields, $categories, $rcd_name, true, $collision); // webEdition/we/include/we_import/importFunctions.class.inc.php
+
+
+	// Objekt löschen
+	deleteEntry($object_id, OBJECT_FILES_TABLE);
+
 ?>
