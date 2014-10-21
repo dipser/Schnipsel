@@ -138,8 +138,8 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 		'Beschreibung'		=> $text
 	);
 	$rcd_name 		= 	importFunctions::correctFilename($title); // der Name des neuen Objektes
-	$collision		=	"replace"; // überschreibt vorhandene Objekte
-	$categories		=	""; // weiß nicht, wie man die angibt
+	$collision		=	"replace"; // replace = überschreibt vorhandene Objekte mit gleichem namen / rename = erstellt immer neues objekt mit Endung "_X"
+	$categories		=	''; // '' = keine Kategorie / ',1,' = eine Kategorie / ',1,2,' = 2 Kategorien
 	importFunctions::importObject($classid, $objfields, $categories, $rcd_name, true, $collision); // webEdition/we/include/we_import/importFunctions.class.inc.php
 
 
