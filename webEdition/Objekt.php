@@ -137,7 +137,7 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 		'Titel' 		=> $title, 
 		'Beschreibung'		=> $text
 	);
-	$rcd_name 		= 	importFunctions::correctFilename($title); // der Name des neuen Objektes, in diesem Beispiel das, was in $fields[0] steht
+	$rcd_name 		= 	importFunctions::correctFilename($title); // der Name des neuen Objektes
 	$collision		=	"replace"; // überschreibt vorhandene Objekte
 	$categories		=	""; // weiß nicht, wie man die angibt
 	importFunctions::importObject($classid, $objfields, $categories, $rcd_name, true, $collision); // webEdition/we/include/we_import/importFunctions.class.inc.php
