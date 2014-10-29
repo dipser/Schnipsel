@@ -1,4 +1,7 @@
 <?php
+
+	include_once($_SERVER["DOCUMENT_ROOT"]."/webEdition/we/include/conf/we_conf.inc.php");
+	include_once($_SERVER["DOCUMENT_ROOT"]."/webEdition/we/include/we_classes/we_template.inc.php"); // Für ältere webEdition-Versionen
 	
 	$newTemplateFilename = 'perphp';
 	$templateParentID = 0;
