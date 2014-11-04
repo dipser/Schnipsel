@@ -26,4 +26,16 @@ $tableInfo = $DB_WE->metadata($table);
 		$fn[$fieldName] = isset($hash[$fieldName . '_autobr']) ? nl2br($hash[$fieldName]) : $hash[$fieldName];
 	}
 
+
+
+
+// Andere DB-Verbindung aufbauen mit webEdition
+$database = 'database2';
+$host = 'localhost';
+$user = 'user';
+$pass = 'pass';
+$GLOBALS['DB_WE_xyz']->connect($database, $host, $user, $pass);
+//p_r($GLOBALS['DB_WE_xyz']);
+
+
 ?>
