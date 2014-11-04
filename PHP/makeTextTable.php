@@ -1,3 +1,5 @@
+<?php
+
 function makeTextTable($arr) {
 	$maxchars = 0;
 	foreach ($arr as $k => $v) { $maxchars = (strlen($v[0]) > $maxchars) ? strlen($v[0]) : $maxchars; }
@@ -7,3 +9,5 @@ function makeTextTable($arr) {
 	}
 	return implode("\r\n", $ret);
 }
+
+?>
