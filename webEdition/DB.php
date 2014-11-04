@@ -30,6 +30,7 @@ $tableInfo = $DB_WE->metadata($table);
 
 
 // Andere DB-Verbindung aufbauen mit webEdition
+// Siehe: class DB_WE extends we_database_base {}
 $database = 'database2';
 $host = 'localhost';
 $user = 'user';
