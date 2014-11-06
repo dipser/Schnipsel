@@ -38,6 +38,7 @@
 	// Template bearbeiten
 	$tmpl = new we_template();
 	$tmpl->initByID( $ID, TEMPLATES_TABLE );
+	//$tmpl->ModDate = time(); // Ungetestet
 	$tmpl->setElement('data', '<?php echo "Hallo Welt."; ?>', "txt");
 	$tmpl->we_save();
 	$tmpl->we_publish();
