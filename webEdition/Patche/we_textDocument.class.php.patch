@@ -1,0 +1,31 @@
+Index: we/include/we_classes/contents/we_textDocument.class.php
+===================================================================
+--- we/include/we_classes/contents/we_textDocument.class.php	(revision 8545)
++++ we/include/we_classes/contents/we_textDocument.class.php	(working copy)
+@@ -141,6 +141,26 @@
+ 			case we_base_ContentTypes::JS:
+ 				$doc = self::replaceWEIDs($doc);
+ 				break;
++			case we_base_ContentTypes::HTACCESS:
++				$path = preg_replace('/\/\.htaccess$/', '', $this->getPath());
++				$serverpath = $_SERVER['DOCUMENT_ROOT'].$path;
++				$urlpath = 'http://'.$_SERVER[HTTP_HOST].$path;
++				$data = file_get_contents($serverpath.'/.htaccess'); // Get current .htaccess
++				// Write new data to .htaccess
++				file_put_contents($serverpath.'/.htaccess', $doc);
++				// Get HTTP-status.
++				$handle = curl_init($urlpath.'/');
++				curl_setopt($handle, CURLOPT_RETURNTRANSFER, TRUE);
++				$response = curl_exec($handle);
++				$httpcode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
++				curl_close($handle);
++				// Missconfiguration! Write old data back.
++				if ($httpcode == 500) {
++					file_put_contents($serverpath.'/.htaccess', $data);
++					$doc = $data;
++					$this->errMsg = 'Error 500';
++				}
++				break;
+ 			default:
+ 		}
+ 		return $doc;

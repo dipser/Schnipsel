@@ -1,0 +1,37 @@
+Index: we/include/weTagWizard/we_tags/we_tag_field.inc.php
+===================================================================
+--- we/include/weTagWizard/we_tags/we_tag_field.inc.php	(revision 8545)
++++ we/include/weTagWizard/we_tags/we_tag_field.inc.php	(working copy)
+@@ -11,6 +11,7 @@
+ 	new weTagDataOption('WE_ID'),
+ 	new weTagDataOption('WE_TEXT'),
+ 	new weTagDataOption('WE_URL'),
++	new weTagDataOption('WE_CLASSID'),
+ 	new weTagDataOption('WE_CUSTOMER_ID'),
+ 	new weTagDataOption('WE_TRIGGERID'),
+ 	new weTagDataOption('wedoc_CreationDate'),
+Index: we/include/we_modules/object/we_object_listview.class.php
+===================================================================
+--- we/include/we_modules/object/we_object_listview.class.php	(revision 8545)
++++ we/include/we_modules/object/we_object_listview.class.php	(working copy)
+@@ -410,6 +410,7 @@
+ 				$this->DB_WE->Record['we_WE_URL'] = $this->DB_WE->f('OF_Url');
+ 				$this->DB_WE->Record['we_WE_TEXT'] = $this->DB_WE->f('OF_Text');
+ 				$this->DB_WE->Record['we_WE_ID'] = $this->DB_WE->f('OF_ID');
++				$this->DB_WE->Record['we_WE_CLASSID'] = $this->classID;
+ 				$this->DB_WE->Record['we_wedoc_Category'] = $this->DB_WE->f('OF_Category');
+ 				$this->DB_WE->Record['we_WE_SHOPVARIANTS'] = 0;
+ 				if(defined('WE_SHOP_VARIANTS_ELEMENT_NAME') && isset($this->DB_WE->Record['we_' . WE_SHOP_VARIANTS_ELEMENT_NAME])){
+Index: we/include/we_classes/main/we_main_headermenu.class.php
+===================================================================
+--- we/include/we_classes/main/we_main_headermenu.class.php	(revision 8545)
++++ we/include/we_classes/main/we_main_headermenu.class.php	(working copy)
+@@ -200,7 +200,7 @@
+ 				print self::createMessageConsole('mainWindow');
+ 				?>
+ 				<img src="<?php print IMAGE_DIR ?>pixel.gif" alt="" name="busy" width="20" height="19">
+-				<img src="<?php print IMAGE_DIR ?>webedition.gif" alt="" style="width:78px;height:25px;padding-left: 10px;padding-right: 5px;padding-top:3px;">
++				<img src="<?php print IMAGE_DIR ?>webedition.gif" alt="" style="width:78px;height:25px;padding-left: 10px;padding-right: 5px;padding-top:3px;" title="<?=WE_VERSION_NAME?>">
+ 			</div>
+ 		</div>
+ 		<?php
