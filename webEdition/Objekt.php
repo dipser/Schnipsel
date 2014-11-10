@@ -12,11 +12,12 @@ $objpath = '/classdir';
 $obj = new we_objectFile();
 $obj->we_new();
 $obj->TableID = 10; //ID der Klasse
-$obj->setRootDirID(true);
+//$obj->setRootDirID(true);
 $obj->restoreDefaults();
-//$obj->add_workspace($wsid);
+$obj->setParentID($ParentID); // ID eines Unterverzeichnisses
+//$obj->add_workspace($wsid); // Arbeitsbereich hinzufügen
 //$obj->del_workspace($wsid);
-//$obj->Workspaces = ''; // Reset
+//$obj->Workspaces = ''; // Arbeitsbereich: Reset
 //$obj->Templates = '';
 $obj->Text = 'Objektname';
 $obj->Path = $objpath.'/'.$obj->Text;
@@ -65,6 +66,7 @@ $object->TableID = 19;
 $object->setRootDirID(true);
 $object->resetParentID();
 $object->restoreDefaults();
+$object->setParentID($ParentID);
 $object->Text = $rechnungsnummer;
 $object->Path=$object->getParentPath()
 // ...
