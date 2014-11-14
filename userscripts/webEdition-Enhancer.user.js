@@ -16,7 +16,7 @@ $(function(){
         //console.log(e, window, top);
         var win = top;
         
-        if (e.ctrlKey) {
+        if (e.altKey) {
             var key = e.key;
             
             // webEdition-Vorbelegung:
