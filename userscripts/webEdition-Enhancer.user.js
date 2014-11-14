@@ -4,7 +4,7 @@
 // @description webEdition Greasemonkey Userscript
 // @include     /^https?://.*/webEdition/.*$/
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js
-// @version     1
+// @version     1.0.1
 // @author      Aurel 'dipser' Hermand
 // ==/UserScript==
 
@@ -16,17 +16,17 @@ $(function(){
         //console.log(e, window, top);
         var win = top;
         
-        if (e.altKey) {
+        if (e.ctrlKey) {
             var key = e.key;
             
             // webEdition-Vorbelegung:
             // w = Schließen
             // s = Sichern
+            // S = Veröffentlichen
             
             // Import (i)
             if (key == 'i') {
                 win.menuaction('import');
-                //win.we_cmd('import');
             }
             
             // Info (I)
@@ -71,22 +71,23 @@ $(function(){
             
             // Navigation (N)
             if (key == 'N') {
-               parent.menuaction('edit_navigation_ifthere');
+                //win.menuaction('edit_navigation_ifthere');
+                win.we_cmd('edit_navigation');
             }
             
             // User (u)
             if (key == 'u') {
-               win.menuaction('edit_users_ifthere');
+                win.menuaction('edit_users_ifthere');
             }
             
             // Find (f)
             if (key == 'f') {
-               parent.menuaction('tool_weSearch_edit');
+                win.menuaction('tool_weSearch_edit');
             }
             
             // Preferences (p)
             if (key == 'p') {
-                win.menuaction('openPreferences');
+                 win.menuaction('openPreferences');
             }
 
         }
