@@ -26,6 +26,7 @@ $(function(){
             // Import (i)
             if (key == 'i') {
                 win.menuaction('import');
+                //win.we_cmd('import');
             }
             
             // Info (I)
