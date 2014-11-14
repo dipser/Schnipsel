@@ -39,6 +39,10 @@ openBrowser(url)
 
 
 
+// Veröffentlichen:
+_EditorFrame.setEditorPublishWhenSave(true);
+we_save_document();
+
 
 
 
