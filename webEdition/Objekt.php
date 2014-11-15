@@ -145,6 +145,7 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 	$collision		=	"replace"; // replace = überschreibt vorhandene Objekte mit gleichem namen / rename = erstellt immer neues objekt mit Endung "_X"
 	importFunctions::importObject($classid, $objfields, $categories, $rcd_name, $publish, $collision); // webEdition/we/include/we_import/importFunctions.class.inc.php
 //Der class Name hat sich geändert.. von import_functions auf importFunctions
+// oder we_import_functions
 
 	// Objekt löschen
 	deleteEntry($object_id, OBJECT_FILES_TABLE);
