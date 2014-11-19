@@ -1,4 +1,58 @@
-# Typo3 Installation und Update
+# Server vorbereiten und Typo3 Installation bzw. Update
+
+
+
+## SSH Zugriff
+```
+ssh [Benutzername]@[domain.tld] -p[Portnummer]
+``
+
+
+
+## Server-Benutzerpasswort ändern
+```
+passwd [Benutzername]
+```
+
+
+
+## Server vorbereiten (Apache, PHP, MySQL)
+```
+# Zugriffsrechte beschaffen
+sudo su
+
+# Mache Updates (Fehlerbehebungen) und Upgrades (Neue Version)
+sudo apt-get update
+sudo apt-get upgrade 
+# Alternativer Einzeiler => sudo apt-get update && sudo apt-get upgrade 
+
+sudo apt-get install apache2 php5 mysql-server
+sudo apt-get install phpmyadmin imagemagick php5-imagick 
+sudo apt-get install php5-mysql libapache2-mod-php5 
+sudo apt-get install php5-curl php5-xmlrpc mcrypt php5-mcrypt
+sudo apt-get install libimage-exiftool-perl ufraw-batch
+sudo apt-get install libav-tools ghostscript php-apc imagemagick htop
+sudo apt-get install sendmail aptitude
+
+# Alternativer Einzeiler => sudo apt-get install apache2 php5 mysql-server phpmyadmin imagemagick php5-imagick php5-mysql libapache2-mod-php5 php5-curl php5-xmlrpc mcrypt php5-mcrypt libimage-exiftool-perl ufraw-batch libav-tools ghostscript php-apc imagemagick htop sendmail aptitude
+
+# Server testen
+sudo nano /var/www/info.php
+inhalt:
+<?php phpinfo(); ?>
+
+# Paket-Einstellungen ändern
+#sudo dpkg-reconfigure [paket]
+#bsp.: sudo dpkg-reconfigure phpmyadmin
+
+# Mysql-Benutzer erstellen
+mysql -u root -p 
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
+\q
+
+```
+
 
 
 ## Installation
@@ -29,7 +83,7 @@ cd ../tld_domain/
 ln -s typo3_src-6.2.5 typo3_src 
 ln -s typo3_src/typo3 typo3 
 ln -s typo3_src/index.php index.php
-# Einzeiler: ln -s typo3_src-6.2.5 typo3_src && ln -s typo3_src/typo3 typo3 && ln -s typo3/index.php index.php 
+# Alternativer Einzeiler => ln -s typo3_src-6.2.5 typo3_src && ln -s typo3_src/typo3 typo3 && ln -s typo3/index.php index.php 
 
 # Benutzerrechte setzen
 chown -R www-data:www-data /var/www/ && sudo chmod -R 755 /var/www/
@@ -77,6 +131,7 @@ nano /etc/apache2/sites-enabled/000-default
 # Apache neustarten
 sudo /etc/init.d/apache2 restart
 ```
+
 
 
 ## Update
