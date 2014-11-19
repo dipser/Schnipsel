@@ -1,4 +1,6 @@
-#Typo3-Update:
+#Typo3-Update
+
+Ein Update ist möglich, indem man einfach das zu Grunde liegende Verzeichnis austauscht.
 
 ```
 # Entferne Verknüpfung/Symlink "typo3_src"
