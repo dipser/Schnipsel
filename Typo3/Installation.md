@@ -1,6 +1,7 @@
 # Installation
 
-´´´
+
+```
 # Zugriffsrechte beschaffen
 sudo su
 
@@ -75,4 +76,4 @@ nano /etc/apache2/sites-enabled/000-default
 
 # Apache neustarten
 sudo /etc/init.d/apache2 restart
-´´´
+```
