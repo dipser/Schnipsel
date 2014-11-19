@@ -53,6 +53,7 @@ apt-get install php5-curl php5-xmlrpc mcrypt php5-mcrypt
 apt-get install libimage-exiftool-perl ufraw-batch
 apt-get install libav-tools ghostscript php-apc imagemagick htop
 apt-get install sendmail aptitude
+apt-get install unzip
 
 # Alternativer Einzeiler => apt-get install apache2 php5 mysql-server phpmyadmin imagemagick php5-imagick php5-mysql libapache2-mod-php5 php5-curl php5-xmlrpc mcrypt php5-mcrypt libimage-exiftool-perl ufraw-batch libav-tools ghostscript php-apc imagemagick htop sendmail aptitude
 
@@ -68,8 +69,6 @@ nano /var/www/info.php
 mysql -u root -p 
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
-\q
-
 ```
 
 
@@ -146,9 +145,24 @@ nano /etc/apache2/sites-enabled/000-default
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
-
 # Apache neustarten
-sudo /etc/init.d/apache2 restart
+/etc/init.d/apache2 restart
+
+
+# Alternativ eigene VirtualHost-Datei anlegen
+nano /etc/apache2/sites-available/projektname.conf
+# ...füllen. (Siehe oben...)
+# Deaktivieren:
+sudo a2dissite 000-default.conf
+# Aktivieren:
+sudo a2ensite projektname.conf
+# Apache neustarten
+/etc/init.d/apache2 restart
+
+
+
+# Typo3-Installation aktivieren
+sudo touch FIRST_INSTALL
 ```
 
 
