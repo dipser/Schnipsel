@@ -84,6 +84,9 @@ sudo /etc/init.d/apache2 restart
 Ein Update ist möglich, indem man einfach das zu Grunde liegende Verzeichnis austauscht.
 
 ```
+# Zugriffsrechte beschaffen
+sudo su
+
 # Entferne Verknüpfung/Symlink "typo3_src"
 rm typo3_src
 
