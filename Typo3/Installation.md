@@ -27,6 +27,10 @@ ssh [AbkName]
 
 ## Server-Benutzerpasswort ändern
 ```
+# Passwort generieren
+openssl rand -base64 42
+
+# Passwort ändern
 passwd [Benutzername]
 ```
 
