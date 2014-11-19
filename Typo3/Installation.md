@@ -74,7 +74,7 @@ GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
 
 
 
-## Installation
+## Typo3 Installation
 
 ```
 # Zugriffsrechte beschaffen
@@ -168,7 +168,7 @@ sudo touch FIRST_INSTALL
 
 
 
-## Update
+## Typo3 Update
 
 Ein Update ist möglich, indem man einfach das zu Grunde liegende Verzeichnis austauscht.
 
