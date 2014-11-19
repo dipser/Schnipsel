@@ -6,6 +6,18 @@
 ```
 ssh [Benutzername]@[domain.tld] -p[Portnummer]
 ```
+Oder man legt eine Abkürzung an:
+```
+cd ~/ && mkdir .ssh && cd .ssh && sudo nano config
+# ...diese Zeilen hinzufügen:
+Host [AbkName]
+User [Benutzername]
+Port [Portnummer]
+HostName [domain.tld]
+
+# Aufrufen
+ssh [AbkName]
+```
 
 
 
