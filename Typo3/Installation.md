@@ -79,7 +79,7 @@ sudo /etc/init.d/apache2 restart
 ```
 
 
-##Typo3-Update
+## Update
 
 Ein Update ist möglich, indem man einfach das zu Grunde liegende Verzeichnis austauscht.
 
