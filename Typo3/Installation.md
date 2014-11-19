@@ -34,16 +34,14 @@ chown -R www-data:www-data /var/www/ && sudo chmod -R 755 /var/www/
 
 # PHP Einstellungen vornehmen
 nano /etc/php5/apache2/php.ini
-folgende Zeilen ändern:
+# ...folgendes ändern:
 max_execution_time = 240
 upload_max_filesize = 12M
 post_max_size = 13M
 
 # Virtuellen Host einrichten für das Projekt-Verzeichnis
 nano /etc/apache2/sites-enabled/000-default
-
-# ...folgende Zeilen ändern:
-
+# ...folgendes ändern:
 <VirtualHost *:80>
         DocumentRoot /var/www/tld_domain/
         DirectoryIndex index.php
