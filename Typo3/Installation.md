@@ -186,6 +186,6 @@ ln -s typo3_src-6.2.6 typo3_src
 chown -R www-data:www-data typo3_src-6.2.6
 chown -R www-data:www-data typo3_src
 
-# Anzeige der Symlinks zur überprüfung
+# Anzeige der Symlinks zur Überprüfung (ls = list; al = "a"lles anzeigen und "l"angform)
 ls -al
 ```
