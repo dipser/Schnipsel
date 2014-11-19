@@ -8,6 +8,10 @@ ssh [Benutzername]@[domain.tld] -p[Portnummer]
 ```
 Oder man legt eine Abkürzung an:
 ```
+# Nachschauen ("~" schreibt man mit alt+n)
+sudo nano ~/.ssh/config
+
+# Anlegen
 cd ~/ && mkdir .ssh && cd .ssh && sudo nano config
 # ...diese Zeilen hinzufügen:
 Host [AbkName]
