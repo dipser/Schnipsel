@@ -1,4 +1,4 @@
-# Server vorbereiten und Typo3 Installation bzw. Update
+# Vorbereitung, Installation und Update
 
 
 
