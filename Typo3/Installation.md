@@ -22,27 +22,27 @@ passwd [Benutzername]
 sudo su
 
 # Mache Updates (Fehlerbehebungen) und Upgrades (Neue Version)
-sudo apt-get update
-sudo apt-get upgrade 
+apt-get update
+apt-get upgrade 
 # Alternativer Einzeiler => sudo apt-get update && sudo apt-get upgrade 
 
-sudo apt-get install apache2 php5 mysql-server
-sudo apt-get install phpmyadmin imagemagick php5-imagick 
-sudo apt-get install php5-mysql libapache2-mod-php5 
-sudo apt-get install php5-curl php5-xmlrpc mcrypt php5-mcrypt
-sudo apt-get install libimage-exiftool-perl ufraw-batch
-sudo apt-get install libav-tools ghostscript php-apc imagemagick htop
-sudo apt-get install sendmail aptitude
+apt-get install apache2 php5 mysql-server
+apt-get install phpmyadmin imagemagick php5-imagick 
+apt-get install php5-mysql libapache2-mod-php5 
+apt-get install php5-curl php5-xmlrpc mcrypt php5-mcrypt
+apt-get install libimage-exiftool-perl ufraw-batch
+apt-get install libav-tools ghostscript php-apc imagemagick htop
+apt-get install sendmail aptitude
 
-# Alternativer Einzeiler => sudo apt-get install apache2 php5 mysql-server phpmyadmin imagemagick php5-imagick php5-mysql libapache2-mod-php5 php5-curl php5-xmlrpc mcrypt php5-mcrypt libimage-exiftool-perl ufraw-batch libav-tools ghostscript php-apc imagemagick htop sendmail aptitude
+# Alternativer Einzeiler => apt-get install apache2 php5 mysql-server phpmyadmin imagemagick php5-imagick php5-mysql libapache2-mod-php5 php5-curl php5-xmlrpc mcrypt php5-mcrypt libimage-exiftool-perl ufraw-batch libav-tools ghostscript php-apc imagemagick htop sendmail aptitude
 
 # Server testen
-sudo nano /var/www/info.php
+nano /var/www/info.php
 # ...Inhalt eintragen: <?php phpinfo(); ?>
 
 # Paket-Einstellungen ändern
-#sudo dpkg-reconfigure [paket]
-#bsp.: sudo dpkg-reconfigure phpmyadmin
+#dpkg-reconfigure [paket]
+#bsp.: dpkg-reconfigure phpmyadmin
 
 # Mysql-Benutzer erstellen
 mysql -u root -p 
