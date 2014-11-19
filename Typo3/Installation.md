@@ -38,8 +38,7 @@ sudo apt-get install sendmail aptitude
 
 # Server testen
 sudo nano /var/www/info.php
-inhalt:
-<?php phpinfo(); ?>
+# ...Inhalt eintragen: <?php phpinfo(); ?>
 
 # Paket-Einstellungen ändern
 #sudo dpkg-reconfigure [paket]
