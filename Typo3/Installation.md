@@ -189,3 +189,28 @@ chown -R www-data:www-data typo3_src
 # Anzeige der Symlinks zur Überprüfung (ls = list; al = "a"lles anzeigen und "l"angform)
 ls -al
 ```
+
+
+
+## Typo3-Backend .htaccess Schutz
+```
+# Zugriffsrechte beschaffen
+sudo su
+
+# Wechsle in das Prjekt-Verzeichnis
+cd /var/www/tld_domain/
+
+# Aktuelle Benutzer ansehen
+nano /var/htpasswd/.htusers
+
+# Weiteren Benutzer anlegen
+htpasswd .htusers [Benutzername]
+
+# .htaccess schreiben / öffnen
+nano .htaccess
+# ...Inhalt hinzufügen:
+AuthType Basic
+AuthName "Backend"
+AuthUserFile /var/htpasswd/.htusers
+Require user [Benutzername] [WeitererBenutzername] [...]
+```
