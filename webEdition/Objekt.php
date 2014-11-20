@@ -144,6 +144,7 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 	$publish = true;
 	$collision		=	"replace"; // replace = überschreibt vorhandene Objekte mit gleichem namen / rename = erstellt immer neues objekt mit Endung "_X"
 	importFunctions::importObject($classid, $objfields, $categories, $rcd_name, $publish, $collision); // webEdition/we/include/we_import/importFunctions.class.inc.php
+	//importObject($classID, $fields, $categories = "", $filename = "", $publish = true, $conflict = 'rename')
 	//Neu 6.3.9(?): we_import_functions::importObject($classID, $fields, $categories, $filename, $publish, $issearchable);
 
 	// Objekt löschen
