@@ -200,14 +200,17 @@ sudo su
 # Paket-Installation
 apt-get install apache2-utils
 
-# Wechsle in das Prjekt-Verzeichnis
-cd /var/www/tld_domain/
+# Anlegen, falls nicht Existent
+cd /var/ && mkdir htpasswd && cd htpassed/ && touch .htusers
 
 # Aktuelle Benutzer ansehen
 nano /var/htpasswd/.htusers
 
 # Weiteren Benutzer anlegen
-htpasswd .htusers [Benutzername]
+htpasswd /var/htpasswd/.htusers [Benutzername]
+
+# Wechsle in das Projekt-Backend-Verzeichnis
+cd /var/www/tld_domain/typo3/
 
 # .htaccess schreiben / öffnen
 nano .htaccess
