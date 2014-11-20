@@ -5,11 +5,11 @@ config.sys_language_uid = 0
 config.language = de
 # Lokalisierung
 config.locale_all = de_DE
-config.baseURL = http://t3.heinerjuetting.de/
+config.baseURL = http://domain.de/
 config.htmlTag_langKey = de
 
 #en_EN
-[globalVar = GP:L=1] || [globalString = ENV:HTTP_HOST=t3.heinerjuetting.de]
+[globalVar = GP:L=1] || [globalString = ENV:HTTP_HOST=domain.de]
 config.sys_language_uid = 1
 config.language = en
 config.locale_all = en_EN
