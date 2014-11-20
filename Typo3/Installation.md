@@ -217,7 +217,7 @@ Require user [Benutzername] [WeitererBenutzername] [...]
 
 
 
-## SSL Zertifikat (https)
+## SSL Zertifikat hinzufügen (https)
 ```
 # Zugriffsrechte beschaffen
 sudo su
@@ -281,4 +281,17 @@ nano projektname.conf
 # Apache neustarten
 /etc/init.d/apache2 restart
 ```
+
+Alternativ eine permanente Weiterleitung auf https:
+```
+<VirtualHost *:80>
+        DocumentRoot /var/www/tld_domain/
+        Redirect permanent / https://domain.tld/
+</VirtualHost>
+
+<VirtualHost *:443>
+        ...
+</VirtualHost>
+```
+
 
