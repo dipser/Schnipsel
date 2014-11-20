@@ -1,7 +1,9 @@
 config.no_cache = 1
 
 config.sys_language_uid = 0
+# Sprache
 config.language = de
+# Lokalisierung
 config.locale_all = de_DE
 config.baseURL = http://t3.heinerjuetting.de/
 config.htmlTag_langKey = de
