@@ -197,6 +197,9 @@ ls -al
 # Zugriffsrechte beschaffen
 sudo su
 
+# Paket-Installation
+apt-get install apache2-utils
+
 # Wechsle in das Prjekt-Verzeichnis
 cd /var/www/tld_domain/
 
