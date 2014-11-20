@@ -247,7 +247,7 @@ openssl x509 -req -days 365 -in typo3.csr -signkey typo3.key -out typo3.crt
 a2enmod ssl
 
 # In das Apache-Konfigurations Verzeichnis wechseln
-cd etc/apache2/sites-available/
+cd /etc/apache2/sites-available/
 
 # Apache Porjekt-Konfiguration öffnen
 nano projektname.conf
@@ -256,7 +256,7 @@ nano projektname.conf
         DocumentRoot /var/www/tld_domain/
         DirectoryIndex index.php
         SSLEngine on
-        SSLCertificateFil /etc/apache2/ssl/projektname/typo3.crt
+        SSLCertificateFile /etc/apache2/ssl/projektname/typo3.crt
         SSLCertificateKeyFile /etc/apache2/ssl/projektname/typo3.key
         <Directory /var/www/tld_domain/>
                 Options +FollowSymLinks -indexes
