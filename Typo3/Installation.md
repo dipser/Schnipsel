@@ -295,3 +295,7 @@ Alternativ eine permanente Weiterleitung auf https:
 ```
 
 
+## Cronjobs einrichten
+```
+crontab -e
+```
