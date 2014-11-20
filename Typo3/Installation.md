@@ -332,4 +332,9 @@ optipng -o7 -preserve *png
 ```
 
 ## Gifs optimieren
-...gifsicle...
+```
+sudo su
+apt-cache search gifsicle
+apt-get install gifsicle
+gifsicle --batch -i *.gif
+````
