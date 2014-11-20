@@ -214,3 +214,71 @@ AuthName "Backend"
 AuthUserFile /var/htpasswd/.htusers
 Require user [Benutzername] [WeitererBenutzername] [...]
 ```
+
+
+
+## SSL Zertifikat (https)
+```
+# Zugriffsrechte beschaffen
+sudo su
+
+# Falls noch nicht installiert
+apt-get install openssl
+
+# Verzeichnis wechseln
+cd /etc/apache2/ssl/projektname/
+
+# Neuen Schlüssel erstellen (4096 Bit Länge)
+openssl genrsa -out typo3.key 4096
+
+# CSR (Certificate signing request) erstellen (Zertifikat-Informationen angeben)
+openssl req -new -key typo3.key -out typo3.csr
+
+# Selbstsignierung
+openssl x509 -req -days 365 -in typo3.csr -signkey typo3.key -out typo3.crt
+
+# Modul SSL aktivieren
+a2enmod ssl
+
+# In das Apache-Konfigurations Verzeichnis wechseln
+cd etc/apache2/sites-available/
+
+# Apache Porjekt-Konfiguration öffnen
+nano projektname.conf
+# ...hinzufügen:
+<VirtualHost *:443>
+        DocumentRoot /var/www/tld_domain/
+        DirectoryIndex index.php
+        SSLEngine on
+        SSLCertificateFil /etc/apache2/ssl/projektname/typo3.crt
+        SSLCertificateKeyFile /etc/apache2/ssl/projektname/typo3.key
+        <Directory /var/www/tld_domain/>
+                Options +FollowSymLinks -indexes
+                AllowOverride all
+                Require all granted
+        </Directory>
+        <ifModule mod_deflate.c>
+                <filesMatch "\.(js|css)$">
+                SetOutputFilter DEFLATE
+                </filesMatch>
+        </ifModule>
+        <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresDefault "access plus 10 days"
+            ExpiresByType text/css "access plus 1 week"
+            ExpiresByType text/plain "access plus 1 month"
+            ExpiresByType image/gif "access plus 1 month"
+            ExpiresByType image/png "access plus 1 month"
+            ExpiresByType image/jpeg "access plus 1 month"
+            ExpiresByType application/x-javascript "access plus 1 month"
+            ExpiresByType application/javascript "access plus 1 week"
+            ExpiresByType application/x-icon "access plus 1 year"
+        </IfModule>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+# Apache neustarten
+/etc/init.d/apache2 restart
+```
+
