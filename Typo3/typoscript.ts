@@ -1,5 +1,5 @@
-
 config.no_cache = 1
+
 config.sys_language_uid = 0
 config.language = de
 config.locale_all = de_DE
