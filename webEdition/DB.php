@@ -29,16 +29,8 @@ $tableInfo = $DB_WE->metadata($table);
 
 
 
-// Andere DB-Verbindung aufbauen mit webEdition
-// Siehe: class DB_WE extends we_database_base {}
-$database = 'database2';
-$host = 'localhost';
-$user = 'user';
-$pass = 'pass';
-$GLOBALS['DB_WE_xyz'] = new DB_WE();
-$res = $GLOBALS['DB_WE_xyz']->connect($database, $host, $user, $pass);
-if ($res == 0) { exit; } // Achtung! Fehlerhafte Logindaten führen dazu, dass der Standardlogin genommen wird.
-//p_r($GLOBALS['DB_WE_xyz']);
+// Andere DB-Verbindung aufbauen mit webEdition geht nicht.
+
 
 
 ?>
