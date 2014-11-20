@@ -42,3 +42,12 @@ page.10 {
    
   }
 }
+
+
+page.20 = CONTENT
+page.20 {
+	table = tt_content
+	select.where = colPos = 4
+	select.languageField=sys_language_uid
+}
+page.20.wrap = <div class="row">|</div>
