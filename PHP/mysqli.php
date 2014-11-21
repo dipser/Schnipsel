@@ -18,11 +18,13 @@ $mysqli->query($sql);
 
 $result = $mysqli->query($sql);
 if ( $row = $result->fetch_object() ) {
-  echo $row->daten;
+  echo $row->feldname;
 }
 
 $result = $mysqli->query($sql);
-while ($row = $result->fetch_object()) {}
+while ( $row = $result->fetch_object() ) {
+    echo $row->feldname;
+}
 
 $mysqli->insert_id;
 
