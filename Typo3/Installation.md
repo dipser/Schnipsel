@@ -231,7 +231,7 @@ cd /etc/apache2/ssl/projektname/
 # Neuen Schlüssel erstellen (4096 Bit Länge)
 openssl genrsa -out typo3.key 4096
 
-# CSR (Certificate signing request) erstellen (Zertifikat-Informationen angeben)
+# CSR (Certificate signing request; Zertifizierungsanforderung) erstellen
 openssl req -new -key typo3.key -out typo3.csr
 
 # Selbstsignierung
