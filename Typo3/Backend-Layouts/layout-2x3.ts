@@ -6,15 +6,15 @@ backend_layout {
 			columns {
 				1 {
 					name = 0x0
-colPos = 0
+					colPos = 0
 				}
 				2 {
 					name = 1x0
-colPos = 1
+					colPos = 1
 				}
 				3 {
 					name = 2x0
-colPos = 2
+					colPos = 2
 				}
 			}
 		}
@@ -22,15 +22,15 @@ colPos = 2
 			columns {
 				1 {
 					name = 0x1
-colPos = 3
+					colPos = 3
 				}
 				2 {
 					name = 1x1
-colPos = 4
+					colPos = 4
 				}
 				3 {
 					name = 2x1
-colPos = 5
+					colPos = 5
 				}
 			}
 		}
