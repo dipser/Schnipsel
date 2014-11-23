@@ -1,0 +1,40 @@
+ServerSignature Off
+
+# Fehler Dokumente
+# 301: Moved Permanently
+# 302: Found
+# 401: Unauthorized
+# 403: Forbidden
+# 404: Not Found
+# 405: Method Not Allowed
+# 500: Internal Server Error
+ErrorDocument 301 /Error-301.html
+ErrorDocument 302 /Error-302.html
+ErrorDocument 401 /Error-401.html
+ErrorDocument 403 /Error-403.html
+ErrorDocument 404 /Error-404.html
+ErrorDocument 405 /Error-405.html
+ErrorDocument 500 /Error-500.html
+
+
+<IfModule mod_headers.c>
+        # Anzeige der PHP-Version unterdrücken
+        Header unset X-Powered-By
+        # Erzwinge IE-Edge Modus
+        <FilesMatch "\.(html|php)$">
+                Header set X-UA-Compatible "IE=Edge,chrome=1"
+        </FilesMatch>
+</IfModule>
+
+
+
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+
+        # Fehler Dokumente umleiten
+        RewriteRule ^Error\-([0-9]+)\.html$ /index.php?id=22&error=$1 [L]
+
+        # Versteckte PHP-Dateien verbieten
+        RewriteRule ^\.(.*)\.php$ – [F]
+</IfModule>
