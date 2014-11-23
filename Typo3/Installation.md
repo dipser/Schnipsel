@@ -344,3 +344,10 @@ apt-cache search gifsicle
 apt-get install gifsicle
 gifsicle --batch -i *.gif
 ````
+
+
+## /phpmyadmin ändern in phpmyadmin.conf
+Hacker versuchen über Links wie domain.tld/pma/ oder domain.tld/phpmyadmin/ auf die Datenbank zuzugreifen, daher sollte falls vorhanden der Standardpfad geändert werden.
+```
+Alias /phpmyadminX /usr/share/phpmyadmin
+```
