@@ -5,6 +5,12 @@ p_r(DB_DATABASE);
 p_r(DB_USER);
 p_r(DB_PASSWORD);
 
+$dbhost = DB_HOST;
+$dbname = DB_DATABASE;
+$dbuser = DB_USER;
+$dbpass = DB_PASSWORD;
+$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
 
 //$db = new DB_WE();
 $db = $GLOBALS['DB_WE'];
