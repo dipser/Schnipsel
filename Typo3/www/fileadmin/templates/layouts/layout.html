@@ -1,0 +1,41 @@
+
+
+<div class="bodywrap">
+  
+  <f:section name="topMenu">
+    <ul id="nav"><f:cObject typoscriptObjectPath="lib.menu" /></ul>
+  </f:section>
+  
+  <f:render partial="header" arguments="{foo: someVariable}" />
+  
+  
+  <main>
+    <div class="inner">
+      <div class="fluid-container">
+        
+        
+        <div class="row">
+          <div class="col-lg-3">
+            <f:format.raw>{cleft}</f:format.raw>
+          </div>
+          <div class="col-lg-6">
+            <f:format.raw>{content}</f:format.raw>
+          </div>
+          <div class="col-lg-3">
+            <f:format.raw>{cright}</f:format.raw>
+          </div>
+        </div>
+        
+        <div class="row">
+          <f:format.raw>{cborder}</f:format.raw>
+        </div>
+        
+        
+      </div>
+    </div>
+  </main>
+  
+  
+  <f:render partial="footer" arguments="{foo: someVariable}" />
+
+</div>
