@@ -1,5 +1,10 @@
 <?php
 
+p_r(DB_HOST);
+p_r(DB_DATABASE);
+p_r(DB_USER);
+p_r(DB_PASSWORD);
+
 
 //$db = new DB_WE();
 $db = $GLOBALS['DB_WE'];
