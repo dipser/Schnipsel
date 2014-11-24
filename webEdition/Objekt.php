@@ -29,8 +29,9 @@ $obj->setElement('ObjektFelder', serialize(array( // Multi-Objekt
 	'objects' => array(1,2,3) // Alle IDs auf die verwiesen werden soll
 )));
 $obj->setElement('we_object_1', 6); // Einzel-Objekt
-$obj->we_save();
+$obj->we_save(); 
 $obj->we_publish();
+//$obj->we_save(1); // 1=Resave für initialisierte Objekte mit initByID()
 $createdID = $obj->ID;
 
 //$obj->Published // 0 oder time()
