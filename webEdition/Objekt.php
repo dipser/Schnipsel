@@ -3,24 +3,24 @@
 /**
  * webEdition Objekt öffnen
  */
- 
 
-// Neues Objekt öffnen
+// (Neues) Objekt öffnen
 include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
 include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
 $objpath = '/classdir';
 $obj = new we_objectFile();
-$obj->we_new();
+$obj->we_new(); // Alternativ: $obj->initByID(497);
 $obj->TableID = 10; //ID der Klasse
-//$obj->setRootDirID(true);
+$obj->setRootDirID(true);
+$obj->resetParentID();
 $obj->restoreDefaults();
-$obj->setParentID($ParentID); // ID eines Unterverzeichnisses
+//$obj->setParentID($ParentID); // ID eines Unterverzeichnisses (nötig?)
 //$obj->add_workspace($wsid); // Arbeitsbereich hinzufügen
 //$obj->del_workspace($wsid);
 //$obj->Workspaces = ''; // Arbeitsbereich: Reset
 //$obj->Templates = '';
-$obj->Text = 'Objektname';
-$obj->Path = $objpath.'/'.$obj->Text;
+$obj->Text = importFunctions::correctFilename('Objekt Name');
+$obj->Path = $obj->getParentPath() . (($obj->getParentPath() != "/") ? "/" : "") . $obj->Text;
 $obj->getElement('NameObjektFeld');
 $obj->setElement('NameObjektFeld', 'Wert');
 $obj->setElement('ObjektFelder', serialize(array( // Multi-Objekt
@@ -38,40 +38,8 @@ $createdID = $obj->ID;
 
 
 
-// Vorhandenes Objekt öffnen
-$id = 123;
-include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
-include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
-$obj = new we_objectFile();
-$obj->initByID($id);
-$obj->getElement('NameObjektFeld');
-$obj->setElement('NameObjektFeld', 'Wert');
-$obj->we_save();
-$obj->we_publish(); 
-
-
-
-
 // Kopieren
 $obj->makeSameNew();
-
-
-
-
-
-$obj = new we_objectFile();
-$obj->initByID(497);
-$object->we_new();
-$object->TableID = 19;
-$object->setRootDirID(true);
-$object->resetParentID();
-$object->restoreDefaults();
-$object->setParentID($ParentID);
-$object->Text = $rechnungsnummer;
-$object->Path=$object->getParentPath()
-// ...
-$object->we_save();
-$object->we_publish();
 
 
 
