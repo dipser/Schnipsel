@@ -38,6 +38,16 @@ $createdID = $obj->ID;
 
 
 
+// Neues Objekt anlegen (alternativ)
+$obj = we_objectFile::initObject($classID);
+$obj->Text = 'Objekt-Name';
+$obj->Path = $obj->getParentPath() . (($obj->getParentPath() != "/") ? "/" : "") . $obj->Text;
+$obj->setElement("xyz", $xyz);
+$obj->we_save();
+$obj->we_publish();
+
+
+
 // Kopieren
 $obj->makeSameNew();
 
