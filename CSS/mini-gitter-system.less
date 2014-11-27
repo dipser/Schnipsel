@@ -1,0 +1,16 @@
+// Mini-Gitter-System mit optionalem Spalt
+.grid {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	.col {
+	    display: table-cell;
+	}
+}
+.grid-padded {
+	width: auto; /* Wichtig! */
+	margin: -20px;
+	.grid {
+		border-spacing: 20px;
+	}
+}
