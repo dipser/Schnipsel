@@ -301,6 +301,18 @@ Alternativ eine permanente Weiterleitung auf https:
 ```
 
 
+
+## Dateikomprimierung aktivieren
+```
+# Aktivierung des Apache2 Moduls "deflate"
+a2enmod deflate
+
+# Apache2 neustarten
+service apache2 restart
+```
+
+
+
 ## Cronjobs einrichten
 ```
 crontab -e
