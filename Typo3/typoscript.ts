@@ -53,3 +53,23 @@ page.20 {
 	select.languageField=sys_language_uid
 }
 page.20.wrap = <div class="row">|</div>
+
+
+
+lib.mainmenu = HMENU
+lib.mainmenu {
+	entryLevel = 0
+	l = TMENU
+	l {
+		wrap = <ul class="nav navbar-nav">|</ul>
+		NO = 1
+		NO {
+			wrapItemAndSub = <li>|</li>
+			stdWrap.htmlSpecialChars = 1
+		}
+		ACT < .NO
+		ACT {
+			wrapItemAndSub = <li class="active">|</li>
+		}
+	}
+}
