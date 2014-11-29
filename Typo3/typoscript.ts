@@ -59,8 +59,8 @@ page.20.wrap = <div class="row">|</div>
 lib.mainmenu = HMENU
 lib.mainmenu {
 	entryLevel = 0
-	l = TMENU
-	l {
+	1 = TMENU
+	1 {
 		wrap = <ul class="nav navbar-nav">|</ul>
 		NO = 1
 		NO {
