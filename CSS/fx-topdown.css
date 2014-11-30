@@ -2,7 +2,7 @@
 /* http://jsfiddle.net/dipser/6u7zgqbw/ */
 
 .fx-topdown {
-    position:absolute;
+    position:relative;
     display:inline-block;
     text-decoration:none;
     color:white;
