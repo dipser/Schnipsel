@@ -1,0 +1,33 @@
+// Lupeneffekt
+a.fx {
+	display: block;
+	text-decoration: none;
+	//overflow: hidden;
+
+	.bild {
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transform: rotate(0.001deg);
+		.transition(background-size 0.3s);
+
+		img { opacity: 0; } // Ausblenden
+	}
+
+	&:hover {
+		.bild {
+			background-size: 110% 110%;
+			.transition(background-size 0.3s);
+		}
+	}
+}
+
+
+/*
+Beispiel:;
+<a class="fx" href="">
+    <div class="bild" style="background-image:url(img.jpg);">
+        <img class="img-full-responsive" width="270" height="200" alt="" src="img.jpg" />
+    </div>
+</a>
+*/

@@ -64,3 +64,8 @@ var actualkey=String.fromCharCode(unicode)
 if (actualkey=="a")
 
 
+
+
+
+for (var i = 6; i < 1000; i++) { if (document.getElementById('lab_'+i)) {top.checkNode('img_'+i);} }
+	
