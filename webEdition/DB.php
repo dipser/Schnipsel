@@ -1,5 +1,16 @@
 <?php
 
+p_r(DB_HOST);
+p_r(DB_DATABASE);
+p_r(DB_USER);
+p_r(DB_PASSWORD);
+
+$dbhost = DB_HOST;
+$dbname = DB_DATABASE;
+$dbuser = DB_USER;
+$dbpass = DB_PASSWORD;
+$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
 
 //$db = new DB_WE();
 $db = $GLOBALS['DB_WE'];
@@ -29,14 +40,8 @@ $tableInfo = $DB_WE->metadata($table);
 
 
 
-// Andere DB-Verbindung aufbauen mit webEdition
-// Siehe: class DB_WE extends we_database_base {}
-$database = 'database2';
-$host = 'localhost';
-$user = 'user';
-$pass = 'pass';
-$GLOBALS['DB_WE_xyz']->connect($database, $host, $user, $pass);
-//p_r($GLOBALS['DB_WE_xyz']);
+// Andere DB-Verbindung aufbauen mit webEdition geht nicht.
+
 
 
 ?>

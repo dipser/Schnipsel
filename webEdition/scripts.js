@@ -11,6 +11,7 @@ window.menuaction('new_css_stylesheet')
 window.menuaction('new_template')
 window.menuaction('new_object')
 window.menuaction('new_ClObjectFile1')
+parent.menuaction('new_webEditionPage')
 window.menuaction('new_document_folder')
 window.menuaction('new_template_folder')
 window.menuaction('new_objectfile_folder')
@@ -67,3 +68,8 @@ var actualkey=String.fromCharCode(unicode)
 if (actualkey=="a")
 
 
+
+
+
+for (var i = 6; i < 1000; i++) { if (document.getElementById('lab_'+i)) {top.checkNode('img_'+i);} }
+	

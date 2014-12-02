@@ -3,24 +3,24 @@
 /**
  * webEdition Objekt öffnen
  */
- 
 
-// Neues Objekt öffnen
+// (Neues) Objekt öffnen
 include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
 include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
 $objpath = '/classdir';
 $obj = new we_objectFile();
-$obj->we_new();
+$obj->we_new(); // Alternativ: $obj->initByID(497);
 $obj->TableID = 10; //ID der Klasse
-//$obj->setRootDirID(true);
+$obj->setRootDirID(true);
+$obj->resetParentID();
 $obj->restoreDefaults();
-$obj->setParentID($ParentID); // ID eines Unterverzeichnisses
+//$obj->setParentID($ParentID); // ID eines Unterverzeichnisses (nötig?)
 //$obj->add_workspace($wsid); // Arbeitsbereich hinzufügen
 //$obj->del_workspace($wsid);
 //$obj->Workspaces = ''; // Arbeitsbereich: Reset
 //$obj->Templates = '';
-$obj->Text = 'Objektname';
-$obj->Path = $objpath.'/'.$obj->Text;
+$obj->Text = importFunctions::correctFilename('Objekt Name');
+$obj->Path = $obj->getParentPath() . (($obj->getParentPath() != "/") ? "/" : "") . $obj->Text;
 $obj->getElement('NameObjektFeld');
 $obj->setElement('NameObjektFeld', 'Wert');
 $obj->setElement('ObjektFelder', serialize(array( // Multi-Objekt
@@ -29,8 +29,8 @@ $obj->setElement('ObjektFelder', serialize(array( // Multi-Objekt
 	'objects' => array(1,2,3) // Alle IDs auf die verwiesen werden soll
 )));
 $obj->setElement('we_object_1', 6); // Einzel-Objekt
-$obj->we_save();
-$obj->we_publish();
+$obj->we_save(); $obj->we_publish(); // Bei neuem Objekt.
+//$obj->PublWhenSave = 1; $obj->we_save(1); // Bei altem Objekt. / 1=Resave
 $createdID = $obj->ID;
 
 //$obj->Published // 0 oder time()
@@ -38,40 +38,18 @@ $createdID = $obj->ID;
 
 
 
-// Vorhandenes Objekt öffnen
-$id = 123;
-include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
-include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
-$obj = new we_objectFile();
-$obj->initByID($id);
-$obj->getElement('NameObjektFeld');
-$obj->setElement('NameObjektFeld', 'Wert');
+// Neues Objekt anlegen (alternativ)
+$obj = we_objectFile::initObject($classID);
+$obj->Text = 'Objekt-Name';
+$obj->Path = $obj->getParentPath() . (($obj->getParentPath() != "/") ? "/" : "") . $obj->Text;
+$obj->setElement("xyz", $xyz);
 $obj->we_save();
-$obj->we_publish(); 
-
+$obj->we_publish();
 
 
 
 // Kopieren
 $obj->makeSameNew();
-
-
-
-
-
-$obj = new we_objectFile();
-$obj->initByID(497);
-$object->we_new();
-$object->TableID = 19;
-$object->setRootDirID(true);
-$object->resetParentID();
-$object->restoreDefaults();
-$object->setParentID($ParentID);
-$object->Text = $rechnungsnummer;
-$object->Path=$object->getParentPath()
-// ...
-$object->we_save();
-$object->we_publish();
 
 
 
@@ -144,7 +122,8 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 	$publish = true;
 	$collision		=	"replace"; // replace = überschreibt vorhandene Objekte mit gleichem namen / rename = erstellt immer neues objekt mit Endung "_X"
 	importFunctions::importObject($classid, $objfields, $categories, $rcd_name, $publish, $collision); // webEdition/we/include/we_import/importFunctions.class.inc.php
-
+	//importObject($classID, $fields, $categories = "", $filename = "", $publish = true, $conflict = 'rename')
+	//Neu 6.3.9(?): we_import_functions::importObject($classID, $fields, $categories, $filename, $publish, $issearchable);
 
 	// Objekt löschen
 	deleteEntry($object_id, OBJECT_FILES_TABLE);
