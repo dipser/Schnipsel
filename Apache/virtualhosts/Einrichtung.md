@@ -5,17 +5,21 @@ Ziel ist es hierbei über einen selbst definierten Host (localhost, domain.tld,.
 Zuerst muss in die hosts Datei die Umleitung auf die IP (127.0.0.1) erfolgen:
 
 ```
+# Zugriffsrechte erlangen
 sudo su
+
+# Hosts-Datei bearbeiten
 nano /etc/hosts
 ```
 
 Füge folgendes hinzu:
 ```
+# Apache localhosts
 127.0.0.1 MYHOSTNAME.local
 127.0.0.1 MYOTHERHOSTNAME.local
 ```
 
-Öffne nun die Konfiguration des Apache und füge hinzu:
+Öffne nun die Konfiguration des Apache und füge einen Include hinzu:
 
 ```
 Include /.../httpd-vhosts.conf
