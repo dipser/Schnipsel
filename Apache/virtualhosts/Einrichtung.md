@@ -31,6 +31,7 @@ NameVirtualHost *:80
     ServerAdmin webmaster@domain.tld
     DocumentRoot "/Applications/MAMP/htdocs"
     ServerName localhost
+    ServerAlias 127.0.0.1
 </VirtualHost>
 
 # Weitere virtuelle Hosts
@@ -38,9 +39,9 @@ NameVirtualHost *:80
     ServerAdmin webmaster@domain.tld
     DocumentRoot "/.../htdocs/local.MYHOST"
     ServerName MYHOST.local
-    ServerAlias www.MYHOST.local
-    ErrorLog "logs/MYHOST.local-error_log"
-    CustomLog "logs/MYHOST.local-access_log" common
+    #ServerAlias www.MYHOST.local
+    #ErrorLog "logs/MYHOST.local-error_log"
+    #CustomLog "logs/MYHOST.local-access_log" common
 </VirtualHost>
 
 ...
