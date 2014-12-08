@@ -81,7 +81,7 @@ lib.mainmenu {
 
 
 # Inhaltselement
-# Verwendung im Template via: <f:cObject typoscriptObjectPath="lib.contentY" />
+# Verwendung im Template via: <f:cObject typoscriptObjectPath="lib.contentY">Y</f:cObject> --> <div>Inhalt: Y</div>
 lib.contentY = TEXT
 lib.contentY {
 	current = 1
