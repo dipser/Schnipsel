@@ -50,7 +50,7 @@ page.10 {
 }
 
 
-# 
+# Spalte abfragen und ausgeben
 page.20 = CONTENT
 page.20 {
 	table = tt_content
