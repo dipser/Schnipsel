@@ -42,10 +42,15 @@ page.10 {
     cright < styles.content.getRight
     cborder < styles.content.getBorder
    
+    # Zusätzliche Variable.
+    # Verwendung im Template via: {siteName}
+    siteName = TEXT
+    siteName.value = MEINSEITENTITEL
   }
 }
 
 
+# 
 page.20 = CONTENT
 page.20 {
 	table = tt_content
@@ -55,7 +60,7 @@ page.20 {
 page.20.wrap = <div class="row">|</div>
 
 
-
+# Bootstrap Navigation
 lib.mainmenu = HMENU
 lib.mainmenu {
 	entryLevel = 0
@@ -72,4 +77,15 @@ lib.mainmenu {
 			wrapItemAndSub = <li class="active">|</li>
 		}
 	}
+}
+
+
+# Inhaltselement
+# Verwendung im Template via: <f:cObject typoscriptObjectPath="lib.contentY" />
+lib.contentY = TEXT
+lib.contentY {
+	current = 1
+	htmlSpecialChars = 1
+	value = ausgabe
+	wrap = <div>Inhalt: |</div>
 }
