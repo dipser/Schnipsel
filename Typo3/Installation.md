@@ -390,5 +390,5 @@ admPanel {
 ````
 
 
-## Erweiterung: Extention Builder
+## Erweiterung: Extension Builder
 Erweiterung um ein Grundgerüst für eigene Erweiterung zu erstellen.
