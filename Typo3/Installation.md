@@ -366,6 +366,7 @@ Alias /phpmyadminX /usr/share/phpmyadmin
 
 
 ## Erweiterung: RealURL
+Erweiterung um via mod_rewrite schön SEO-URLs zu erzeugen.
 ```
 # Zugriffsrechte beschaffen
 sudo su
@@ -375,4 +376,15 @@ a2enmod realurl
 
 # Apache2 neustarten
 service apache2 restart
+````
+
+## Erweiterung: Frontend Editing
+Erweiterung um die Bearbeitung der Seiten im Frontend zu erlauben.
+````
+# Unter "Backend users" -> "Options" -> "TSconfig" ergänzen:
+admPanel {
+        enable.edit = 1
+        module.edit.forceDisplayFieldIcons = 1
+        hide = 0
+}
 ````
