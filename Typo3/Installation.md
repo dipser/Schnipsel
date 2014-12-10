@@ -388,3 +388,7 @@ admPanel {
         hide = 0
 }
 ````
+
+
+## Erweiterung: Extention Builder
+Erweiterung um ein Grundgerüst für eigene Erweiterung zu erstellen.
