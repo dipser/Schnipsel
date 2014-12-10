@@ -363,3 +363,16 @@ Hacker versuchen über Links wie domain.tld/pma/ oder domain.tld/phpmyadmin/ auf
 ```
 Alias /phpmyadminX /usr/share/phpmyadmin
 ```
+
+
+## Erweiterung: RealURL
+```
+# Zugriffsrechte beschaffen
+sudo su
+
+# Aktivierung des Apache2 Moduls "deflate"
+a2enmod realurl
+
+# Apache2 neustarten
+service apache2 restart
+````
