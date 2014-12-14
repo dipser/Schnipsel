@@ -4,7 +4,7 @@
 // @description webEdition Greasemonkey Userscript
 // @include     /^https?://.*/webEdition/.*$/
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js
-// @version     1.0.2
+// @version     1.0.3
 // @author      Aurel 'dipser' Hermand
 // ==/UserScript==
 
@@ -16,7 +16,7 @@ $(function(){
         //console.log(e, window, top);
         var win = top;
         
-        if (e.altKey) {
+        if (e.ctrlKey) { // Vorsicht: e.altKey liefert bei e.key andere Zeichen
             var key = e.key;
             
             // webEdition-Vorbelegung:
