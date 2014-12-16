@@ -5,7 +5,10 @@ config.sys_language_uid = 0
 config.language = de
 # Lokalisierung
 config.locale_all = de_DE
-config.baseURL = http://domain.de/
+config.baseURL = http://www.domain.de/
+[globalString = ENV:HTTPS=on]
+  config.baseURL = https://www.domain.de/
+[global]
 config.htmlTag_langKey = de
 
 #en_EN
