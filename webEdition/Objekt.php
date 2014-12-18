@@ -6,7 +6,7 @@
 
 // (Neues) Objekt öffnen
 include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we.inc.php");
-include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php");
+//include_once($_SERVER["DOCUMENT_ROOT"] . "/webEdition/we/include/we_modules/object/we_objectFile.inc.php"); // Vor Version 3.6.9 hinzufügen!
 $objpath = '/classdir';
 $obj = new we_objectFile();
 $obj->we_new(); // Alternativ: $obj->initByID(497);
