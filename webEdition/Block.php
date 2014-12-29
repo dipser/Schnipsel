@@ -41,7 +41,7 @@ Du solltest noch $block bzw. $innerBlock auf !=false prüfen.
 
 
 
-// Spalten für den Editmode
+// Spalten für den Editmode - Horizontal
 
 <style>table {border:1px solid red;} td {border:1px solid orange;}</style>
 
