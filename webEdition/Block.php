@@ -33,3 +33,43 @@ $anzahl = count(unserialize($GLOBALS['we_doc']->getElement('meinBlock')));
 
 so bist du auch weitestgehend auf der sicheren Seite bei Updates.
 Du solltest noch $block bzw. $innerBlock auf !=false prüfen.
+
+
+
+
+
+
+
+
+// Spalten für den Editmode
+
+<style>table {border:1px solid red;} td {border:1px solid orange;}</style>
+
+<table><tr><td>
+<we:block name="test" showselect="false">
+	
+	<div><we:input type="text" name="x" /></div>
+	
+	<we:ifPosition type="block" position="1" reference="test" operator="every">
+		</td>
+		<we:ifNotPosition type="block" position="3" reference="test" operator="every">
+			<we:ifNotPosition type="block" position="last" reference="test">
+				<td>
+			</we:ifNotPosition>
+		</we:ifNotPosition>
+	</we:ifPosition>
+	
+	<we:ifPosition type="block" position="3" reference="test" operator="every">
+		<we:ifNotPosition type="block" position="last" reference="test">
+			</tr>
+		</we:ifNotPosition>
+	</we:ifPosition>
+	
+	<we:ifPosition type="block" position="last" reference="test"></tr></we:ifPosition>
+	<we:ifPosition type="block" position="3" reference="test" operator="every">
+		<we:ifNotPosition type="block" position="last" reference="test">
+			<tr><td>
+		</we:ifNotPosition>
+	</we:ifPosition>
+</we:block>
+</table>
