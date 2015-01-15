@@ -3,5 +3,5 @@
 
 
 ### Sprachen Switcher
-https://wordpress.org/plugins/multilingual-press/screenshots/
+https://wordpress.org/plugins/multilingual-press/
 
