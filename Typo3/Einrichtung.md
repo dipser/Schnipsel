@@ -12,7 +12,7 @@
   * [SYS][sitename] = Seitenname!
 
 #### Install > Upgrade Wizard
-Nach dem Update muss man hier aktiv werden.
+Nach einem Update muss man hier aktiv werden.
 
 
 ## Web
