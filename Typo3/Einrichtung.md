@@ -20,3 +20,7 @@ Nach einem Update muss man hier aktiv werden.
 ### Web > Page
 Anlegen der Seitenstruktur mit 3 versch. Seitentypen: Standard, Link, Ordner
 
+
+### Web > Template
+TS auf der höchsten Ebene der Rootline erstellen.
+
