@@ -14,3 +14,9 @@
 #### Install > Upgrade Wizard
 Nach dem Update muss man hier aktiv werden.
 
+
+## Web
+
+### Web > Page
+Anlegen der Seitenstruktur mit 3 versch. Seitentypen: Standard, Link, Ordner
+
