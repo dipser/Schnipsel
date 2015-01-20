@@ -29,6 +29,7 @@ Anlegen der Seitenstruktur mit 3 versch. Seitentypen: Standard, Link, Ordner
 ## Extention Manager
 
 ### Extention Manager > Get Extention
-Installiere: "RealURL: speaking paths for TYPO3"
+1. Installiere: "RealURL: speaking paths for TYPO3"
+2. RealUrl-Typoscript einfügen (siehe config.ts)
 
 
