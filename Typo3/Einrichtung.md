@@ -22,7 +22,13 @@ Anlegen der Seitenstruktur mit 3 versch. Seitentypen: Standard, Link, Ordner
 
 
 ### Web > Template
-1. Typoscript auf der höchsten Ebene der Rootline erstellen.
+1. Typoscript auf der höchsten Ebene der Rootline erstellen und die setup.ts einfügen.
 2. fileadmin/-Verzeichnis reinkopieren.
 3. Im Reiter "Includes" die "CSS Styled Content" aktivieren.
+
+## Extention Manager
+
+### Extention Manager > Get Extention
+Installiere: "RealURL: speaking paths for TYPO3"
+
 
