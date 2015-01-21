@@ -65,9 +65,9 @@ lib.navbar {
 			NO.allWrap >
 			NO.wrapItemAndSub = <li>|</li>
 			# Rootline definieren
-			#ACT = 1
-			#ACT < .NO
-			#ACT.wrapItemAndSub = <li class="dropdown-submenu active">|</li>
+			ACT = 1
+			ACT < .NO
+			ACT.wrapItemAndSub = <li class="dropdown-submenu active">|</li>
 			# Aktiver Navipunkt
 			CUR = 1
 			CUR < .NO
