@@ -33,3 +33,14 @@ Anlegen der Seitenstruktur mit 3 versch. Seitentypen: Standard, Link, Ordner
 2. RealUrl-Typoscript einfügen (siehe config.ts)
 
 
+## Extention Manager > Manage Extentions
+1. "Frontend editing" aktivieren
+2. Frontend editing für einen Benutzer aktivieren durch hinzufügen eines Typoscripts unter "Backend users > Options":
+```
+admPanel {
+  enable.edit=1
+  module.edit.forceDisplayFieldIcons=1
+  hide=0
+}
+```
+
