@@ -1,3 +1,5 @@
+#http://www.typo3.net/tsref/menu-objects/menu-zustaende/
+
 # ContentObjectArray - Da kann alles rein was man möchte
 lib.navbar = COA
 lib.navbar.wrap = <nav class="navbar navbar-default" role="navigation">|</nav>
@@ -15,6 +17,7 @@ lib.navbar {
 	20.wrap = <div class="collapse navbar-collapse" id="mainnavbar"><ul class="nav navbar-nav">|</ul></div>
 	20 {
 		entryLevel = 0
+		# Seite mit ID 6 nicht anzeigen
 		#excludeUidList = 6
 
 		# Textmenü
@@ -61,17 +64,22 @@ lib.navbar {
 			NO = 1
 			NO.allWrap >
 			NO.wrapItemAndSub = <li>|</li>
+			# Rootline definieren
+			ACT = 1
+			ACT < .NO
+			ACT.wrapItemAndSub = <li class="dropdown-submenu active">|</li>
+			# Aktiver Navipunkt
 			CUR = 1
 			CUR < .NO
 			CUR.wrapItemAndSub = <li class="active">|</li>
-			ACT = 1
-			ACT < .CUR
 
+			# Achtung: [ACT/CUR]IFSUB wird vor ACT und CUR ausgeführt
 			IFSUB < .NO
-			IFSUB.wrap = <li class="dropdown-submenu">|</li>
-			CURIFSUB < .1.CURIFSUB
+			IFSUB.wrapItemAndSub = <li class="dropdown-submenu">|</li>
+			ACTIFSUB < .NO
+			ACTIFSUB.wrapItemAndSub = <li class="dropdown-submenu active">|</li>
+			CURIFSUB < .NO
 			CURIFSUB.wrapItemAndSub = <li class="dropdown-submenu active">|</li>
-			ACTIFSUB < .2.CURIFSUB
 
 			#SPC = 1
 			#SPC.doNotLinkIt = 1
@@ -80,77 +88,24 @@ lib.navbar {
 		}
 
 		3 < .2
-		#3.IFSUB < .2.IFSUB
-		#3.CURIFSUB < .2.CURIFSUB
-		#3.ACTIFSUB < .2.ACTIFSUB
+		3.IFSUB < .2.IFSUB
+		3.ACTIFSUB < .2.ACTIFSUB
+		3.CURIFSUB < .2.CURIFSUB
 
-		4 < .2
-		#4.IFSUB < .2.IFSUB
-		#4.CURIFSUB < .2.CURIFSUB
-		#4.ACTIFSUB < .2.ACTIFSUB
+		4 < .3
+		4.IFSUB < .3.IFSUB
+		4.ACTIFSUB < .3.ACTIFSUB
+		4.CURIFSUB < .3.CURIFSUB
 
-		5 < .2
-		#5.IFSUB < .2.IFSUB
-		#5.CURIFSUB < .2.CURIFSUB
-		#5.ACTIFSUB < .2.ACTIFSUB
+		5 < .4
+		5.IFSUB < .4.IFSUB
+		5.ACTIFSUB < .4.ACTIFSUB
+		5.CURIFSUB < .4.CURIFSUB
 
-		6 < .2
-		#6.IFSUB < .2.IFSUB
-		#6.CURIFSUB < .2.CURIFSUB
-		#6.ACTIFSUB < .2.ACTIFSUB
+		6 < .5
+		6.IFSUB < .5.IFSUB
+		6.ACTIFSUB < .5.ACTIFSUB
+		6.CURIFSUB < .5.CURIFSUB
 	}
 }
 
-
-
-
-bootstrap.multi-level-dropdown.css
-http://bootsnipp.com/snippets/featured/multi-level-dropdown-menu-bs3
-
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
-}
-
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block;
-}
-
-.dropdown-submenu>a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
-}
-
-.dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
-}
-
-.dropdown-submenu.pull-left {
-    float: none;
-}
-
-.dropdown-submenu.pull-left>.dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
-}
