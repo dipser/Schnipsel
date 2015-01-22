@@ -44,3 +44,18 @@ admPanel {
 }
 ```
 
+## 
+Sprache
+1. Die Rootseite editideren und einfügen in "Page TSConfig":
+```
+# Anzeige Default-Sprache im Backend als Deutsch festlegen
+mod.SHARED {
+  defaultLanguageFlag = de
+  defaultLanguageLabel = Deutsch
+}
+```
+
+
+## Extention: tt_news
+https://www.youtube.com/watch?v=T7NG8j0h2Zs
+
