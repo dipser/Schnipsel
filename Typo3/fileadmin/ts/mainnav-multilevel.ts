@@ -5,11 +5,24 @@ lib.navbar = COA
 lib.navbar.wrap = <nav class="navbar navbar-default" role="navigation">|</nav>
 lib.navbar {
 
+
 	# Einfacher Text der am Anfang ausgegeben wird
 	10 = TEXT
 	10 {
 		value = <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-		wrap = <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavbar">|</button><a class="navbar-brand" href="#"><i class="glyphicon glyphicon-home"></i></a></div>
+		wrap = <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavbar">|</button>
+
+	}
+	11 = TEXT
+	11 {
+		value = <i class="glyphicon glyphicon-home"></i>
+		stdWrap.typolink.parameter = 2
+		stdWrap.typolink.ATagParams = class="navbar-brand"
+		stdWrap.typolink.title = Zur Startseite
+	}
+	12 = TEXT
+	12 {
+		value = </div>
 	}
 
 	# Hirarchisches Menü

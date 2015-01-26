@@ -1,0 +1,20 @@
+
+<!-- Startseite -->
+
+<f:layout name="startlayout" />
+
+<f:section name="bild">
+	<!-- Inhalt von BILD -->
+	<f:format.raw>{cleft}</f:format.raw>
+</f:section>
+
+<f:section name="main">
+	<!-- Inhalt von MAIN -->
+	<f:format.raw>{content}</f:format.raw>
+</f:section>
+
+<f:section name="aside">
+	<!-- Inhalt von ASIDE -->
+	<f:cObject typoscriptObjectPath="lib.rechtespalte" />
+	<f:format.raw>{cright}</f:format.raw>
+</f:section>
