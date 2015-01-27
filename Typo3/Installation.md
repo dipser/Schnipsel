@@ -178,9 +178,13 @@ sudo su
 
 # Entferne Verknüpfung/Symlink "typo3_src"
 rm typo3_src
+#rm typo3
+#rm index.php 
 
 # Erstelle neue Verknüfung auf "typo3_src" mit dem Update-Verzeichnis
 ln -s typo3_src-6.2.6 typo3_src
+#ln -s typo3_src/typo3 typo3
+#ln -s typo3_src/index.php index.php
 
 # Ändere Besitzer der Verzeichnisse auf "www-data:www-data"
 chown -R www-data:www-data typo3_src-6.2.6
