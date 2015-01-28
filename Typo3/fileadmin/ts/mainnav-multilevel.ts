@@ -16,7 +16,7 @@ lib.navbar {
 	11 = TEXT
 	11 {
 		value = <i class="glyphicon glyphicon-home"></i>
-		stdWrap.typolink.parameter = 2
+		stdWrap.typolink.parameter = 1
 		stdWrap.typolink.ATagParams = class="navbar-brand"
 		stdWrap.typolink.title = Zur Startseite
 	}

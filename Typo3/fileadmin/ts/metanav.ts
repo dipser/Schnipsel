@@ -7,7 +7,7 @@ lib.metanav {
   10 {
     special = directory
     # ID des Systemverzeichnis
-    special.value = 5
+    special.value = 11
  
     1 = TMENU
     1 {

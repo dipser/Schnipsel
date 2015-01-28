@@ -1,7 +1,7 @@
 lib.language = HMENU
 lib.language {
   special = language
-  special.value = 0,2,3,4
+  special.value = 0,1,2,3
 
   1 = TMENU
   1 {
