@@ -376,7 +376,7 @@ Erweiterung um via mod_rewrite schön SEO-URLs zu erzeugen.
 sudo su
 
 # Aktivierung des Apache2 Moduls "deflate"
-a2enmod realurl
+a2enmod rewrite
 
 # Apache2 neustarten
 service apache2 restart
