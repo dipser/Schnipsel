@@ -123,6 +123,8 @@ nano /etc/apache2/sites-enabled/000-default
         <Directory /var/www/tld_domain/>
                 Options +FollowSymLinks -indexes
                 AllowOverride all
+                Order allow,deny
+                allow from all
                 Require all granted
         </Directory>
         <ifModule mod_deflate.c>
