@@ -14,7 +14,7 @@ lib.breadcrumb {
 			expAll = 1
 
 			NO = 1
-			NO.wrapItemAndSub = <li rowl="active">|</li>
+			NO.wrapItemAndSub = <li class="active">|</li>
 			CUR = 1
 			CUR < .NO
 			ACT = 1
