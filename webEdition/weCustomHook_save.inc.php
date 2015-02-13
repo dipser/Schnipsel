@@ -9,7 +9,7 @@ function weCustomHook_save($param){
 		// Mitspeichern der Master-Datei, bei Speicherung von Less-Dateien aus den Ordnern $lesspath
 		case 'we_textDocument':
 			$lesspath = array(21,22); // <= IDs aller Elternordner
-			if ((in_array($obj->ParentID, $lesspath) && ($obj->Extension == '.less') && ($obj->parseFile == false)) {
+			if ((in_array($obj->ParentID, $lesspath)) && ($obj->Extension == '.less') && ($obj->parseFile == false)) {
 				$aMasterIDs = array(10); // <= ID der main.less etc.
 				foreach($aMasterIDs as $iID) {
 					$masterfile = new we_textDocument();
