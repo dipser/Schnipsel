@@ -6,11 +6,11 @@ function weCustomHook_save($param){
 	$resave = $param['resave'];
 	$obj = $param[0];
 	switch(get_class($obj)){
-		// Mitspeichern der Master-Datei, bei Speicherung von Less-Dateien aus den Ordnern $lesspath
+		// Mitspeichern der Master-Datei, bei Speicherung von Less/SCSS-Dateien aus den Ordnern $lesspath
 		case 'we_textDocument':
-			$lesspath = array(21,22); // <= IDs aller Elternordner
-			if ( in_array($obj->ParentID, $lesspath) && ($obj->Extension == '.less' || $obj->Extension == '.scss' ) && ($obj->parseFile == false) ) {
-				$aMasterIDs = array(10); // <= ID der main.less etc.
+			$parentpath = array(21,22); // <= IDs aller Elternordner
+			if ( in_array($obj->ParentID, $parentpath) && in_array($obj->Extension, array('.less','.scss')) && ($obj->parseFile == false) ) {
+				$aMasterIDs = array(10); // <= ID der main.less, main.scss
 				foreach($aMasterIDs as $iID) {
 					$masterfile = new we_textDocument();
 					$masterfile->initByID($iID);
