@@ -6,15 +6,15 @@ function weCustomHook_save($param){
 	$resave = $param['resave'];
 	$obj = $param[0];
 	switch(get_class($obj)){
-		// beim Speichern von Less Dateien im Ordner /system/css/include auch die masterdateien styles.less / lightbox.less etc. speichern
+		// Mitspeichern der Master-Datei, bei Speicherung von Less-Dateien aus den Ordnern $lesspath
 		case 'we_textDocument':
-			// ich pruefe zusaetzlich noch das Verzeichnis der Dateien ab
-			if ((in_array($obj->ParentID, array(21,22)) && ($obj->Extension == '.less') && ($obj->parseFile == false)) {
-				$aMasterIDs = array(10);
+			$lesspath = array(21,22); // <= IDs aller Elternordner
+			if ((in_array($obj->ParentID, $lesspath) && ($obj->Extension == '.less') && ($obj->parseFile == false)) {
+				$aMasterIDs = array(10); // <= ID der main.less etc.
 				foreach($aMasterIDs as $iID) {
 					$masterfile = new we_textDocument();
 					$masterfile->initByID($iID);
-					$masterfile->we_save(false, true);// we_save() kann die beiden Parameter $resave und $skipHook verarbeiten. durch das $skipHook=true wird eine Endlosschleife verhindert
+					$masterfile->we_save(false, true); // we_save() kann die beiden Parameter $resave und $skipHook verarbeiten. durch das $skipHook=true wird eine Endlosschleife verhindert
 				}
 			}
 			break;
