@@ -1,4 +1,4 @@
-Schnippsel
+Schnipsel
 ==========
 
 Funktionen, Variablen, Spezialquelltext.
