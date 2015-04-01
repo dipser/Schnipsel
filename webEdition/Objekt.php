@@ -134,6 +134,19 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 	deleteEntry($object_id, OBJECT_FILES_TABLE);
 	
 	
+	// <we:write />
+	/*$_REQUEST['edit_object'] = 1;
+	$_REQUEST['we_editObject_ID'] = 0;
+	$_REQUEST['we_ui_NewObject']['fieldname'] = 12345;
+	$x = we_tag('write', array(
+		'type' => 'object',
+		'formname' => 'NeuesObjektForm',
+		'publish' => 'true',
+		'classid' => ?,
+		'forceedit' => 'true',
+		'name' => $objektname,
+		'onduplicate' => 'overwrite'
+	));
 	
 
 ?>
