@@ -126,7 +126,14 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 	//Neu 6.3.9(?): we_import_functions::importObject($classID, $fields, $categories, $filename, $publish, $issearchable);
 	// Version 6.4.0 Beta 1: we_import_functions::importObject($classID, $fields, $categories, $filename, $publish, $issearchable, $parentID, $charset, $conflict = 'rename')
 
+	// Imported-ID, wenn "replace"
+	$objid = f('SELECT ID FROM ' . OBJECT_FILES_TABLE . ' WHERE Text="' . $GLOBALS['DB_WE']->escape($name) . '"', 'ID', $GLOBALS['DB_WE']);
+
+
 	// Objekt löschen
 	deleteEntry($object_id, OBJECT_FILES_TABLE);
+	
+	
+	
 
 ?>
