@@ -149,4 +149,17 @@ $root = f("SELECT ID FROM tblObjectFiles WHERE IsClassFolder = 1 AND Path = '/PO
 	));
 	
 
+
+?>
+
+<?php
+$db = $GLOBALS['DB_WE'];
+$result = $db->query('SELECT id, Path FROM tblObject');
+$tableNames = array();
+$classIds   = array();
+while ($row = mysql_fetch_assoc($result)) {
+	$classIds[$row['Path']] = $row['id'];
+	$tableNames[$row['Path']] = "tblObject_{$row['id']}";
+}
+// Benutze: $tableNames['/DD-Event-2015']
 ?>
