@@ -16,6 +16,7 @@ $sql = 'SELECT * FROM tablename WHERE userid = :userid';
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
 $stmt->execute();
+$count = $stmt->rowCount(); // Anzahl
 while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
     echo $row->id.'<br />';
 }
