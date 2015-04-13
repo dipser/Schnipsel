@@ -28,8 +28,8 @@ function announcement_query($announcement) {
 /**
  * Action 1 - Langsamere Variante
  */
-if ( $action == 'demologin' ) {
-	if ( !empty($_POST['human']) ) {
+if ( $action == 'login' ) {
+	if ( !empty($_POST['name']) ) {
 
 		// ...
 		
@@ -43,7 +43,7 @@ if ( $action == 'demologin' ) {
 /**
  * Action 2 - Schnelle Variante
  */
-if ( $action == 'demologin' ) {
+if ( $action == 'logout' ) {
 	include 'actions/action2.php';
 }
 
