@@ -22,5 +22,11 @@ while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
 }
 
 
+// Inserting
+$sql = 'INSERT INTO table (column) VALUES (:val)';
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':val', $val, PDO::PARAM_INT);
+$stmt->execute();
+echo $lastId = $pdo->lastInsertId();
 
 ?>
