@@ -5,11 +5,11 @@ p_r(DB_DATABASE);
 p_r(DB_USER);
 p_r(DB_PASSWORD);
 
-$dbhost = DB_HOST;
-$dbname = DB_DATABASE;
-$dbuser = DB_USER;
-$dbpass = DB_PASSWORD;
-$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+// MySQLi Verbindung
+$GLOBALS['mysqli'] = $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+
+// PDO Verbindung
+$GLOBALS['pdo'] = $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_DATABASE, DB_USER, DB_PASSWORD, array( PDO::ATTR_PERSISTENT => false));
 
 
 //$db = new DB_WE();
