@@ -30,3 +30,16 @@
 // $_SESSION["user"]["ID"]
  
 ?>
+
+
+
+<?php /* Voreinstellung */ ?>
+<we:ifVarEmpty match="Typ">
+	<we:setVar to="self" nameto="Typ" value="abc" />
+</we:ifVarEmpty>
+<we:select name="Typ" reload="true">
+	<option value="abc">ABC</option>
+	<option value="xyz">XYZ</option>
+</we:select>
+<we:ifVar doc="self" name="Typ" match="abc">...abc...</we:ifVar>
+<we:ifVar doc="self" name="Typ" match="xyz">...xyz...</we:ifVar>
