@@ -13,7 +13,7 @@ lib.subnav {
 
 			NO = 1
 			NO.allWrap >
-			NO.wrapItemAndSub = <li rowl="presentation">|</li>
+			NO.wrapItemAndSub = <li role="presentation">|</li>
 			CUR = 1
 			CUR < .NO
 			CUR.wrapItemAndSub = <li role="presentation" class="active">|</li>
