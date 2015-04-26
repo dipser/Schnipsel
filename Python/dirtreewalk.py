@@ -38,9 +38,8 @@ def dirtreewalk(path):
 
 # Direktaufruf
 if __name__ == '__main__':
-    # Zum testen einen Ordner mit Inhalt anlegen
-    # Danach eine Datei und einen Ordner ohne Rechte erstellen:
-    # touch norights.txt && chmod 0000 norights.txt && mkdir -m 0000 norightsdir
-    path = '/Users/dipser/Desktop/GIS'
+    # Zum Testen einen Ordner mit Inhalt anlegen, danach z.B. eine Datei und einen Ordner ohne Rechte erstellen, oder:
+    # mkdir example && cd example && touch file.txt && touch file2.txt && echo 2 > file2.txt && touch file3.txt && echo 3 > file3.txt && mkdir subdir && mkdir subdir/subsubdir && touch subdir/subsubdir/file.txt && echo 4 > subdir/subsubdir/file.txt && touch norights.txt && chmod 0000 norights.txt && mkdir -m 0000 norightsdir && cd ..
+    path = '/Users/dipser/Desktop/example'
     dirtreewalk(path)
 
