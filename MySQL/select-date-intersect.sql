@@ -17,4 +17,4 @@ SELECT * FROM `table` WHERE
 	(`start_date` > :start_date AND `end_date` > :end_date AND `start_date` < :end_date)
 )
 
-// Hinweis: 3 und 4 könnten noch mit BETWEEN zusammengefasst werden
+// Hinweis: Fall 3 und 4 könnten noch mit BETWEEN zusammengefasst werden
