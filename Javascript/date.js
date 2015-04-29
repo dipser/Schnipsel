@@ -9,6 +9,10 @@ function date(format, timestamp) { // format: http://php.net/manual/de/function.
   
 	return format.replace(/\\?[a-zA-Z]{1,1}/g, function(m) {
 		if (m[0]=='\\') { return m[1]; }
+		// Minuten
+		if (m[0]=='i') { return _pad(d.getMinutes()); }
+		// Stunden
+		if (m[0]=='H') { return _pad(d.getHours()); }
 		// Tag
 		if (m[0]=='d') { return _pad(d.getDate()); }
 		if (m[0]=='D') { return days[d.getDay()].slice(0, 3); }
