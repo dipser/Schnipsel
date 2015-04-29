@@ -9,6 +9,8 @@ function date(format, timestamp) { // format: http://php.net/manual/de/function.
   
 	return format.replace(/\\?[a-zA-Z]{1,1}/g, function(m) {
 		if (m[0]=='\\') { return m[1]; }
+		// Sekunden
+		if (m[0]=='s') { return _pad(d.getSeconds()); }
 		// Minuten
 		if (m[0]=='i') { return _pad(d.getMinutes()); }
 		// Stunden
