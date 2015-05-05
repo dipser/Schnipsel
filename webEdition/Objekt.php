@@ -54,6 +54,12 @@ $obj->makeSameNew();
 
 
 
+$object = we_objectFile::initObject(intval($classId), $name, $categories, intval($parentid), true);
+$object->Text = $objName;
+$object->Path = $object->getParentPath().(($object->getParentPath() != "/") ? "/" : "") . $object->Text;
+$object->we_publish();
+
+
 
 // Objekt löschen
 $GLOBALS['NOT_PROTECT'] = (bool) true; // Sicherheitssperre aufheben, damit keine webEdition-Session benötigt wird
