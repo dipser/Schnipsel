@@ -9,7 +9,7 @@ p_r(DB_PASSWORD);
 $GLOBALS['mysqli'] = $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
 // PDO Verbindung
-$GLOBALS['pdo'] = $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_DATABASE, DB_USER, DB_PASSWORD, array( PDO::ATTR_PERSISTENT => false));
+$GLOBALS['pdo'] = $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_DATABASE.';charset=utf-8', DB_USER, DB_PASSWORD, array( PDO::ATTR_PERSISTENT => false));
 
 
 //$db = new DB_WE();
