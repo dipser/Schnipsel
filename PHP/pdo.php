@@ -8,7 +8,7 @@ define('DBUSER', 'root');
 define('DBPASS', 'root');
 
 // PDO Verbindung aufbauen
-$GLOBALS['pdo'] = $pdo = new PDO('mysql:host='.DBHOST.';port='.DBPORT.';dbname='.DBNAME.';charset=utf-8', DBUSER, DBPASS, array( PDO::ATTR_PERSISTENT => false));
+$GLOBALS['pdo'] = $pdo = new PDO('mysql:host='.DBHOST.';port='.DBPORT.';dbname='.DBNAME.';charset=utf8', DBUSER, DBPASS, array( PDO::ATTR_PERSISTENT => false));
 
 
 // Listenausgabe
