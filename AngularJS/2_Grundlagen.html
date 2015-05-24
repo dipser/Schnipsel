@@ -1,0 +1,11 @@
+<script>
+app.filter('customfilter', function () {
+	return function (item, param1, param2) {
+		param1 = typeof param1 !== 'undefined' ? param1 : 'default param1';
+		param2 = typeof param2 !== 'undefined' ? param2 : 'default param2';
+		return item + param1 + param2;
+	};
+});
+</script>
+
+{{ 'item' | customfilter:'p1':'p2' }}
