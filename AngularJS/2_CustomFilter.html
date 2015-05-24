@@ -9,6 +9,7 @@
 	<link href="main.css" rel="stylesheet" type="text/css" />
 	<script src="angular.min.js"></script>
 	<script>
+	var app = angular.module('app', []);
 	app.filter('customfilter', function () {
 		return function (item, param1, param2) {
 			param1 = typeof param1 !== 'undefined' ? param1 : 'default param1';
