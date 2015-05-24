@@ -1,11 +1,27 @@
-<script>
-app.filter('customfilter', function () {
-	return function (item, param1, param2) {
-		param1 = typeof param1 !== 'undefined' ? param1 : 'default param1';
-		param2 = typeof param2 !== 'undefined' ? param2 : 'default param2';
-		return item + param1 + param2;
-	};
-});
-</script>
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Grundlagen</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<script src="angular.min.js"></script>
+	<script>
+	app.filter('customfilter', function () {
+		return function (item, param1, param2) {
+			param1 = typeof param1 !== 'undefined' ? param1 : 'default param1';
+			param2 = typeof param2 !== 'undefined' ? param2 : 'default param2';
+			return item + param1 + param2;
+		};
+	});
+	</script>
+</head>
+<body>
 
-{{ 'item' | customfilter:'p1':'p2' }}
+	<input type="text" ng-model="item">
+	<p>{{ item | customfilter:'p1':'p2' }}</p>
+
+</body>
+</html>
