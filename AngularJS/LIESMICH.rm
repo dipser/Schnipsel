@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Grundlage</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="main.css" rel="stylesheet" type="text/css" />
+  <script src="angular.min.js"></script>
+</head>
+<body>
+
+	<!-- Model, View -->
+	<input type="text" ng-model="search">
+	<input type="text" ng-model="search">
+	<p>Suche nach: {{search}}</p>
+	<p>Suche nach: {{search.toUpperCase() + "!"}}</p>
+	<p ng-show="search">Suche nach: {{search}}</p>
+
+	<hr />
+
+	<!-- Schleifen -->
+	<table class="table">
+		<tr ng-repeat="article in ['Tomaten', 'Nudeln']">
+			<td>{{article}}</td>
+		</tr>
+	</table>
+
+
+
+</body>
+</html>
