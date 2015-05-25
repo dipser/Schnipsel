@@ -18,6 +18,14 @@
 	<p>Suche nach: {{search.toUpperCase() + "!"}}</p>
 	<p ng-show="search">Suche nach: {{search}}</p>
 
+
+	<hr />
+	
+	
+	<!-- ng-class -->
+	<div ng-class="{'off': !isActive, 'on': isActive}" ng-init="isActive = false" ng-click="isActive = !isActive">Schalter</div>
+	<style>.off {color:red;} .on {color:green;}</style>
+	
 	<hr />
 
 	<!-- Schleifen -->
