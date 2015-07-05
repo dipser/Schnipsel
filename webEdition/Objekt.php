@@ -169,3 +169,6 @@ while ($row = mysql_fetch_assoc($result)) {
 }
 // Benutze: $tableNames['/DD-Event-2015']
 ?>
+
+
+<?=p_r($GLOBALS['we_obj'])?>
