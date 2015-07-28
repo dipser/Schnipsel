@@ -9,6 +9,7 @@ while($GLOBALS['DB_WE']->next_record())
 }
 ?>
 
+<?php echo id_to_path(123, 'tblCategorys'); ?>
 
 
 <div>
