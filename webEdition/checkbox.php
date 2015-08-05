@@ -1,5 +1,6 @@
+<!-- Vorbelegung ist nicht möglich. -->
 <we:ifEditmode>
-	<we:input type="checkbox" name="x" /><?php /* value="1" für true am anfang */ ?>
+	<we:input type="checkbox" name="x" value="1" />
 <we:else />
 	<we:ifVar name="x" match="1">
 		true
