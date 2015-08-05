@@ -1,5 +1,5 @@
 <we:ifEditmode>
-	<we:input type="checkbox" name="x" value="1" />
+	<we:input type="checkbox" name="x" />
 <we:else />
 	<we:ifVar name="x" match="1">
 		true
