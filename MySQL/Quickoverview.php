@@ -1,6 +1,6 @@
 <?php
 
-echo"
+echo "
 <table align='center' class='border' border='1' width='60%' cellpadding='0' cellspacing='0'>
  <tr>
    <td width='30%'>Server Online:</td>
@@ -41,35 +41,30 @@ echo"
 
 function tableme($result){
 
-$row = mysql_fetch_assoc($result);
+  $row = mysql_fetch_assoc($result);
+  $header = '';
+  $header .= '<tr>';
+  foreach ($row as $col => $value) {
+    $header .= '<th>'.$col.'</th>';
+  }
+  $header .= '</tr>';
 
-$header='';
-$header.='<tr>';
-            foreach ($row as $col => $value) {
-                $header.= "<th>";
-                $header.= $col;
-                $header.= "</th>";
-            }
-$header.='</tr>';
+  mysql_data_seek($result, 0); // Wieder auf Anfang!
 
-
-mysql_data_seek($result, 0);
-
-
-    $rows='';
-    while ($row = mysql_fetch_assoc($result)) { 
-            $rows.='<tr>'; 
-            foreach($row as $key => $value){ 
-                $rows.='<td>'.$value.'</td>'; 
-            } 
-            $rows.='</tr>';
+  $rows='';
+  while ($row = mysql_fetch_assoc($result)) { 
+    $rows .= '<tr>'; 
+    foreach ($row as $key => $value){ 
+      $rows .= '<td>'.$value.'</td>'; 
     } 
-    return '<table align="center" class="border" border="1" width="60%" cellpadding="0" cellspacing="0">'.$header.$rows.'</table>';
+    $rows .= '</tr>';
+  }
+
+  return '<table align="center" class="border" border="1" width="60%" cellpadding="0" cellspacing="0">'.$header.$rows.'</table>';
 }
 
 $result = mysql_query("SELECT * FROM st2_login");
 echo tableme($result);
-
 
 
 
