@@ -1,0 +1,40 @@
+Bildfokus
+
+1. Thumbnail mit Bildfokus-Erweiterung
+/webEdition/we/include/we_classes/base/we_base_imageEdit.class.php
+Meethode: "edit_image"
+Vor der Zeile "$_image_resize_function($_output_gdimg, $_gdimg, 0, 0, $x, $y, $width, $height, $w, $h);" einfügen:
+                    // Set thumbnail focus point -ah2015
+                    if (true) {
+                        echo '<script>console.log("TX:"+'.$x.', "TY:"+'.$y.', "OWidth:"+'.$_width.', "TWidth"+'.$width.', "OHeight:"+'.$_height.', "THeight"+'.$height.');</script>';
+                        $x_focus = 0.0; // von -1.0 bis 1.0
+                        $y_focus = 0.0; // von -1.0 bis 1.0
+                        $x = $x + ($x * $x_focus);
+                        $y = $y + ($y * $y_focus);
+                    }
+
+
+2. Interface unter Bilddokument -> Bearbeiten:
+/webEdition/we/include/we_editors/we_editor_binaryContent.inc.php
+Erweitern um: 
+			array(
+				'icon' => 'imgfocus.gif',
+				'headline' => 'Bildfokus',
+				'html' => $GLOBALS['we_doc']->formImageFocus(),
+				'space' => 140
+			)
+
+
+3. Bei Klick auf "Speichern wird" /webEdition/we_cmd.php aufgerufen mit den Parametern:
+we_cmd[0]: "save_document"
+we_cmd[1]: "xyzhashkey"
+
+Diese includiert dann: webEdition/we/include/we_editors/we_editor.inc.php
+-> Zeile 372
+
+Dann include -> WE_INCLUDES_PATH.'we_editors/we_editor_save.inc.php'
+
+
+
+
+we_thumbnail.class.php
