@@ -472,12 +472,20 @@ abstract class we_base_imageEdit{
 					}
 					// #AH2015#
 					// Set thumbnail focus point -ah2015
-					if (true) {
-						echo '<script>console.log("TX:"+'.$x.', "TY:"+'.$y.', "OWidth:"+'.$_width.', "TWidth"+'.$width.', "OHeight:"+'.$_height.', "THeight"+'.$height.');</script>';
+					if ($crop_x!=0 || $crop_y!=0) {
+						echo '<script>console.log("TX:"+'.$x.', "TY:"+'.$y.', "OWidth:"+'.$_width.', "TWidth:"+'.$width.', "OHeight:"+'.$_height.', "THeight:"+'.$height.', "W:"+'.$w.', "H:"+'.$h.');</script>';
 						$x_focus = $crop_x; // von -1.0 bis 1.0
 						$y_focus = $crop_y; // von -1.0 bis 1.0
-						$x = $x + ($x * $x_focus);
-						$y = $y + ($y * $y_focus);
+						
+						$_x = $x + ($w/2); // x + origthumbwidth/2 => x-Mittelpunkt
+						$x = $_x + ($_x * $x_focus) - ($w/2); // Mittelpunkt + Bildfokus - origthumbwidth/2 => Neuer x-Punkt
+						if ($x+$w > $_width) { $x = $_width - $w; }
+						if ($x < 0) { $x = 0; }
+
+						$_y = $y + ($h/2); // y + origthumbheight/2 => y-Mittelpunkt
+						$y = $_y + ($_y * $y_focus) - ($h/2); // Mittelpunkt + Bildfokus - origthumbheight/2 => Neuer y-Punkt
+						if ($y+$h > $_height) { $y = $_height - $h; }
+						if ($y < 0) { $y = 0; }
 					}
 					// #AH2015#
 					$_image_resize_function($_output_gdimg, $_gdimg, 0, 0, $x, $y, $width, $height, $w, $h);
