@@ -470,6 +470,7 @@ abstract class we_base_imageEdit{
 						$x = 0;
 						$y = ($_height - $height / $ratio) / 2;
 					}
+					// #AH2015#
 					// Set thumbnail focus point -ah2015
 					if (true) {
 						echo '<script>console.log("TX:"+'.$x.', "TY:"+'.$y.', "OWidth:"+'.$_width.', "TWidth"+'.$width.', "OHeight:"+'.$_height.', "THeight"+'.$height.');</script>';
@@ -478,6 +479,7 @@ abstract class we_base_imageEdit{
 						$x = $x + ($x * $x_focus);
 						$y = $y + ($y * $y_focus);
 					}
+					// #AH2015#
 					$_image_resize_function($_output_gdimg, $_gdimg, 0, 0, $x, $y, $width, $height, $w, $h);
 				} else {
 					$_image_resize_function($_output_gdimg, $_gdimg, 0, 0, 0, 0, $_outsize["width"], $_outsize["height"], $_width, $_height);

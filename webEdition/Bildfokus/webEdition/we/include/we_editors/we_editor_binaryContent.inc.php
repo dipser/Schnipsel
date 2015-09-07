@@ -50,13 +50,16 @@ echo STYLESHEET .
 				"headline" => g_l('weClass', '[metadata]'),
 				"html" => $GLOBALS['we_doc']->formMetaInfos() . $GLOBALS['we_doc']->formMetaData(),
 				"space" => 140
-			),
+			)
+			// #AH2015#
+			,
 			array(
 				'icon' => 'imgfocus.gif',
 				'headline' => 'Bildfokus',
 				'html' => $GLOBALS['we_doc']->formImageFocus(),
 				'space' => 140
 			)
+			// #AH2015#
 			), 20).
 			we_html_element::htmlHidden("we_complete_request",1);
 		?>

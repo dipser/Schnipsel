@@ -1005,7 +1005,7 @@ img' . self::$imgCnt . 'Out.src = "' . ($src? : $this->Path) . '";';
 	}
 
 
-
+// #AH2015#
 	public function formImageFocus() {
 		$name = $GLOBALS['we_doc']->Name;
 		$id = $GLOBALS['we_doc']->ID;
@@ -1049,6 +1049,6 @@ HERE;
 		//$out .= '<script>alert(JSON.stringify('.json_encode($GLOBALS['we_doc']).'));</script>';
 		return $out;
 	}
-	
+// #AH2015#
 
 }

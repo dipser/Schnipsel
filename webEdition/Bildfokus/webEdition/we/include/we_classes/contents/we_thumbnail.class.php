@@ -178,8 +178,10 @@ class we_thumbnail{
 	 */
 	private $generateSmaller = false;
 
+// #AH2015#
 	private $xfocus = 0;
 	private $yfocus = 0;
+// #AH2015#
 
 	/**
 	 * Constructor of class
@@ -238,9 +240,11 @@ class we_thumbnail{
 			$this->setOutputPath();
 			$this->calculateOutsize();
 		}
+		// #AH2015#
 		//$this->xfocus = -1;
 		//$this->yfocus = 1;
 		$this->getImageData();
+		// #AH2015#
 	}
 
 	/**
@@ -336,7 +340,7 @@ class we_thumbnail{
 	 * @return int (WE_THUMB_OK, WE_THUMB_BUILDERROR, WE_THUMB_USE_ORIGINAL or WE_THUMB_NO_GDLIB_ERROR;
 	 * @public
 	 */
-	public function createThumb(){echo '<script>console.log('.json_encode($this->xfocus).');</script>';
+	public function createThumb(){//echo '<script>console.log('.json_encode($this->xfocus).');</script>';
 		if(we_base_imageEdit::gd_version() <= 0){
 			return self::NO_GDLIB_ERROR;
 		}
@@ -355,7 +359,9 @@ class we_thumbnail{
 			we_base_file::createLocalFolder($_thumbdir);
 		}
 		$quality = max(10, min(100, intval($this->thumbQuality) * 10));
-		$outarr = we_base_imageEdit::edit_image($this->imageData ? : WEBEDITION_PATH . '../' . $this->imagePath, $this->outputFormat, WEBEDITION_PATH . '../' . $this->outputPath, $quality, $this->thumbWidth, $this->thumbHeight, $this->thumbRatio, $this->thumbInterlace, $this->xfocus, $yfocus, -1, -1, 0, $this->thumbFitinside);
+// #AH2015#
+		$outarr = we_base_imageEdit::edit_image($this->imageData ? : WEBEDITION_PATH . '../' . $this->imagePath, $this->outputFormat, WEBEDITION_PATH . '../' . $this->outputPath, $quality, $this->thumbWidth, $this->thumbHeight, $this->thumbRatio, $this->thumbInterlace, $this->xfocus, $this->yfocus, -1, -1, 0, $this->thumbFitinside);
+// #AH2015#
 
 		return $outarr[0] ? self::OK : self::BUILDERROR;
 	}
@@ -583,12 +589,14 @@ class we_thumbnail{
 			} else if($this->db->f('Name') === 'origheight'){
 				$this->imageHeight = $this->db->f('Dat');
 			}
+			// #AH2015#
 			if($this->db->f('Name') === 'xfocus'){
 				$this->xfocus = $this->db->f('Dat');
 			}
 			if($this->db->f('Name') === 'yfocus'){
 				$this->yfocus = $this->db->f('Dat');
 			}
+			// #AH2015#
 		}
 
 		$imgdat = getHash('SELECT ID,Filename,Extension,Path FROM ' . FILE_TABLE . ' WHERE ID=' . intval($this->imageID), $this->db);
