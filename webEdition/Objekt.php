@@ -19,6 +19,7 @@ $obj->restoreDefaults();
 //$obj->del_workspace($wsid);
 //$obj->Workspaces = ''; // Arbeitsbereich: Reset
 //$obj->Templates = '';
+//$obj->Category = '';
 $obj->Text = importFunctions::correctFilename('Objekt Name');
 $obj->Path = $obj->getParentPath() . (($obj->getParentPath() != "/") ? "/" : "") . $obj->Text;
 $obj->getElement('NameObjektFeld');
