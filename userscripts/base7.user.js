@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.0
-// @description  Try to make Base7 better!
+// @version      1.6.1
+// @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
 // @match        https://*.base7.io/*
 // @match        https://*.base7booking.com/*
@@ -27,7 +27,7 @@ function matchRuleShort(str, rule) {
     $('body').append('<div id="monkeybox">-</div>'+printstyle);
     $("#monkeybox").css("position", "fixed").css("top", 0).css("right", 0).css('display', 'none');
     var checkin_checkout = function(t) {
-        var months = {'Jan':'01', 'Feb':'02', 'Mar':'03', 'Apr':'04', 'May':'05', 'Jun':'06', 'Jul':'07', 'Aug':'08', 'Sep':'09', 'Oct':'10', 'Nov':'11', 'Dec':'12'};
+        var months = {'Jan':'01', 'Feb':'02', 'Mär':'03', 'Apr':'04', 'Mai':'05', 'Jun':'06', 'Jul':'07', 'Aug':'08', 'Sep':'09', 'Okt':'10', 'Nov':'11', 'Dez':'12'};
         var time = t.split('-').map(function(i) { return i.trim(); });
         var cin = time[0].split(' ');
         var cout = time[1].split(' ');
