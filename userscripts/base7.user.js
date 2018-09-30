@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.6
+// @version      1.6.7
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
