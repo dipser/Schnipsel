@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.2
+// @version      1.6.3
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
 // @match        https://*.base7.io/*
@@ -153,8 +153,8 @@ function matchRuleShort(str, rule) {
 
         var extrainfo = ''+
             '<section id="top_extrainfo"><table style="font-size:16px;border-top:1px solid grey;">'+
-            '<tr style="border-bottom:1px solid grey;"><th style="width:170px;">Fr&uuml;hst&uuml;ck heute: </th><td>'+fsb_today+' G&auml;ste</td></tr>'+
-            '<tr style="border-bottom:1px solid grey;"><th>Fr&uuml;hst&uuml;ck morgen: </th><td>'+fsb_tomorrow+' G&auml;ste</td></tr>'+
+            '<tr style="border-bottom:1px solid grey;"><th style="width:170px;">Fr&uuml;hst&uuml;ck heute: </th><td contentEditable="true">'+fsb_today+' G&auml;ste</td></tr>'+
+            '<tr style="border-bottom:1px solid grey;"><th>Fr&uuml;hst&uuml;ck morgen: </th><td contentEditable="true">'+fsb_tomorrow+' G&auml;ste</td></tr>'+
             '</table></section>';
         $('#roomkeeping h1').after(extrainfo);
 
@@ -163,7 +163,7 @@ function matchRuleShort(str, rule) {
             '<h1 style="margin:0 0 15px 0;">Guten Tag,</h1>'+
             '<p style="margin:0 0 15px 0;font-size:0.7em;">bitte nehmen Sie sich Ihren zugeordneten Zimmerschl&uuml;ssel.<br>'+
             ''+
-            '<p style="margin:0 0 15px 0;font-size:0.7em;">Bei Fragen: 0176 70006033</p>'+
+            '<p style="margin:0 0 15px 0;font-size:0.7em;" contentEditable="true">Bei Fragen: 0176 70006033</p>'+
             '<div style="text-align:center;"><img src="http://www.wolterdinger-hof.de/intern/res/img/Hotelplan-WolterdingerHof.png" height="450" alt="" /></div>'+
             '</section>';
         $('section .arrivals').parent().after(bottom_extrainfo);
