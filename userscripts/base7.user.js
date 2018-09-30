@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.7
+// @version      1.6.8
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -32,8 +32,8 @@ function matchRuleShort(str, rule) {
         var time = t.split('-').map(function(i) { return i.trim(); });
         var cin = time[0].split(' ');
         var cout = time[1].split(' ');
-        var checkout = cout[2]+'-'+months[cout[1]]+'-'+cout[0];
-        var checkin = cout[2]+'-'+months[cin[1]]+'-'+cin[0];
+        var checkout = cout[2] +'-'+ months[cout[1]] +'-'+ cout[0].padStart(2, '0');
+        var checkin = cout[2] +'-'+ months[cin[1]] +'-'+ cin[0].padStart(2, '0');
         return [checkin, checkout];
     }
 
