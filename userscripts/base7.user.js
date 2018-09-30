@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.3
+// @version      1.6.4
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
 // @match        https://*.base7.io/*
@@ -134,6 +134,12 @@ function matchRuleShort(str, rule) {
                 $('section#bottom_extrainfo').hide();
             }
         };
+      
+        // contentEditable of Rommnumbers
+        let els = document.querySelectorAll('table.arrivals tr:not(class=comment) td:not([colspan]):nth-child(1)');
+        for (let i = 0; i < els.length; i++) {
+          els[i].setAttribute('contentEditable', 'true');
+        }
 
         var html_displayComments = '<input type="checkbox" id="monkeyroomkeepingcomments" title="Kommentare ausblenden?" class="no-print">';
         var html_makeAnreisePaper = '<input type="checkbox" id="monkeyroomkeepinganreisepaper" title="Anreisezettel erzeugen?" class="no-print">';
