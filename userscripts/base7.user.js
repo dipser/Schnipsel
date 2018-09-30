@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.4
+// @version      1.6.5
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
 // @match        https://*.base7.io/*
@@ -135,8 +135,8 @@ function matchRuleShort(str, rule) {
             }
         };
       
-        // contentEditable of Rommnumbers
-        let els = document.querySelectorAll('table.arrivals tr:not(class=comment) td:not([colspan]):nth-child(1)');
+        // contentEditable of room-numbers
+        let els = document.querySelectorAll('table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(1)');
         for (let i = 0; i < els.length; i++) {
           els[i].setAttribute('contentEditable', 'true');
         }
