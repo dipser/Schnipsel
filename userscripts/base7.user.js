@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.6.1
+// @version      1.6.2
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
 // @match        https://*.base7.io/*
@@ -164,7 +164,7 @@ function matchRuleShort(str, rule) {
             '<p style="margin:0 0 15px 0;font-size:0.7em;">bitte nehmen Sie sich Ihren zugeordneten Zimmerschl&uuml;ssel.<br>'+
             ''+
             '<p style="margin:0 0 15px 0;font-size:0.7em;">Bei Fragen: 0176 70006033</p>'+
-            '<div style="text-align:center;"><img src="http://www.wolterdinger-hof.de/intern/res/img/Hotelplan-WolterdingerHof.png" height="500" alt="" /></div>'+
+            '<div style="text-align:center;"><img src="http://www.wolterdinger-hof.de/intern/res/img/Hotelplan-WolterdingerHof.png" height="450" alt="" /></div>'+
             '</section>';
         $('section .arrivals').parent().after(bottom_extrainfo);
     });
