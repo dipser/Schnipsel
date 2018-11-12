@@ -82,12 +82,13 @@ function matchRuleShort(str, rule) {
         client.countryCode = client.countryNumber>0 ? client.countryText.split('(')[1].split(')')[0] : '';
 
         // Eingabefelder Text zusammenfuegen
-        var company = ((client.company.length>0)?client.company+'\n':'');
+        var company = (client.company.length>0) ? client.company+'\n' : '';
+        var countryCode = (client.countryCode.length>0) ? client.countryCode ' - ' : '';
         var text = ''
             + company
             + client.firstname +' '+ client.lastname +'\n'
             + client.street +'\n'
-            + client.countryCode +' - '+ client.postcode +' '+ client.city;
+            + countryCode + client.postcode +' '+ client.city;
 
         var addressee = text.replace(/\r\n|\n/g, "%0A");
 
