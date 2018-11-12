@@ -85,7 +85,6 @@ function matchRuleShort(str, rule) {
         var company = ((client.company.length>0)?client.company+'\n':'');
         var text = ''
             + company
-            + ((client.company.length>0)?client.company+'\n':'')
             + client.firstname +' '+ client.lastname +'\n'
             + client.street +'\n'
             + client.countryCode +' - '+ client.postcode +' '+ client.city;
