@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.7.9
+// @version      1.8.1
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -146,13 +146,7 @@ function matchRuleShort(str, rule) {
         for (let i = 0; i < els.length; i++) {
           els[i].setAttribute('contentEditable', 'true');
         }
-      
-        // remove "guest-name" if the same "name"
-        for (let i = 0; i < els.length; i++) {
-          if ( document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(2)').innerText.toLowerCase() == document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(5)').innerText.toLowerCase() ) {
-            document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(5)').innerText = '';
-          }
-        }
+
 
         var html_displayComments = '<input type="checkbox" id="monkeyroomkeepingcomments" title="Kommentare ausblenden?" class="no-print">';
         var html_makeAnreisePaper = '<input type="checkbox" id="monkeyroomkeepinganreisepaper" title="Anreisezettel erzeugen?" class="no-print">';
