@@ -23,9 +23,10 @@ function matchRuleShort(str, rule) {
 
 
     // Allgemeines Anzeigeelement
-    var disablebrowserpagetext = '@page {size: auto;margin: 0mm;}';// html {background-color: #FFFFFF;margin: 0px; } body {margin: 10mm 15mm 10mm 15mm; }';
-    var printstyle = '<style>'+disablebrowserpagetext+'@media print{ .no-print, .no-print * { display: none !important; } }</style>';
-    $('body').append('<div id="monkeybox" class="no-print">-</div>'+printstyle);
+    var disablebrowserpagetext = '@page { size: auto; margin: 0mm; } html {background-color: #FFFFFF;margin: 0px; } body {margin: 10mm 15mm 10mm 15mm; }';
+    var printmediacss = '@media print{ .no-print, .no-print * { display: none !important; } }';
+    var printstyle = '<style>' + disablebrowserpagetext + printmediacss + '</style>';
+    $('body').append(printstyle + '<div id="monkeybox" class="no-print">-</div>');
     $("#monkeybox").css("position", "fixed").css("top", 0).css("right", 0).css('display', 'none');
     var checkin_checkout = function(t) {
         var months = {'Jan':'01', 'Feb':'02', 'Mär':'03', 'Apr':'04', 'Mai':'05', 'Jun':'06', 'Jul':'07', 'Aug':'08', 'Sep':'09', 'Okt':'10', 'Nov':'11', 'Dez':'12'};
