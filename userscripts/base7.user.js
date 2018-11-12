@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.7.3
+// @version      1.7.4
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -23,8 +23,8 @@ function matchRuleShort(str, rule) {
 
 
     // Allgemeines Anzeigeelement
-    var disablebrowserpagetext = '';// html {background-color: #FFFFFF;margin: 0px; } body {margin: 10mm 15mm 10mm 15mm; }';
-    var printmediacss = '@media print { @page { size: auto; margin: 0; } body { padding: 50px; } .no-print, .no-print * { display: none !important; } }';
+    var disablebrowserpagetext = '@page { size: auto; margin: 0; }';// html {background-color: #FFFFFF;margin: 0px; } body {margin: 10mm 15mm 10mm 15mm; }';
+    var printmediacss = '@media print { body { margin:0; padding: 50px; } .no-print, .no-print * { display: none !important; } }';
     var printstyle = '<style>' + disablebrowserpagetext + printmediacss + '</style>';
     $('body').append(printstyle + '<div id="monkeybox" class="no-print">-</div>');
     $("#monkeybox").css("position", "fixed").css("top", 0).css("right", 0).css('display', 'none');
@@ -84,7 +84,7 @@ function matchRuleShort(str, rule) {
 
         // Eingabefelder Text zusammenfuegen
         var company = (client.company.length>0) ? client.company+'\n' : '';
-        var countryCode = (client.countryCode.length>0) ? client.countryCode ' - ' : '';
+        var countryCode = (client.countryCode.length>0) ? client.countryCode + ' - ' : '';
         var text = ''
             + company
             + client.firstname +' '+ client.lastname +'\n'
