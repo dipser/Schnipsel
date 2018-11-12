@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.7.8
+// @version      1.7.9
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -149,7 +149,7 @@ function matchRuleShort(str, rule) {
       
         // remove "guest-name" if the same "name"
         for (let i = 0; i < els.length; i++) {
-          if ( document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(2)').innerText == document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(5)').innerText ) {
+          if ( document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(2)').innerText.toLowerCase() == document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(5)').innerText.toLowerCase() ) {
             document.querySelector('table.departures tr:not([class=comment]) > td:nth-child(5)').innerText = '';
           }
         }
