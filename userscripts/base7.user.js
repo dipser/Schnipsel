@@ -66,7 +66,7 @@ function matchRuleShort(str, rule) {
     // Ausfuehren wenn ein bestimmtes HTML existiert
     $(document).arrive('.component--page .page.module-client #client_details', {existing:true}, function(newElem) {
         //var $newElem = $(newElem);
-        //console.log('new client');
+        console.log('new client');
 
         // Eingabefelder auslesen
         var client = {
