@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.8.5
+// @version      1.8.6
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -21,11 +21,24 @@ function matchRuleShort(str, rule) {
 (function() {
     'use strict';
 
+var printstyle = `
+<style>
+@page { size: auto; margin: 0 !important; padding: 0; }
+@media print {
+    * { box-sizing: border-box; }
+    .no-print, .no-print * { display: none !important; }
+
+    body { margin:0 !important; padding: 30px 30px !important; }
+
+    table { page-break-inside:auto; }
+    tr    { page-break-inside:avoid; page-break-after:auto; }
+    thead { display:table-header-group; }
+    tfoot { display:table-footer-group; }
+}
+</style>
+`;
 
     // Allgemeines Anzeigeelement
-    var disablebrowserpagetext = '@page { size: auto; margin: 0; }';// html {background-color: #FFFFFF;margin: 0px; } body {margin: 10mm 15mm 10mm 15mm; }';
-    var printmediacss = '@media print { body { margin:0; padding: 20px 30px !important; } .no-print, .no-print * { display: none !important; } }';
-    var printstyle = '<style>' + disablebrowserpagetext + printmediacss + '</style>';
     $('body').append(printstyle + '<div id="monkeybox" class="no-print">-</div>');
     $("#monkeybox").css("position", "fixed").css("top", 0).css("right", 0).css('display', 'none');
     var checkin_checkout = function(t) {
