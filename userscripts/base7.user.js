@@ -29,11 +29,6 @@ var printstyle = `
     .no-print, .no-print * { display: none !important; }
 
     body { margin:0 !important; padding: 30px 30px !important; }
-
-    table { page-break-inside:auto; }
-    tr    { page-break-inside:avoid; page-break-after:auto; }
-    thead { display:table-header-group; }
-    tfoot { display:table-footer-group; }
 }
 </style>
 `;
