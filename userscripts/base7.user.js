@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.8.2
+// @version      1.8.4
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -99,8 +99,22 @@ function matchRuleShort(str, rule) {
         var str_rooms = room, spl_rooms = str_rooms.split(','), arr_rooms = []; for (let i in spl_rooms) { arr_rooms.push(Number((spl_rooms[i]).match(/\d+$/))); }
         var t = $('#client_resa table.list td:nth-child(2)').text().trim();
         var cc = checkin_checkout(t);
-        var urlget = '?module_id=3&view=invoice&addressee='+addressee+'&guest='+client.firstname+' '+client.lastname+'&room='+arr_rooms.join(', ')+'&price='+price+'&date_checkin='+cc[0]+'&date_checkout='+cc[1];
-        $('#monkeybox').html('<a href="http://hms.wolterdinger-hof.de/'+urlget+'" style="vertical-align:top;">&#8618;</a><textarea id="monkeycopy">'+ text +'</textarea>');
+        //var urlget = '?module_id=3&view=invoice&addressee='+addressee+'&guest='+client.firstname+' '+client.lastname+'&room='+arr_rooms.join(', ')+'&price='+price+'&date_checkin='+cc[0]+'&date_checkout='+cc[1];
+        
+        let url = new URL('http://hms.wolterdinger-hof.de/');//http://hms.wolterdinger-hof.de/'+urlget+'
+        let urlparams = {
+          module_id: 3,
+          view: invoice,
+          addressee: addressee,
+          guest: client.firstname+' '+client.lastname,
+          room: arr_rooms.join(', '),
+          price: price,
+          date_checkin: cc[0],
+          date_checkout: cc[1]
+        };
+        Object.keys(urlparams).forEach(key => url.searchParams.append(key, urlparams[key]));
+      
+        $('#monkeybox').html('<a href="'+url+'" style="vertical-align:top;">&#8618;</a><textarea id="monkeycopy">'+ text +'</textarea>');
     });
     /*$(document).leave('.component--page .page.module-client #client_details', function() {
         var $removedElem = $(this);
