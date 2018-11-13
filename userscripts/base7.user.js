@@ -85,13 +85,13 @@ function matchRuleShort(str, rule) {
         // Eingabefelder Text zusammenfuegen
         var company = (client.company.length>0) ? client.company+'\n' : '';
         var countryCode = (client.countryCode.length>0) ? client.countryCode + ' - ' : '';
-        var text = '' +
+        var addressee = '' +
             company +
             client.firstname +' '+ client.lastname +'\n'+
             client.street +'\n'+
             countryCode + client.postcode +' '+ client.city;
 
-        var addressee = text.replace(/\r\n|\n/g, "%0A");
+        //var addressee = text.replace(/\r\n|\n/g, "%0A");
 
         // Ergebnistext im HTML ausgeben
         var price = $('#client_resa table.list td:nth-child(5)').text().trim();
@@ -105,7 +105,7 @@ function matchRuleShort(str, rule) {
         let urlparams = {
           module_id: 3,
           view: 'invoice',
-          addressee: addressee,
+          addressee: addressee,//.split('\n').join('%0A'),
           guest: client.firstname+' '+client.lastname,
           room: arr_rooms.join(', '),
           price: price,
@@ -114,7 +114,7 @@ function matchRuleShort(str, rule) {
         };
         Object.keys(urlparams).forEach(key => url.searchParams.append(key, urlparams[key]));
       
-        $('#monkeybox').html('<a href="'+url+'" style="vertical-align:top;">&#8618;</a><textarea id="monkeycopy">'+ text +'</textarea>');
+        $('#monkeybox').html('<a href="'+url+'" style="vertical-align:top;">&#8618;</a><textarea id="monkeycopy">'+ addressee +'</textarea>');
     });
     /*$(document).leave('.component--page .page.module-client #client_details', function() {
         var $removedElem = $(this);
