@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.8.4
+// @version      1.8.5
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -104,7 +104,7 @@ function matchRuleShort(str, rule) {
         let url = new URL('http://hms.wolterdinger-hof.de/');//http://hms.wolterdinger-hof.de/'+urlget+'
         let urlparams = {
           module_id: 3,
-          view: invoice,
+          view: 'invoice',
           addressee: addressee,
           guest: client.firstname+' '+client.lastname,
           room: arr_rooms.join(', '),
