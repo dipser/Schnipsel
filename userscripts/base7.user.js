@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.8.1
+// @version      1.8.2
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -85,11 +85,11 @@ function matchRuleShort(str, rule) {
         // Eingabefelder Text zusammenfuegen
         var company = (client.company.length>0) ? client.company+'\n' : '';
         var countryCode = (client.countryCode.length>0) ? client.countryCode + ' - ' : '';
-        var text = ''
-            + company
-            + client.firstname +' '+ client.lastname +'\n'
-            + client.street +'\n'
-            + countryCode + client.postcode +' '+ client.city;
+        var text = '' +
+            company +
+            client.firstname +' '+ client.lastname +'\n'+
+            client.street +'\n'+
+            countryCode + client.postcode +' '+ client.city;
 
         var addressee = text.replace(/\r\n|\n/g, "%0A");
 
