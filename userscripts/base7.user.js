@@ -122,7 +122,7 @@ var printstyle = `
         };
         Object.keys(urlparams).forEach(key => url.searchParams.append(key, urlparams[key]));
       
-        $('#monkeybox').html('<a href="'+url+'" style="vertical-align:top;">&#8618;</a><textarea id="monkeycopy">'+ addressee +'</textarea>');
+        $('#monkeybox').html('<a href="'+url+'" target="_blank" style="vertical-align:top;">&#8618;</a><textarea id="monkeycopy">'+ addressee +'</textarea>');
     });
     /*$(document).leave('.component--page .page.module-client #client_details', function() {
         var $removedElem = $(this);
