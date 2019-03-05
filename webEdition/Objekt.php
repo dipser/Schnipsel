@@ -29,6 +29,7 @@ $obj->setElement('ObjektFelder', serialize(array( // Multi-Objekt
 	'max'     => 0,
 	'objects' => array(1,2,3) // Alle IDs auf die verwiesen werden soll
 )));
+$obj->setElement('LinkInternFeld', array('id'=>12, 'href'=>'', 'text'=>'Linktext', 'type':'int', 'ctype'=>'text'));
 $obj->setElement('we_object_1', 6); // Einzel-Objekt
 $obj->we_save(); $obj->we_publish(); // Bei neuem Objekt.
 //$obj->PublWhenSave = 1; $obj->we_save(1); // Bei altem Objekt. / 1=Resave
