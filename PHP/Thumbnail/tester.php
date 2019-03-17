@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 
 function build($type, $conf) {  print_r($conf);echo '<br>';
   include_once 'thumb.class.php';
-  //$id = $conf['id'];
-  //$filename = VEVI_DIR_UPLOADS . $this->upload_id_to_path($id);
+
   $filename = dirname(__FILE__).'/example.jpg';
 
   $t = new ThumbImage($filename);
