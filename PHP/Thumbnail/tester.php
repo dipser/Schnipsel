@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 function build($type, $conf) {  print_r($conf);echo '<br>';
-  include_once '../thumb.class.php';
+  include_once 'thumb.class.php';
   //$id = $conf['id'];
   //$filename = VEVI_DIR_UPLOADS . $this->upload_id_to_path($id);
   $filename = dirname(__FILE__).'/example.jpg';
@@ -19,7 +19,7 @@ function build($type, $conf) {  print_r($conf);echo '<br>';
     $t->setSize($conf['size']);
   }
   /*
-  3. bild verschieben zum fokuspunkt/position
+  bild verschieben zum fokuspunkt/position
     if position = center center -> x und y in px berechnen
     if position = 10% 10% -> x und y in px berechnen
     verschieben soweit es geht!
