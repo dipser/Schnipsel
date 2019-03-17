@@ -2,7 +2,7 @@
 Hinzufügen von Submodules/Verlinkungen
 
 $ git submodule add https://dipser@bitbucket.org/bitfertig/php_thumbnails.git vevi/lib/php_thumbnails
-Cloning into '/Applications/MAMP/htdocs/Gits/Website/vevi/lib/php_thumbnails'...
+Cloning into '/.../vevi/lib/php_thumbnails'...
 remote: Counting objects: 9, done.
 remote: Compressing objects: 100% (8/8), done.
 remote: Total 9 (delta 0), reused 0 (delta 0)
