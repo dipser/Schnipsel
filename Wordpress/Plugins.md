@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ```
 
 
-# Wordpress erweitern (add_action)
+## Wordpress erweitern (add_action)
 
 
 
@@ -45,7 +45,7 @@ add_action( 'wp_footer', 'your_function' );
 //add_action('init', 'runOnInit', 10, 0);
 ```
 
-# Liste von nützlichen Funktionen
+## Liste von nützlichen Funktionen
 
 ```php
 get_bloginfo('url') // http://domain.com/public/
