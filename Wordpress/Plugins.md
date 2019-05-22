@@ -75,4 +75,5 @@ wp_normalize_path(plugin_dir_url(__FILE__).'/assets/img/file.svg') // => /wp-con
 wp_normalize_path(plugins_url('/assets/img/file.svg', __FILE__)) // => /wp-content/plugins/assets/img/file.svg
 wp_get_current_user() // => WP_User
 $user = new WP_User( 1 ); // => WP_User
+do_shortcode("[shortcode]") // Führ einen shortcode aus
 ```
