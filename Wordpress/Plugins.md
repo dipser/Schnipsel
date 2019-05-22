@@ -47,7 +47,7 @@ add_action( 'wp_footer', 'your_function' );
 
 ```php
 function add_my_css_and_my_js_files(){
-    // wp_enqueue_script('your-script-name', $this->urlpath . '/your-script-filename.js', array('jquery'), '1.2.3', true);
+    wp_enqueue_script('your-script-name', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), '1.2.3', true);
     wp_enqueue_style('your-stylesheet-name', plugins_url('/assets/css/style.css', __FILE__), false, '1.0.0', 'all');
 }
 add_action( 'wp_enqueue_scripts', 'add_my_css_and_my_js_files' );
