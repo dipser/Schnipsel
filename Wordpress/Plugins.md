@@ -34,8 +34,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ## Wordpress erweitern (add_action)
 
-
-
 ```php
 function your_function() {
     echo '<p>INSERTED</p>';
@@ -43,6 +41,16 @@ function your_function() {
 add_action( 'wp_footer', 'your_function' );
 //add_action('plugins_loaded', 'runOnPluginsLoaded');
 //add_action('init', 'runOnInit', 10, 0);
+```
+
+## CSS und JS einbinden
+
+```php
+function add_my_css_and_my_js_files(){
+    // wp_enqueue_script('your-script-name', $this->urlpath . '/your-script-filename.js', array('jquery'), '1.2.3', true);
+    wp_enqueue_style('your-stylesheet-name', plugins_url('/assets/css/style.css', __FILE__), false, '1.0.0', 'all');
+}
+add_action( 'wp_enqueue_scripts', 'add_my_css_and_my_js_files' );
 ```
 
 ## Liste von nützlichen Funktionen
