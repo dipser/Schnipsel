@@ -39,8 +39,8 @@ function your_function() {
     echo '<p>INSERTED</p>';
 }
 add_action( 'wp_footer', 'your_function' );
-//add_action('plugins_loaded', 'runOnPluginsLoaded');
-//add_action('init', 'runOnInit', 10, 0);
+//add_action('plugins_loaded', 'run_on_plugins_loaded');
+//add_action('init', 'run_on_init', 10, 0);
 ```
 
 ## CSS und JS einbinden
