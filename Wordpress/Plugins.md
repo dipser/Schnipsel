@@ -76,4 +76,5 @@ wp_normalize_path(plugins_url('/assets/img/file.svg', __FILE__)) // => /wp-conte
 wp_get_current_user() // => WP_User
 $user = new WP_User( 1 ); // => WP_User
 do_shortcode("[shortcode]") // Führt einen shortcode aus
+current_user_can('activate_plugins') // => Admin
 ```
