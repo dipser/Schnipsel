@@ -2,7 +2,7 @@
 
 ## Beispiel Plugin-Starter-Datei:
 
-Lege einen Ordner unter /wp-content/plugins/ mit dem Namen des Plugins an. Erstelle darin eine PHP-Datei z.B. main.php.
+Lege einen Ordner unter /wp-content/plugins/ mit dem Namen deines Plugins an. Erstelle darin eine PHP-Datei z.B. main.php.
 
 ```php
 <?php
