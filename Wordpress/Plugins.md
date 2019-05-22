@@ -1,5 +1,8 @@
 # Plugins
 
+## Beispiel Plugin-Starter-Datei:
+
+Lege einen Ordner unter /wp-content/plugins/ mit dem Namen des Plugins an. Erstelle darin eine PHP-Datei z.B. main.php.
 
 ```php
 <?php
@@ -29,22 +32,26 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ```
 
 
-# add_action
+# Wordpress erweitern (add_action)
 
+
+
+```
 function your_function() {
     echo '<p>INSERTED</p>';
 }
 add_action( 'wp_footer', 'your_function' );
 //add_action('plugins_loaded', 'runOnPluginsLoaded');
 //add_action('init', 'runOnInit', 10, 0);
-
+```
 
 # Liste von nützlichen Funktionen
 
 ```php
-get_bloginfo('url')
-.wp_normalize_path(plugin_dir_url(__FILE__).'/assets/img/file.svg')
-wp_normalize_path(plugins_url('/assets/img/file.svg', __FILE__))
-wp_get_current_user()
-$user = new WP_User( 1 );
+get_bloginfo('url') // http://domain.com/public/
+wp_normalize_path('path/path\path//file.svg') // => path/path/path/file.svg
+wp_normalize_path(plugin_dir_url(__FILE__).'/assets/img/file.svg') // => /wp-content/plugins/assets/img/file.svg
+wp_normalize_path(plugins_url('/assets/img/file.svg', __FILE__)) // => /wp-content/plugins/assets/img/file.svg
+wp_get_current_user() // => WP_User
+$user = new WP_User( 1 ); // => WP_User
 ```
