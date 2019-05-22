@@ -53,6 +53,19 @@ function add_my_css_and_my_js_files(){
 add_action( 'wp_enqueue_scripts', 'add_my_css_and_my_js_files' );
 ```
 
+## Shortcodes
+
+```php
+function func_productimages( $atts, $content = "" ) {
+    $sc = '...';
+	return $sc;
+}
+add_shortcode( 'productimages', 'func_productimages' );
+
+//echo do_shortcode("[shortcode]"); // via PHP an geeigneter Stelle ausführen
+```
+
+
 ## Liste von nützlichen Funktionen
 
 ```php
