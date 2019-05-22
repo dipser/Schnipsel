@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ```php
 function your_function() {
-    echo '<p>INSERTED</p>';
+	echo '<p>INSERTED</p>';
 }
 add_action( 'wp_footer', 'your_function' );
 //add_action('plugins_loaded', 'run_on_plugins_loaded');
@@ -47,8 +47,8 @@ add_action( 'wp_footer', 'your_function' );
 
 ```php
 function add_my_css_and_my_js_files(){
-    wp_enqueue_script('your-script-name', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), '1.2.3', true);
-    wp_enqueue_style('your-stylesheet-name', plugins_url('/assets/css/style.css', __FILE__), false, '1.0.0', 'all');
+	wp_enqueue_script('your-script-name', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), '1.2.3', true);
+	wp_enqueue_style('your-stylesheet-name', plugins_url('/assets/css/style.css', __FILE__), false, '1.0.0', 'all');
 }
 add_action( 'wp_enqueue_scripts', 'add_my_css_and_my_js_files' );
 ```
@@ -57,7 +57,7 @@ add_action( 'wp_enqueue_scripts', 'add_my_css_and_my_js_files' );
 
 ```php
 function func_productimages( $atts, $content = "" ) {
-    $sc = '...';
+	$sc = '...';
 	return $sc;
 }
 add_shortcode( 'productimages', 'func_productimages' );
