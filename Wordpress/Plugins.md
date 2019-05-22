@@ -37,6 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
 ```
+<?php
 function your_function() {
     echo '<p>INSERTED</p>';
 }
@@ -48,6 +49,7 @@ add_action( 'wp_footer', 'your_function' );
 # Liste von nützlichen Funktionen
 
 ```php
+<?php
 get_bloginfo('url') // http://domain.com/public/
 wp_normalize_path('path/path\path//file.svg') // => path/path/path/file.svg
 wp_normalize_path(plugin_dir_url(__FILE__).'/assets/img/file.svg') // => /wp-content/plugins/assets/img/file.svg
