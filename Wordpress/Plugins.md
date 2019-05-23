@@ -79,6 +79,7 @@ add_shortcode( 'productimages', 'func_productimages' );
 ## Liste nützlicher Funktionen
 
 ```php
+site_url() // http://domain/public
 get_bloginfo('url') // http://domain.com/public/
 wp_normalize_path('path/path\path//file.svg') // => path/path/path/file.svg
 wp_normalize_path(plugin_dir_url(__FILE__).'/assets/img/file.svg') // => /wp-content/plugins/assets/img/file.svg
@@ -89,4 +90,5 @@ do_shortcode("[shortcode]") // Führt einen shortcode aus
 current_user_can('activate_plugins') // => Admin
 get_query_var('pagename') // Request: /mein-konto/view-order/6070 = Querystring: pagename=mein-konto&view-order=6070 => mein-konto
 $upload_info = wp_upload_dir(); // => Array ( [path] => /.../wp-content/uploads/2019/05 [url] => http://.../wp-content/uploads/2019/05 [subdir] => /2019/05 [basedir] => /.../wp-content/uploads [baseurl] => http://.../wp-content/uploads [error] => )
+
 ```
