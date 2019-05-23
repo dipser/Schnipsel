@@ -66,7 +66,7 @@ add_shortcode( 'productimages', 'func_productimages' );
 ```
 
 
-## Liste von nützlichen Funktionen
+## Liste nützlicher Funktionen
 
 ```php
 get_bloginfo('url') // http://domain.com/public/
