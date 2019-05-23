@@ -43,6 +43,16 @@ add_action( 'wp_footer', 'your_function' );
 //add_action('init', 'run_on_init', 10, 0);
 ```
 
+
+## Hook: Plugin aktivierung
+
+```php
+function myplugin_activate() {
+    // ...
+}
+register_activation_hook( __FILE__, 'myplugin_activate' );
+```
+
 ## CSS und JS einbinden
 
 ```php
