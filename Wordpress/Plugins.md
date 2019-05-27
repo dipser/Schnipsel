@@ -75,6 +75,9 @@ add_shortcode( 'productimages', 'func_productimages' );
 //echo do_shortcode("[shortcode]"); // via PHP an geeigneter Stelle ausführen
 ```
 
+## Datenbankaufbau
+
+https://codex.wordpress.org/Database_Description
 
 ## Liste nützlicher Funktionen
 
