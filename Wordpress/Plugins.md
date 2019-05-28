@@ -47,30 +47,40 @@ add_action( 'wp_footer', 'your_function' );
 ## Hook: Plugin aktivierung
 
 ```php
-function myplugin_activate() {
+function MYPLUGIN_activate() {
     // ...
 }
-register_activation_hook( __FILE__, 'myplugin_activate' );
+register_activation_hook( __FILE__, 'MYPLUGIN_activate' );
 ```
 
 ## CSS und JS einbinden
 
 ```php
-function add_my_css_and_my_js_files(){
+function MYPLUGIN_frontend_enqueue_scripts(){
 	wp_enqueue_script('your-script-name', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), '1.2.3', true);
 	wp_enqueue_style('your-stylesheet-name', plugins_url('/assets/css/style.css', __FILE__), false, '1.0.0', 'all');
 }
-add_action( 'wp_enqueue_scripts', 'add_my_css_and_my_js_files' );
+add_action('wp_enqueue_scripts', 'MYPLUGIN_frontend_enqueue_scripts');
+```
+
+oder im Adminbereich:
+
+```php
+function MYPLUGIN_admin_enqueue_scripts($hook) {
+    wp_enqueue_style('wcpp_admin_css_styles', wp_normalize_path(plugin_dir_url(__FILE__).'/assets/css/styles-admin.css'));
+    wp_enqueue_script('wcpp_admin_js_scripts', wp_normalize_path(plugin_dir_url(__FILE__).'/assets/js/scripts-admin.js'));
+}
+add_action('admin_enqueue_scripts', 'MYPLUGIN_admin_enqueue_scripts');
 ```
 
 ## Shortcodes
 
 ```php
-function func_productimages( $atts, $content = "" ) {
+function MYPLUGIN_myshortcode( $atts, $content = "" ) {
 	$sc = '...';
 	return $sc;
 }
-add_shortcode( 'productimages', 'func_productimages' );
+add_shortcode('myshortcode', 'MYPLUGIN_myshortcode');
 
 //echo do_shortcode("[shortcode]"); // via PHP an geeigneter Stelle ausführen
 ```
@@ -78,20 +88,20 @@ add_shortcode( 'productimages', 'func_productimages' );
 ## Ajax calls
 
 ```php
-function MYACTIONNAME() {
+function MYPLUGIN_MYACTION() {
 	global $wpdb; // this is how you get access to the database
 
 	echo 'Hello Internet.';
 
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
-add_action( 'wp_ajax_MYACTIONNAME', 'MYACTIONNAME' );
+add_action('wp_ajax_MYPLUGIN_MYACTION', 'MYPLUGIN_MYACTION');
 ```
 
 ```js
 jQuery(document).ready(function($) {
 	jQuery.post(ajaxurl, {
-		'action': 'MYACTIONNAME',
+		'action': 'MYPLUGIN_MYACTION',
 		'key': 'val'
 	}, function(response) { // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
 		console.log('Got this from the server: ' + response);
