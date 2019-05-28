@@ -93,5 +93,5 @@ do_shortcode("[shortcode]") // Führt einen shortcode aus
 current_user_can('activate_plugins') // => Admin
 get_query_var('pagename') // Request: /mein-konto/view-order/6070 = Querystring: pagename=mein-konto&view-order=6070 => mein-konto
 $upload_info = wp_upload_dir(); // => Array ( [path] => /.../wp-content/uploads/2019/05 [url] => http://.../wp-content/uploads/2019/05 [subdir] => /2019/05 [basedir] => /.../wp-content/uploads [baseurl] => http://.../wp-content/uploads [error] => )
-
+update_option( 'key', 'val' ); get_option( 'key' ); // => val
 ```
