@@ -75,7 +75,32 @@ add_shortcode( 'productimages', 'func_productimages' );
 //echo do_shortcode("[shortcode]"); // via PHP an geeigneter Stelle ausführen
 ```
 
-## Datenbankaufbau
+## Ajax calls
+
+```php
+function MYACTIONNAME() {
+	global $wpdb; // this is how you get access to the database
+
+	echo 'Hello Internet.';
+
+	wp_die(); // this is required to terminate immediately and return a proper response
+}
+add_action( 'wp_ajax_MYACTIONNAME', 'MYACTIONNAME' );
+```
+
+```js
+jQuery(document).ready(function($) {
+	jQuery.post(ajaxurl, {
+		'action': 'MYACTIONNAME',
+		'key': 'val'
+	}, function(response) { // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+		console.log('Got this from the server: ' + response);
+	});
+});
+```
+
+
+## Datenbankstruktur
 
 https://codex.wordpress.org/Database_Description
 
