@@ -142,4 +142,5 @@ update_option( 'key', 'val' ); get_option( 'key' ); // => val
 __('MYTEXT', 'my-plugins-textdoamin') // returns translation
 _e('MYTEXT', 'my-plugins-textdoamin') // echos translation
 printf( esc_html__( 'We deleted %d spam messages.', 'my-plugins-textdomain' ), $count ) // Übersetzung mit Vars
+printf( esc_html( _n( 'We deleted %d spam message.', 'We deleted %d spam messages.', $count, 'my-plugins-textdomain'  ) ), $count ); // Plurals
 ```
