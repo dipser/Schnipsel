@@ -14,6 +14,7 @@ Lege einen Ordner unter /wp-content/plugins/ mit dem Namen deines Plugins an. Er
  * Author URI: [Insert Your URL]
  * Version: 1.0
  * Text Domain: plugin-name
+ * Domain Path: /languages/
  *
  * Copyright: (c) 2019 [Insert Your Name] (your@email.com)
  *
@@ -44,13 +45,22 @@ add_action( 'wp_footer', 'your_function' );
 ```
 
 
-## Hook: Plugin aktivierung
+## Hook: Plugin Aktivierung
 
 ```php
 function MYPLUGIN_activate() {
     // ...
 }
 register_activation_hook( __FILE__, 'MYPLUGIN_activate' );
+```
+
+## Sprache
+
+```php
+function MYPLUGIN_load_plugin_textdomain() {
+    load_plugin_textdomain( 'plugin-name', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'MYPLUGIN_load_plugin_textdomain' );
 ```
 
 ## CSS und JS einbinden
@@ -129,4 +139,6 @@ current_user_can('activate_plugins') // => Admin
 get_query_var('pagename') // Request: /mein-konto/view-order/6070 = Querystring: pagename=mein-konto&view-order=6070 => mein-konto
 $upload_info = wp_upload_dir(); // => Array ( [path] => /.../wp-content/uploads/2019/05 [url] => http://.../wp-content/uploads/2019/05 [subdir] => /2019/05 [basedir] => /.../wp-content/uploads [baseurl] => http://.../wp-content/uploads [error] => )
 update_option( 'key', 'val' ); get_option( 'key' ); // => val
+__('MYTEXT', 'my-plugin-textdoamin') // returns translation
+_e('MYTEXT', 'my-plugin-textdoamin') // echos translation
 ```
