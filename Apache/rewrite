@@ -1,0 +1,6 @@
+# Extract a pair "key:value" and append it to the query string
+RewriteRule ^contact/([^:]+):([^/]+)/?(.*)$ /contact/$3?$1=$2 [L,QSA]
+
+# We're done: rewrite to index.php
+RewriteCond %{QUERY_STRING} !^$
+RewriteRule ^contact/$ /index.php?site=contact [L,QSA]
