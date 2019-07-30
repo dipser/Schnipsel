@@ -1,7 +1,12 @@
 # SQL
 
-If you develop an application that reads data more often than writing (example: search engine), choose MyISAM storage engine.
-If you develop an application that writes data more often than reading (example: real-time bank transactions), choose INNODB storage engine.
+## Datenbank-Engine
+
+### Leselastig
+MyISAM storage engine
+
+### Schreibelastig
+INNODB storage engine
 
 
 ## LIKE
