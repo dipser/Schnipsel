@@ -9,6 +9,13 @@ MyISAM storage engine
 INNODB storage engine
 
 
+## Standardfelder für Zeitstempel
+```sql
+ALTER TABLE `mytable`
+	ADD COLUMN `_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	ADD COLUMN `_updated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+```
+
 ## LIKE
 ```sql
 SELECT * 
