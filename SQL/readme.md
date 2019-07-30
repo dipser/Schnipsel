@@ -19,14 +19,14 @@ ALTER TABLE `mytable`
 ## LIKE
 ```sql
 SELECT * 
-FROM table
+FROM `mytable`
 WHERE column LIKE '%". $querystring_special_chars ."%'
 ```
 
 ## SET
 ```sql
 SELECT * 
-FROM table
+FROM `mytable`
 WHERE FIND_IN_SET('". $querystring ."', keywords) <> 0
 ```
 
