@@ -1,0 +1,37 @@
+
+
+<dialog id="emailsuccess" ref="emailsuccess">
+    <p>E-Mails wurden versendet.</p>
+    <button @click="$refs.emailsuccess.close()">Schließen</button>
+</dialog>
+
+
+<style>
+dialog {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  margin:0 auto;
+  padding:15px;
+  background-color: #4f8a10;
+}
+dialog::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+dialog button {
+    border:1px solid white;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 3px 5px;
+    color: white;
+}
+</style>
+
+<script>
+this.$refs.emailsuccess.showModal();
+</script>
