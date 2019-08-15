@@ -1,0 +1,14 @@
+a:focus, a:hover {
+    background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#da1b60));
+    background: linear-gradient(to right,#ff8a00,#da1b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-shadow: none;
+}
+a:focus, .on-light a:hover {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #ccc;
+    text-decoration-color: #ccc;
+}
