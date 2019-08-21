@@ -1,0 +1,3 @@
+
+# Zugriff auf den Ordner pdf verbieten
+RewriteRule ^pdf/ - [F,L]
