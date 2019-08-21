@@ -10,5 +10,13 @@
 #php_value upload_max_filesize 20M
 
 
+# Key-Value Rewrite
+# Extract a pair "key:value" and append it to the query string
+RewriteRule ^contact/([^:]+):([^/]+)/?(.*)$ /contact/$3?$1=$2 [L,QSA]
+# We're done: rewrite to index.php
+RewriteCond %{QUERY_STRING} !^$
+RewriteRule ^contact/$ /index.php?site=contact [L,QSA]
+
+
 # Zugriff auf den Ordner pdf verbieten
 RewriteRule ^pdf/ - [F,L]
