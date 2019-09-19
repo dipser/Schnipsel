@@ -60,3 +60,9 @@ npm install        #
 npm run dev        # once
 npm run watch      # always on changes
 
+
+## Artisan
+
+php artisan make:constroller PostsController
+php artisan make:model Post -m            #Mit Migration in database/migrations/...
+
