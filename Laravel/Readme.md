@@ -4,8 +4,10 @@
 ## Visual Studio Code: Terminal
 
 Set Windows internal Terminal to:
+Go to Datei > Einstellungen > Einstellungen >Features > Terminal> Windows Exec
 C:\Program Files\Git\bin\bash.exe
 
+Anzeigen > Terminal (Strg + ö)
 
 ## Projekt mit composer anlegen
 
