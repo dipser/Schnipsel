@@ -66,3 +66,25 @@ npm run watch      # always on changes
 php artisan make:constroller PostsController
 php artisan make:model Post -m            #Mit Migration in database/migrations/...
 
+
+
+
+php artisan migrate
+
+php artisan tinker
+App\Post::count()
+$post = new App\Post();
+$post->title = 'Post One';
+$post->body = 'Post Body';
+$post->save();
+
+-- Mit standard methods
+php artisan make:crontroller PostsController --resource
+
+
+php artisan route:list
+
+
+Route::resource('posts', 'PostsController'); // !!!
+
+https://www.youtube.com/watch?v=emyIlJPxZr4
