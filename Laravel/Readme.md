@@ -143,6 +143,28 @@ $user_id = auth()->user()->id; // currently loggedin user
 ```
 
 
+## Model Relationship
+
+/app/User.php
+public function posts() {
+  return $this->belongsTo('App\User');
+}
+
+/app/User.php
+public function posts() {
+  return $this->hasMany('App\Post');
+}
+
+/app/Http/Controllers/DashboardController.php
+public function index() {
+  $user_id = auth()->user()->id;
+  $user = User::find($user_id);
+  return view('dashboard')->with('posts', $user->posts); // see /app/User.php , we only see posts from this user
+}
+
+
+## Access control
+
 ## Functions
 
 ```php
