@@ -164,6 +164,63 @@ public function index() {
 
 
 ## Access control
+PostsController
+public function __construct() {
+  $this->middleware('auth', ['except' => ['index', 'show']]);
+}
+
+@if(Auth::guest())
+@endif
+
+@if(Auth::user()->id == $post->user->id)
+@endif
+
+In methods:
+if (auth()->user()->id !== $post->user_id) {
+  return redirect('/posts')->with('error', 'Unauthorized Page');
+} 
+
+
+## File upload
+
+php artisan make:migration add_cover_image_to_posts
+
+```php
+public function up() {
+  Schema::table('posts', function($table){
+    $table->string('cover_image'); // add field
+  });
+}
+public function down() {
+  Schema::table('posts', function($table){
+    $table->dropColumn('cover_image'); // drop field
+  });
+}
+```
+
+$this->validate($request, [
+  'title' => 'required',
+  'cover_image' => 'image|nullable|max:1999'
+]);
+
+if($requust->hasFile('cover_image')){
+  $filenameWithExt = $request->file('cover_image')->getClientOriginalImage();
+  $filename = pathinfo($filenameWithExt, PATH_FILENAME);
+  $extension = $request->file('cover_image')->getOriginalClientExtension()
+  $fileNameToStore = $filename.'_'.time().'.'.$extension;
+  $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore); // => /storage/app/public/cover_images/
+  
+} else {
+  $fileNameToStore = 'noimage.jpg'
+} 
+
+php artisan storage:ink
+
+```bash
+php artisan migrate                 # calls up()
+php artisan migrate rollback        # calls down()
+```
+
 
 ## Functions
 
