@@ -14,7 +14,13 @@ Anzeigen > Terminal (Strg + ö)
 ```
 composer create-project laravel/laravel <appname>
 ```
-  
+
+
+## NPM
+npm install        #
+npm run dev        # once
+npm run watch      # always on changes
+
 
 ## Blade
 
@@ -45,7 +51,11 @@ composer create-project laravel/laravel <appname>
 @foreach($collection as $item)
 {{config('app.name', 'default')}}
 {{asset('css/app.css')}}
+{{!!$html_allowed!!}}
 ```
+
+
+## Controller
 
 
 PagesController.php
@@ -55,10 +65,17 @@ return view('pages.index')->with('title', $title)
 return view('pages.index')->with(['title' => $title])
 ```
 
-## NPM
-npm install        #
-npm run dev        # once
-npm run watch      # always on changes
+## CRUD
+
+use DB;
+$posts = DB:select('...');
+
+use App\Post;
+$posts = Post::all();
+$posts = Post::sortBy('created_at', 'desc')->get();
+$posts = Post::all()->paginate(); // {{$posts->links()}}
+$posts = Post::all();
+
 
 
 ## Artisan
@@ -88,3 +105,46 @@ php artisan route:list
 Route::resource('posts', 'PostsController'); // !!!
 
 https://www.youtube.com/watch?v=emyIlJPxZr4
+
+
+
+## Auth
+
+```bash
+php artisan make:auth
+```
+
+
+Erstellt neue DB migration file unter database/migrations/
+```bash
+php artisan make:migration add_user_id_to_posts
+```
+
+```php
+public function up() {
+  Schema::table('posts', function($table){
+    $table->integer('user_id'); // add field
+  });
+}
+public function down() {
+  Schema::table('posts', function($table){
+    $table->dropColumn('user_id'); // drop field
+  });
+}
+```
+
+```bash
+php artisan migrate                 # calls up()
+php artisan migrate rollback        # calls down()
+```
+
+```php
+$user_id = auth()->user()->id; // currently loggedin user
+```
+
+
+## Functions
+
+```php
+dd() // die and dump
+```
