@@ -227,6 +227,71 @@ php artisan migrate                 # calls up()
 php artisan migrate rollback        # calls down()
 ```
 
+## Eloquent
+
+php artisan make:model Post
+
+php artisan tinker
+
+```
+DB::enableQueryLog(); // Enable Query Log
+...
+DB::getQueryLog(); // => Array of all queries
+```
+
+php artisan migrate:fresh               # db-tabellen neu anlegen
+
+
+return $this->hasOne(Post::class); // z.B. user has one Post
+
+public function posts() {
+  return $this->hasMany(Post::class); // z.B. user has many Posts
+}
+//return $this->hasMany(Post::class, 'different_id');
+//return $this->belongsTo(User::class); // z.B. comment belongs to post
+//return $this->belongsToMany(Post::class); // z.B. Tags belongs to many posts
+
+
+```bash
+# erstelle eine assozierte/relationship/pivot tabelle der beiden tabellen post und tag
+php artisan make:migration create_post_tag_table --create=post_tag
+```
+
+//return $this->belongsToMany(Post::class, 'different_table_name_than_standard'); // z.B. Tags belongs to many posts
+
+->attach($id)
+->detach($id)
+->attach([...])
+->attach($obj_instance)
+
+//return $this->belongsToMany(Post::class)->withTimestamps();
+
+migration file:
+Schema::create('post_tag', function(Blueprint $table){
+  $table->primary(['post_id', 'tag_id']); // => together it is the primary key
+  ...
+  $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+  $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+  $table->timestamps();
+}):
+
+
+### hasManyThrough(): innerjoin where ...
+return $this->hasManyThrough(Post::class, User:: class)
+
+
+### Polymorphic relations
+
+Unbekannter typ
+
+"morph", "watchable"
+
+
+## Laravel-Debugbar
+
+Alle SQL Befehle und Co einsehen
+
+
 
 ## Functions
 
