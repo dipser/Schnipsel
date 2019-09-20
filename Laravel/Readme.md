@@ -204,9 +204,9 @@ $this->validate($request, [
 ]);
 
 if($requust->hasFile('cover_image')){
-  $filenameWithExt = $request->file('cover_image')->getClientOriginalImage();
+  $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
   $filename = pathinfo($filenameWithExt, PATH_FILENAME);
-  $extension = $request->file('cover_image')->getOriginalClientExtension()
+  $extension = $request->file('cover_image')->getClientOriginalExtension()
   $fileNameToStore = $filename.'_'.time().'.'.$extension;
   $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore); // => /storage/app/public/cover_images/
   
@@ -214,7 +214,13 @@ if($requust->hasFile('cover_image')){
   $fileNameToStore = 'noimage.jpg'
 } 
 
-php artisan storage:ink
+php artisan storage:link                # Erstellt symlink im öffentlichen Ordner
+
+<img src="/storage/cover_images/{{$post->cover_image}}">
+
+use Illuminate\Support\Facades\Storage;
+Storage::delete('public/cover_images/'.$post->cover_image);
+
 
 ```bash
 php artisan migrate                 # calls up()
