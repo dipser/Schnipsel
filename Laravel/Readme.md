@@ -1,13 +1,16 @@
 # Laravel (mit Windows und Visual Studio Code)
 
 
-## Visual Studio Code: Terminal
+## Visual Studio Code: Terminal nutzen
 
-Set Windows internal Terminal to:
-Go to Datei > Einstellungen > Einstellungen >Features > Terminal> Windows Exec
-C:\Program Files\Git\bin\bash.exe
+**Tastaturkombination: Strg + ö**
 
-Anzeigen > Terminal (Strg + ö)
+### Besseres Terminal installieren:
+In Visual Studio Code gehe:
+    Datei > Einstellungen > Einstellungen >Features > Terminal> Windows Exec
+Füge nun folgenden Pfad ein:
+    C:\Program Files\Git\bin\bash.exe
+
 
 ## Projekt mit composer anlegen
 
@@ -27,6 +30,24 @@ php artisan serve --port=8080
 ```bash
 cd C:\Webentwicklung && cd <appname> && code . && php artisan serve
 ```
+
+DB einrichten
+ 
+Datei .env bearbeiten.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=...
+DB_USERNAME=...
+DB_PASSWORD=...
+```
+
+```bash
+php artisan migrate:fresh
+```
+Bei Fehlern ggfs. die DB Einstellungen ändern
+charset to utf8 and the collation to utf8_general_ci in config/database.php
 
 
 ## NPM
