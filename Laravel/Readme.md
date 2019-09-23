@@ -1,4 +1,4 @@
-# Laravel
+# Laravel (mit Windows und Visual Studio Code)
 
 
 ## Visual Studio Code: Terminal
@@ -11,8 +11,21 @@ Anzeigen > Terminal (Strg + ö)
 
 ## Projekt mit composer anlegen
 
-```
+
+Installation im Verzeichnis C:\Webentwicklung\<appname>
+```bash
+cd C:\Webentwicklung                               # Windows
 composer create-project laravel/laravel <appname>
+```
+
+Serving:
+```bash
+php artisan serve
+php artisan serve --port=8080
+```
+
+```bash
+cd C:\Webentwicklung && cd <appname> && code . && php artisan serve
 ```
 
 
