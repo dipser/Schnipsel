@@ -3,6 +3,8 @@
 
 ## Benötigte Software
 * Composer https://getcomposer.org/download/
+* Node.js
+* NPM
 
 
 
@@ -66,15 +68,23 @@ php artisan migrate:fresh
 
 
 
-## NPM
+## NPM starten
+
+Mit dem Node Package Manager (NPM) werden Komponenten nachgeladen und z.B. die SCSS Kompilierung gestartet:
+
+```bash
 npm install        #
-npm run dev        # once
-npm run watch      # always on changes
+npm run dev        # einmaliger Aufruf
+npm run watch      # überwacht Datei-Änderungen permanent
+```
+
 
 
 ## Blade
 
-/resources/views/layouts/app.blade.php
+Template Engine.
+
+/resources/views/layouts/master.blade.php
 ```
 ...
 @include('inc.navbar')
@@ -85,17 +95,14 @@ npm run watch      # always on changes
 
 /resources/views/pages/<pagename>.blade.php
 ```
-@extends('layouts.app')
-
+@extends('layouts.master')
+...
 @section('content')
-  ...
+...
 @endsection
-
 ```
 
-/resources/views/inc/navbar.blade.php
-
-
+Sonstiges:
 ```
 @if(true)
 @foreach($collection as $item)
@@ -105,8 +112,8 @@ npm run watch      # always on changes
 ```
 
 
-## Controller
 
+## Controller
 
 PagesController.php
 ```
