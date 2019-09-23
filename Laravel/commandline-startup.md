@@ -17,7 +17,7 @@ npm run watch
 
 Terminal Tab 3:
 ```bash
-php artisan make:constroller DocumentsController --resource
+php artisan make:controller DocumentsController --resource
 php artisan make:model Document -m
 php artisan make:factory DocumentFactory
 php artisan make:seeder DocumentsTableSeeder
