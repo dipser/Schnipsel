@@ -135,15 +135,33 @@ $posts = Post::all();
 
 
 
-## Artisan
+## Controller, Model, Migration (mit Artisan)
 
-php artisan make:constroller PostsController
-php artisan make:model Post -m            #Mit Migration in database/migrations/...
+### Dateien anlegen für Crontroller, Model und Migration
 
+```bash
+php artisan make:constroller PostsController --resource      # Mit Standard-Methoden
+php artisan make:model Post -m                               # Mit Migration in database/migrations/...
+```
 
+### Route in /routes/web.php:
+```php
+Route::resource('posts', 'PostsController'); // !!!
+```
 
+Controller in /app/Http/Controllers/ProductsController.php:
+```php
+...
+```
 
+Model:
+```php
+
+```
+
+```bash
 php artisan migrate
+```
 
 php artisan tinker
 App\Post::count()
@@ -152,14 +170,14 @@ $post->title = 'Post One';
 $post->body = 'Post Body';
 $post->save();
 
--- Mit standard methods
+-- 
 php artisan make:crontroller PostsController --resource
 
 
 php artisan route:list
 
 
-Route::resource('posts', 'PostsController'); // !!!
+
 
 https://www.youtube.com/watch?v=emyIlJPxZr4
 
@@ -347,6 +365,13 @@ Unbekannter typ
 ## Laravel-Debugbar
 
 Alle SQL Befehle und Co einsehen
+
+
+
+##
+php artisan make:seeder UsersTableSeeder     # Neuen Seeder anlegen unter (database/seeds/)
+php artisan db:seed                                # Alles seeden
+php artisan db:seed --class=ProductsTableSeeder    # Nur eins seeden
 
 
 
