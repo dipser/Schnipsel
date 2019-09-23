@@ -1,39 +1,53 @@
 # Laravel (mit Windows und Visual Studio Code)
 
 
+## Benötigte Software
+* Composer https://getcomposer.org/download/
+
+
+
 ## Visual Studio Code: Terminal nutzen
 
 **Tastaturkombination: Strg + ö**
 
 ### Besseres Terminal installieren:
-In Visual Studio Code gehe:
-    Datei > Einstellungen > Einstellungen >Features > Terminal> Windows Exec
-Füge nun folgenden Pfad ein:
-    C:\Program Files\Git\bin\bash.exe
+
+**In Visual Studio Code gehe:**
+
+Datei > Einstellungen > Einstellungen >Features > Terminal> Windows Exec
+    
+**Füge nun folgenden Pfad ein:**
+
+C:\Program Files\Git\bin\bash.exe
 
 
-## Projekt mit composer anlegen
 
+## Neues Projekt mit composer anlegen
 
-Installation im Verzeichnis C:\Webentwicklung\<appname>
+### Installation im Verzeichnis C:\Webentwicklung\<appname>
+
 ```bash
 cd C:\Webentwicklung                               # Windows
 composer create-project laravel/laravel <appname>
 ```
 
-Serving:
+### Serving
+
 ```bash
 php artisan serve
 php artisan serve --port=8080
 ```
 
+### Editor öffnen und Server starten
+
 ```bash
 cd C:\Webentwicklung && cd <appname> && code . && php artisan serve
 ```
 
-DB einrichten
+### DB einrichten
  
-Datei .env bearbeiten.
+Zunächst die Datei /.env bearbeiten:
+
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -43,11 +57,13 @@ DB_USERNAME=...
 DB_PASSWORD=...
 ```
 
+Und dann **frisch** migrieren:
+
 ```bash
 php artisan migrate:fresh
 ```
-Bei Fehlern ggfs. die DB Einstellungen ändern
-charset to utf8 and the collation to utf8_general_ci in config/database.php
+*Bei Fehlern ggfs. die DB Einstellungen ändern: charset auf utf8 und collation to utf8_unicode_ci in config/database.php*
+
 
 
 ## NPM
