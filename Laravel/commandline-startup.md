@@ -6,6 +6,8 @@ cd ~
 mkdir Laravel
 composer create-project laravel/laravel <appname>
 cd <appname>
+composer require laravel/ui --dev
+php artisan ui vue --auth
 npm install
 php artisan serve
 ```
