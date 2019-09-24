@@ -5,6 +5,7 @@
 * Composer https://getcomposer.org/download/
 * Node.js
 * NPM
+* PHP (Neueste Version) https://www.betterhostreview.com/turn-on-iis-windows-10.html
 
 
 
