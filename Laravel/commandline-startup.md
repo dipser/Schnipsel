@@ -25,3 +25,7 @@ php artisan make:factory DocumentFactory
 php artisan make:seeder DocumentsTableSeeder
 ```
 
+```bash
+php artisan db:seed
+#php artisan db:seed --class=ProductsTableSeeder
+```
