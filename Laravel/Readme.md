@@ -305,6 +305,10 @@ php artisan migrate rollback        # calls down()
 
 ## Eloquent
 
+- hasOne wenn das referenzierte model den foreign key hat
+- belongsTo wenn das aktuelle model den foreign key hat
+
+
 php artisan make:model Post
 
 php artisan tinker
@@ -381,3 +385,4 @@ php artisan db:seed --class=ProductsTableSeeder    # Nur eins seeden
 ```php
 dd() // die and dump
 ```
+
