@@ -25,8 +25,3 @@ php artisan make:factory DocumentFactory
 php artisan make:seeder DocumentsTableSeeder
 ```
 
-```bash
-php artisan make:auth
-```
-
-
