@@ -43,3 +43,10 @@ php artisan make:seeder DocumentsTableSeeder
 php artisan db:seed
 #php artisan db:seed --class=ProductsTableSeeder
 ```
+
+```bash
+php artisan config:cache       # create combination of config files into one file
+php artisan config:clear       # dump combination of config files
+```
+
+
