@@ -19,6 +19,9 @@ composer create-project laravel/laravel <appname>
 cd <appname>
 composer require laravel/ui --dev
 php artisan ui vue --auth
+composer require laravel/telescope
+php artisan telescope:install
+php artisan migrate
 npm install
 ```
 
@@ -37,6 +40,8 @@ php artisan make:controller DocumentsController --resource
 php artisan make:model Document -m
 php artisan make:factory DocumentFactory
 php artisan make:seeder DocumentsTableSeeder
+
+php artisan make:mail ExampleMail --markdown="mail.examplemail"
 ```
 
 ```bash
