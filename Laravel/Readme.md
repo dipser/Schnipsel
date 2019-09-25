@@ -6,6 +6,7 @@
 * Node.js
 * NPM
 * PHP (Neueste Version) https://www.betterhostreview.com/turn-on-iis-windows-10.html und https://www.iis.net/downloads/microsoft/web-platform-installer
+* Chrome JSON-Formatter Extension https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
 
 
 
