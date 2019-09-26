@@ -7,7 +7,7 @@ brew upgrade node                     # Mac
 composer selfupdate
 npm install -g npm                    # Mac
 npm install -g npm-windows-upgrade    # Windows
-brew install php@7.2                  # Mac
+brew install php@7.3                  # Mac
 brew install mysql                    # Mac
 ```
 
