@@ -45,6 +45,10 @@ php artisan make:mail ExampleMail --markdown="mail.examplemail"
 ```
 
 ```bash
+php artisan migrate:fresh --seed
+```
+
+```bash
 php artisan db:seed
 #php artisan db:seed --class=ProductsTableSeeder
 ```
