@@ -428,6 +428,8 @@ npm install material-design-icons
 
 ## Dialog
 
+https://github.com/GoogleChrome/dialog-polyfill
+
 ```bash
 npm i dialog-polyfill
 ```
