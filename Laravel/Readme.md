@@ -450,4 +450,11 @@ var deleteConfirmDialog = document.querySelector('dialog#deleteConfirmDialog');
 window.dialogPolyfill.registerDialog( deleteConfirmDialog );
 
 deleteConfirmDialog.showModal();
+deleteConfirmDialog.addEventListener('close', function (event) {
+    if (deleteConfirmDialog.returnValue == 'true') {
+        alert('TODO: Löschen!');
+    } else {
+        //
+    }
+});
 ```
