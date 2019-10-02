@@ -424,3 +424,28 @@ npm install material-design-icons
 <i class="material-icons">face</i>
 <i class="material-icons">edit</i>
 ```
+
+
+## Dialog
+
+```bash
+npm i dialog-polyfill
+```
+
+```html
+<dialog id="deleteConfirmDialog">
+    Wirklich löschen?
+    <form method="dialog">
+        <input type="submit" value="Löschen" />
+    </form>
+</dialog>
+```
+
+```js=app.js
+window.dialogPolyfill = require('dialog-polyfill').default;
+
+var deleteConfirmDialog = document.querySelector('dialog#deleteConfirmDialog');
+window.dialogPolyfill.registerDialog( deleteConfirmDialog );
+
+deleteConfirmDialog.showModal();
+```
