@@ -402,3 +402,7 @@ npm i --save @fortawesome/fontawesome-free
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 ```
+
+```html
+<i class="fa fa-edit"></i>
+```
