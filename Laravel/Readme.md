@@ -406,3 +406,21 @@ npm i --save @fortawesome/fontawesome-free
 ```html
 <i class="fa fa-edit"></i>
 ```
+
+
+## Material Design Icons
+
+https://material.io/resources/icons/
+
+```bash
+npm install material-design-icons
+```
+
+```scss
+@import '~material-design-icons/iconfont/material-icons.css';
+```
+
+```html
+<i class="material-icons">face</i>
+<i class="material-icons">edit</i>
+```
