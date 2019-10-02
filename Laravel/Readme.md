@@ -389,3 +389,16 @@ php artisan db:seed --class=ProductsTableSeeder    # Nur eins seeden
 dd() // die and dump
 ```
 
+
+## Font-Awesome
+
+```bash
+npm i --save @fortawesome/fontawesome-free
+```
+
+```scss
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+```
