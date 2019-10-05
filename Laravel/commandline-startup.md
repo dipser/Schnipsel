@@ -19,6 +19,7 @@ composer create-project laravel/laravel <appname>
 cd <appname>
 composer require laravel/ui --dev
 php artisan ui vue --auth
+composer require intervention/image
 composer require laravel/telescope
 php artisan telescope:install
 php artisan migrate
