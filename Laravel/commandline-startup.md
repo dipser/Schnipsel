@@ -11,6 +11,18 @@ brew install php@7.3                  # Mac
 brew install mysql                    # Mac
 ```
 
+Ändert sich die PHP Version nicht unterm Mac mit "php -v" füge folgedes ein in ~/.bash_profile:
+```
+#sudo nano ~/.bash_profile
+```
+
+```
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+```
+
+---
+
 ```bash
 cd ~
 mkdir Laravel
