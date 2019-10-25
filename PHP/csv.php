@@ -1,3 +1,4 @@
+<?php
 $raw_lines = trim('
 name
 line1
