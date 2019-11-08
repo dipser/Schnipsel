@@ -16,4 +16,10 @@ function getLatLong($address){
 	return $_coords;
 }
 
-?>
+
+
+
+// Bing
+//$xml = simplexml_load_file('https://dev.virtualearth.net/REST/v1/Locations?query='.str_replace(" ","+", $city).'&o=xml&key='.BING_MAPS_KEY);
+//$lati = $xml->ResourceSets->ResourceSet->Resources->Location->Point->Latitude;
+//$long = $xml->ResourceSets->ResourceSet->Resources->Location->Point->Longitude; 
