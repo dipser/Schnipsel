@@ -1,3 +1,3 @@
 <?php /* Checkbox-Simulation: Es wird 1 oder 0 gesendet. */ ?>
-<input type="text" name="field" value="<?=$field?>">
+<input type="hidden" name="field" value="<?=$field?>">
 <input type="checkbox" id="field" <?=($field ? ' checked ' : '')?> onchange="this.previousElementSibling.value=this.checked ? 1 : 0;">
