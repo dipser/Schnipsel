@@ -2,10 +2,10 @@
 
 
 ## Benötigte Software
+* Chocolatey ( PHP wird nach C:\tools installiert. Ggfs. muss die Umgebungsvariable auf die neue Version angepasst werden. Einstellungen > Systemumgebungsvariablen > Umgebungsvariablen > Systemvariablen > Path > Bearbeiten... )
 * Composer https://getcomposer.org/download/
 * Node.js
 * NPM
-* PHP (Neueste Version) https://www.betterhostreview.com/turn-on-iis-windows-10.html und https://www.iis.net/downloads/microsoft/web-platform-installer
 
 ## Optionale Software
 * Chrome JSON-Formatter Extension https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
