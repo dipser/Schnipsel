@@ -1,0 +1,10 @@
+/**
+ * Stretch von .col to its maximum.
+ *
+ * Usage:
+ * <div class="row"><div class="col col-grow-1">A</div><div class="col col-grow-0">B</div></div>
+ * Result:
+ * [A-------------A|B]
+ */
+.col-grow-1 { flex-grow:1; flex-basis:auto; width:auto; }
+.col-grow-0 { flex-basis:auto; width:auto; }
