@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Base7
 // @namespace    http://vegvisir.de/
-// @version      1.9.0
+// @version      1.9.1
 // @updateURL    https://raw.githubusercontent.com/dipser/Schnipsel/master/userscripts/base7.user.js
 // @description  Trying to make Base7 better!
 // @author       Aurelian Hermand
@@ -37,7 +37,7 @@ var printstyle = `
     $('body').append(printstyle + '<div id="monkeybox" class="no-print">-</div>');
     $("#monkeybox").css("position", "fixed").css("top", 0).css("right", 0).css('display', 'none');
     var checkin_checkout = function(t) {
-        var months = {'Jan':'01', 'Feb':'02', 'Mär':'03', 'Apr':'04', 'Mai':'05', 'Jun':'06', 'Jul':'07', 'Aug':'08', 'Sep':'09', 'Okt':'10', 'Nov':'11', 'Dez':'12'};
+        var months = {'Jan':'01', 'Feb':'02', 'Mär':'03', 'Mar':'03', 'Apr':'04', 'Mai':'05', 'Jun':'06', 'Jul':'07', 'Aug':'08', 'Sep':'09', 'Okt':'10', 'Nov':'11', 'Dez':'12'};
         var time = t.split('-').map(function(i) { return i.trim(); });
         var cin = time[0].split(' ');
         var cout = time[1].split(' ');
