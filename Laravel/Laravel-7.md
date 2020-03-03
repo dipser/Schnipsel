@@ -3,7 +3,7 @@ Fluent Strings Syntax / Chaining für bessere Lesbarkeit
 
 https://laravel.com/docs/7.x/helpers#fluent-strings
 
-str_replace('', '', trim($str))
+str_replace('gif', 'svg', trim($str))
 
 Str::of($str)
     ->trim(' ')
