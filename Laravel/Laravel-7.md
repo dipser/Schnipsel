@@ -70,6 +70,5 @@ Laravel 7 ist da: https://laravel.com/docs/7.x/releases​​​​​​​
 	Route Model Binding: Es ist möglich statt der id nun auch andere DB-Zellen zu verwenden. Beispiel mit "slug": Route::get('/posts/{post:slug}', 'PostController@show')
 	Query Casts / Custom Classes für Casting von DB-Werten
 
-(sun)
 
 
