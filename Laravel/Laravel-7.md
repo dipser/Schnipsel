@@ -57,3 +57,20 @@ Query Casts / Custom classes: https://laravel.com/docs/master/eloquent-mutators#
 app/Casts/<name>.php enthält setter und getter Methoden
 
 protected $casts = [ 'myfield' => <name>::class ];
+    
+
+---------------
+
+Laravel 7 ist da: https://laravel.com/docs/7.x/releases​​​​​​​
+    Highlights sind
+
+	"Fluent Strings Syntax" für noch einfachere Lesbarkeit: Str::->trim(',')->replaceLast('gif', 'jpg')->...->...
+	Blade Components / x-Tags: Ist im Grunde ein @include() aber mit eigenen Controller.
+	Http Client: Verständliche "curl" alternative, ebenfalls mit Chaining. Beispiel: Http::attach('image-upload', file_get_contents($file), $filename)->withHeaders([...])->post($url)
+	Route Model Binding: Es ist möglich statt der id nun auch andere DB-Zellen zu verwenden. Beispiel mit "slug": Route::get('/posts/{post:slug}', 'PostController@show')
+	Query Casts / Custom Classes für Casting von DB-Werten
+
+(sun)
+
+
+<https://teams.microsoft.com/l/message/19:9d0686a9b10047e1b2b9eeb5a738b1de@thread.skype/1583312755792?tenantId=9256c9c7-57c9-4a7d-97ca-c3b3b57ce107&amp;groupId=fe7d5d50-e961-4937-8d74-798d7b84973a&amp;parentMessageId=1583312755792&amp;teamName=eMotivo DEV Team&amp;channelName=Allgemein&amp;createdTime=1583312755792>
