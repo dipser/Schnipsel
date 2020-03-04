@@ -61,7 +61,7 @@ protected $casts = [ 'myfield' => <name>::class ];
 
 ---------------
 
-Laravel 7 ist da: https://laravel.com/docs/7.x/releases​​​​​​​
+Laravel 7 ist da: https://laravel.com/docs/7.x/releases
     Highlights sind
 
 	"Fluent Strings Syntax" für noch einfachere Lesbarkeit: Str::->trim(',')->replaceLast('gif', 'jpg')->...->...
