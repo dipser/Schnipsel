@@ -73,4 +73,3 @@ Laravel 7 ist da: https://laravel.com/docs/7.x/releases​​​​​​​
 (sun)
 
 
-<https://teams.microsoft.com/l/message/19:9d0686a9b10047e1b2b9eeb5a738b1de@thread.skype/1583312755792?tenantId=9256c9c7-57c9-4a7d-97ca-c3b3b57ce107&amp;groupId=fe7d5d50-e961-4937-8d74-798d7b84973a&amp;parentMessageId=1583312755792&amp;teamName=eMotivo DEV Team&amp;channelName=Allgemein&amp;createdTime=1583312755792>
