@@ -169,3 +169,51 @@ export default {
     }
 }
 </script>
+
+
+
+
+<datatable-component :items="items" :columns="columns" :options="options"></datatable-component>
+
+<script>
+const app = new Vue({
+    el: '#app',
+    mounted () {
+
+    },
+    methods: {
+
+    },
+    data () {
+        return {
+            items: items,
+            /*items: [
+                {id:1, name:'Jim'},
+                {id:2, name:{text:'"Bobby"', value:'Bob'}, category:'Das'}
+            ], */
+            columns:[
+                {name:'drag', text:''},
+                {name:'id', text:'ID'},
+                //{name:'order', text:'R'},
+                {name:'name', text:'Name'},
+                {name:'short_name', text:'Kurzname'},
+                {name:'price', text:'Preis', attributes:{class:'text-right'}},
+                {name:'gear', text:'<span class="mdi mdi-settings-outline" title="Steuerung"></span>', enable_html:true, attributes:{class:'text-right'}}
+            ],
+            options: {
+                key: 'id',
+                dom_table_attributes: {class:'table table-striped w-100'},
+                dom_table_thead_attributes: {class:'table-dark'},
+                dom_table_tbody_attributes: {},
+                order_by: ['order'],
+                draggable: true,
+                draggable_attributes: {handle:'.handle'},
+                //draggable_start: function(evt, key, items){},
+                //draggable_end: function(evt, key, items){},
+            }
+        }
+    }
+});
+
+
+</script>
