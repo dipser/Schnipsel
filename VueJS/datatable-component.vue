@@ -12,13 +12,16 @@
             </div>
         </details> -->
 
+        <!-- <input type="search" v-model="q"> -->
 
         <table v-bind="dtOptions.dom_table_attributes">
             <thead v-bind="dtOptions.dom_table_thead_attributes">
                 <tr>
                     <template v-for="(col, col_i) in dtColumns">
-                        <th :key="col_i" v-if="col.enable_html" v-html="col.text" v-bind="col.attributes"></th>
-                        <th :key="col_i" v-else v-bind="col.attributes">{{ col.text }}</th>
+                        <template v-if="col.visible">
+                            <th :key="col_i" v-if="col.enable_html" v-html="col.text" v-bind="col.attributes"></th>
+                            <th :key="col_i" v-else v-bind="col.attributes">{{ col.text }}</th>
+                        </template>
                     </template>
                 </tr>
             </thead>
@@ -30,18 +33,20 @@
                 @end="dtOptions.draggable_end(...arguments, dtItems[arguments[0].newIndex][dtOptions.key].text, dtItems)"
             >
                 <template v-for="(row, row_i) in dtItems">
-                    <tr :key="row_i">
+                    <tr :key="row_i" v-show="filter(row)">
                         <template v-for="(col, col_i) in dtColumns">
-                            <td :key="col_i"
-                                v-if="_.get(row, '['+col.name+'].enable_html', false)"
-                                v-html="_.get(row, '['+col.name+'].text', '')"
-                                v-bind="_.get(row, '['+col.name+'].attributes', [])"
-                            >
-                            </td>
-                            <td :key="col_i"
-                                v-else
-                                v-bind="_.get(row, '['+col.name+'].attributes', [])"
+                            <template v-if="col.visible">
+                                <td :key="col_i"
+                                    v-if="_.get(row, '['+col.name+'].enable_html', false)"
+                                    v-html="_.get(row, '['+col.name+'].text', '')"
+                                    v-bind="_.get(row, '['+col.name+'].attributes', [])"
+                                >
+                                </td>
+                                <td :key="col_i"
+                                    v-else
+                                    v-bind="_.get(row, '['+col.name+'].attributes', [])"
                             >{{ _.get(row, '['+col.name+'].text', '') }}</td>
+                            </template>
                         </template>
                     </tr>
                 </template>
@@ -54,26 +59,29 @@
 
 <script>
 export default {
-    props: ['items', 'columns', 'options'],
+    props: ['items', 'columns', 'options', 'search'],
     components: {
         draggable,
 
     },
     data: function(){
         return {
-            dt_items: this.items,
-            dt_columns: this.columns,
-            dt_options: this.options,
+            prop_items: this.items,
+            prop_columns: this.columns,
+            prop_options: this.options,
+
+            //search: this.search,
         }
     },
     computed: {
+        //
         dtItems: {
             get: function() {
                 //{idx:2, name:{text:'"Bobby"', value:'Bob'}, category:'Das'}
-                for (let row_i in this.dt_items) {
-                    let row = this.dt_items[row_i];
+                for (let row_i in this.prop_items) {
+                    let row = this.prop_items[row_i];
                     for (let col_i in row) {
-                        let col = this.dt_items[row_i][col_i];
+                        let col = this.prop_items[row_i][col_i];
 
                         let column = {};
                         column.attributes = _.get(col, 'attributes') || {};
@@ -81,7 +89,7 @@ export default {
 
                         if ( typeof col === 'object' ) {
                             column.text = col.text || '';
-                            column.value = col.value || col.text;
+                            column.value = typeof col.value != 'undefined' ? col.value : col.text;
                         }
                         else if ( typeof col === 'string' ) {
                             column.text = col;
@@ -91,45 +99,47 @@ export default {
                             column.text = col;
                             column.value = col;
                         }
-                        this.dt_items[row_i][col_i] = column;
+                        this.prop_items[row_i][col_i] = column;
                     }
                 }
 
-                return this.dt_items;
+                return this.prop_items;
             },
             set: function(newValue) {
-                this.dt_items = newValue;
+                this.prop_items = newValue;
             }
         },
         dtColumns: function() {
-            for (let col_i in this.dt_columns) {
-                let col = this.dt_columns[col_i];
+            for (let col_i in this.prop_columns) {
+                let col = this.prop_columns[col_i];
                 let column = {};
                 column.attributes = _.get(col, 'attributes') || {};
                 column.enable_html = !!_.get(col, 'enable_html');
                 if ( typeof col === 'string' ) {
                     column.name = col;
                     column.text = col;
+                    column.visible = true;
                 }
                 else if ( typeof col === 'object' ) {
                     column.name = col.name;
                     column.text = col.text || '';
+                    column.visible = typeof col.visible !== 'undefined' ? !!col.visible : true;
                 }
-                this.dt_columns[col_i] = column;
+                this.prop_columns[col_i] = column;
             }
-            return this.dt_columns;
+            return this.prop_columns;
         },
         dtOptions: function() {
-            this.dt_options.key = this.dt_options.key || 'id';
-            this.dt_options.order = this.dt_options.order || ['id'];
-            this.dt_options.draggable = !!this.dt_options.draggable;
-            this.dt_options.draggable_start = this.dt_options.draggable_start || function(event, key, items){};
-            this.dt_options.draggable_end = this.dt_options.draggable_end || function(event, key, items){};
-            this.dt_options.draggable_attributes = this.dt_options.draggable_attributes || {}; // {handle:'.handle'}
-            this.dt_options.dom_table_attributes = this.dt_options.dom_table_attributes || {};
-            this.dt_options.dom_table_thead_attributes = this.dt_options.dom_table_thead_attributes || {};
-            this.dt_options.dom_table_tbody_attributes = this.dt_options.dom_table_tbody_attributes || {};
-            return this.dt_options;
+            this.prop_options.key = this.prop_options.key || 'id';
+            this.prop_options.order = this.prop_options.order || ['id'];
+            this.prop_options.draggable = !!this.prop_options.draggable;
+            this.prop_options.draggable_start = this.prop_options.draggable_start || function(event, key, items){};
+            this.prop_options.draggable_end = this.prop_options.draggable_end || function(event, key, items){};
+            this.prop_options.draggable_attributes = this.prop_options.draggable_attributes || {}; // {handle:'.handle'}
+            this.prop_options.dom_table_attributes = this.prop_options.dom_table_attributes || {};
+            this.prop_options.dom_table_thead_attributes = this.prop_options.dom_table_thead_attributes || {};
+            this.prop_options.dom_table_tbody_attributes = this.prop_options.dom_table_tbody_attributes || {};
+            return this.prop_options;
         }
     },
     mounted() {
@@ -147,13 +157,33 @@ export default {
 
 
         this.order();
+        //this.filter();
     },
     methods: {
+        /* columns: function() {
+
+        }, */
+        filter: function(row) {
+            if ( !this.search ) return true;
+            let q = this.search.split(' ');
+            let fulltext = '';
+            for (let col of this.dtColumns) {
+                let val = row[col.name].value.toString();
+                fulltext += ' ' + val;
+            }
+            //console.log(fulltext);
+            let found = 0; // all must be true
+            for (let i in q) {
+                if ( fulltext.toLowerCase().includes(q[i].toLowerCase()) ) found++;
+            }
+            if ( found == q.length ) return true;
+            return false;
+        },
         order: function() {
-            let items = this.dt_items;
+            let items = this.prop_items;
             items.sort((a, b) => {
                 var isNumber = function(n) { return !isNaN(parseFloat(n)) && isFinite(n); };
-                let order_keys = this.dt_options.order_by;//['order','id'];
+                let order_keys = this.prop_options.order_by;//['order','id'];
                 for (let i in order_keys) {
                     let order_key = order_keys[i];
                     let value_a = a[order_key].value;
@@ -163,7 +193,7 @@ export default {
                 }
                 return 0;
             });
-            this.dt_items = items;
+            this.prop_items = items;
         }
 
     }
@@ -173,7 +203,8 @@ export default {
 
 
 
-<datatable-component :items="items" :columns="columns" :options="options"></datatable-component>
+
+<datatable-component :items="items" :columns="columns" :options="options" :search="search"></datatable-component>
 
 <script>
 const app = new Vue({
