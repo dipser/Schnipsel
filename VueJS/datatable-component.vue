@@ -1,60 +1,9 @@
-<template>
-    <div v-cloak>
 
-        <!-- <details>
-            <summary class="text-danger">Datatable-Info</summary>
-            <div>
-                <table>
-                    <tr><td>items</td><td><details open="open"><summary>JSON</summary><pre class="text-info">{{dtItems}}</pre></details></td></tr>
-                    <tr><td>columns</td><td><details open="open"><summary>JSON</summary><pre class="text-info">{{dtColumns}}</pre></details></td></tr>
-                    <tr><td>options</td><td><details open="open"><summary>JSON</summary><pre class="text-info">{{dtOptions}}</pre></details></td></tr>
-                </table>
-            </div>
-        </details> -->
+See: http://tools.bitfertig.de/JustDatatableVue
 
-        <!-- <input type="search" v-model="q"> -->
 
-        <table v-bind="dtOptions.dom_table_attributes">
-            <thead v-bind="dtOptions.dom_table_thead_attributes">
-                <tr>
-                    <template v-for="(col, col_i) in dtColumns">
-                        <template v-if="col.visible">
-                            <th :key="col_i" v-if="col.enable_html" v-html="col.text" v-bind="col.attributes"></th>
-                            <th :key="col_i" v-else v-bind="col.attributes">{{ col.text }}</th>
-                        </template>
-                    </template>
-                </tr>
-            </thead>
-            <draggable tag="tbody"
-                v-model="dtItems"
-                :disabled="!dtOptions.draggable"
-                v-bind="{...dtOptions.dom_table_tbody_attributes, ...dtOptions.draggable_attributes}"
-                @start="dtOptions.draggable_start(...arguments, dtItems[arguments[0].oldIndex][dtOptions.key].text, dtItems)"
-                @end="dtOptions.draggable_end(...arguments, dtItems[arguments[0].newIndex][dtOptions.key].text, dtItems)"
-            >
-                <template v-for="(row, row_i) in dtItems">
-                    <tr :key="row_i" v-show="filter(row)">
-                        <template v-for="(col, col_i) in dtColumns">
-                            <template v-if="col.visible">
-                                <td :key="col_i"
-                                    v-if="_.get(row, '['+col.name+'].enable_html', false)"
-                                    v-html="_.get(row, '['+col.name+'].text', '')"
-                                    v-bind="_.get(row, '['+col.name+'].attributes', [])"
-                                >
-                                </td>
-                                <td :key="col_i"
-                                    v-else
-                                    v-bind="_.get(row, '['+col.name+'].attributes', [])"
-                            >{{ _.get(row, '['+col.name+'].text', '') }}</td>
-                            </template>
-                        </template>
-                    </tr>
-                </template>
-            </draggable>
-        </table>
 
-    </div>
-</template>
+
 
 
 <script>
