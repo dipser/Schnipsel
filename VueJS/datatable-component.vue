@@ -230,3 +230,6 @@ pagination: function() {
         <select v-model="options.pagination.page">
             <option v-for="(page, page_index) in new Array(pagination_pages)" :value="page_index + 1">Seite @{{ page_index + 1 }}</option>
         </select>
+
+
+this.$parent.pagination_pages = Math.ceil(this.dtItems.length / this.dtOptions.pagination.items_per_page);
