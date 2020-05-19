@@ -216,3 +216,17 @@ pagination: function() {
 
     this.prop_items = items;
 }
+
+
+        {{-- <select v-model="options.pagination.items_per_page" title="Anzahl pro Seite">
+            <option value="3">3</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="*">Alle</option>
+        </select> --}}
+
+        <select v-model="options.pagination.page">
+            <option v-for="(page, page_index) in new Array(pagination_pages)" :value="page_index + 1">Seite @{{ page_index + 1 }}</option>
+        </select>
