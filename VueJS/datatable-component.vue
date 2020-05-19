@@ -197,3 +197,22 @@ const app = new Vue({
 
 
 </script>
+
+
+
+this.prop_options.pagination = this.prop_options.pagination || {items_per_page: '*', page: 1};
+
+
+pagination: function() {
+    if ( this.prop_options.pagination.items_per_page == '*' ) return;
+
+    let items = this.prop_items;
+
+    let items_per_page = this.prop_options.pagination.items_per_page;
+    let page = this.prop_options.pagination.page;
+    let start = (page - 1) * items_per_page;
+    let end = start + items_per_page;
+    items = items.slice(start, end);
+
+    this.prop_items = items;
+}
