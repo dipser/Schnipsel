@@ -1,0 +1,21 @@
+
+	.container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+
+
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		padding-left: -15px;
+		padding-right: -15px;
+	}
+	.col-6 {
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding-left: 7.5px;
+		padding-right: 7.5px;
+	}
