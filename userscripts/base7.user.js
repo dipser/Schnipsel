@@ -163,7 +163,10 @@ var printstyle = `
         let els = document.querySelectorAll(
           'table.departures tr:not([class=comment]) td:not([colspan]):nth-child(1), ' +
           'table.stayvovers tr:not([class=comment]) td:not([colspan]):nth-child(1), ' +
-          'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(1)'
+          'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(1), ' +
+          'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(2), ' +
+          'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(4), ' +
+          'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(5)'
         );
         for (let i = 0; i < els.length; i++) {
           els[i].setAttribute('contentEditable', 'true');
