@@ -108,7 +108,7 @@ function MYPLUGIN_myshortcode( $atts, $content = "" ) {
 }
 add_shortcode('myshortcode', 'MYPLUGIN_myshortcode');
 
-//echo do_shortcode("[shortcode]"); // via PHP an geeigneter Stelle ausführen
+//echo do_shortcode("[myshortcode]"); // via PHP an geeigneter Stelle ausführen
 ```
 
 ## Ajax calls
