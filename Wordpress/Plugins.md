@@ -32,6 +32,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // Add your custom code below this line
 ```
 
+## Wordpress erweitern in OOP
+
+```php
+class MySideSpecificPlugin {
+    public function __construct()
+    {
+        add_action('init', [$this, 'theme_setup']);
+    }
+    public function theme_setup()
+    {
+        #add_image_size('my1-thumb', 300); // 300 pixels wide (and unlimited height)
+        #add_image_size('my2-thumb', 220, 180, true); // (cropped)
+    }
+}
+$my_ssp = new MySideSpecificPlugin();
+```
 
 ## Wordpress erweitern (add_action)
 
