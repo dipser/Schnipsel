@@ -6,6 +6,8 @@
 choco install packages.config
 ```
 
+[QuickLook](https://www.microsoft.com/de-de/p/quicklook/9nv4bs3l1h4s?activetab=pivot:overviewtab)
+
 
 ## Install VisualStudioCode extensions
 
