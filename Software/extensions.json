@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "alefragnani.project-manager",
+    "mikestead.dotenv",
+    "octref.vetur",
+    "felixfbecker.php-intellisense"
+  ]
+}
