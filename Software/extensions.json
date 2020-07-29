@@ -2,12 +2,19 @@
   "recommendations": [
     "alefragnani.project-manager",
     
+    "editorconfig.editorconfig",
+    
     "mikestead.dotenv",
     
     "octref.vetur",
     
     "felixfbecker.php-intellisense",
     "bmewburn.vscode-intelephense-client",
+    
+    "stef-k.laravel-goto-controller",
+    "codingyu.laravel-goto-view",
+    "amiralizadeh9480.laravel-extra-intellisense",
+    "ctf0.laravel-goto-env",
     
     "mechatroner.rainbow-csv",
     "oderwat.indent-rainbow",
