@@ -10,6 +10,7 @@
     
     "felixfbecker.php-intellisense",
     "bmewburn.vscode-intelephense-client",
+    "mehedidracula.php-namespace-resolver",
     
     "tyriar.shell-launcher",
     "stef-k.laravel-goto-controller",
