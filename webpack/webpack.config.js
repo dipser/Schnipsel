@@ -9,7 +9,7 @@ module.exports = {
         poll: 1000 // every
     },
     entry: {
-        main: ['./assets/js/main.js', './assets/css/main.scss']
+        main: ['./main.js', './main.scss']
     },
     output: {
         path: path.resolve(__dirname, 'assets'), 
