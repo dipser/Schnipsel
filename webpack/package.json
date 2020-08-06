@@ -1,0 +1,19 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  },
+  "devDependencies": {
+    "file-loader": "^6.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "dev": "webpack --config webpack.config.js --watch --mode='development'",
+    "build": "webpack --config webpack.config.js --mode='production'"
+  }
+}
