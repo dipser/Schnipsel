@@ -3,12 +3,31 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.5.0"
+    "@babel/polyfill": "^7.10.4",
+    "bootstrap": "^4.5.2",
+    "countup.js": "^2.0.6",
+    "owl.carousel": "^2.3.4",
+    "vue-multiselect": "^2.1.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^9.8.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^7.1.5",
+    "css-loader": "^4.2.1",
+    "extract-loader": "^5.1.0",
     "file-loader": "^6.0.0",
     "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.2",
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
