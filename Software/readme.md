@@ -12,6 +12,7 @@ choco install packages.config
 * [easy2boot](https://www.easy2boot.com/download/)
 * [Davinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
 * [Recuva](https://www.ccleaner.com/recuva)
+* [Predator USB](https://www.predator-usb.com/predator/en/index.php?n=Main.DownloadHome)
 
 
 
