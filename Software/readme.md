@@ -13,6 +13,7 @@ choco install packages.config
 * [Davinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
 * [Recuva](https://www.ccleaner.com/recuva)
 * [Predator USB](https://www.predator-usb.com/predator/en/index.php?n=Main.DownloadHome)
+* [VeraCrypt](https://www.veracrypt.fr/en/Home.html)
 
 
 
