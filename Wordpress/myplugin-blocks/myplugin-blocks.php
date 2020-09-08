@@ -67,14 +67,14 @@ add_action('init', 'myplugin_register_gutenberg_block');
 
 
  
-function vf_block_enqueue(){
+function myplugin_block_enqueue(){
 
     // General editor style
     $editor_style = plugins_url('/blocks/editor.css', __FILE__);
 	wp_enqueue_style('gutenberg-block-style-editor', $editor_style, ['wp-edit-blocks'], time());
  
 }
-add_action('enqueue_block_editor_assets', 'vf_block_enqueue');
+add_action('enqueue_block_editor_assets', 'myplugin_block_enqueue');
 
 
 
