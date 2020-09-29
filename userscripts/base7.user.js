@@ -162,9 +162,16 @@ var printstyle = `
         // contentEditable of room-numbers
         let els = document.querySelectorAll(
           'table.departures tr:not([class=comment]) td:not([colspan]):nth-child(1), ' +
+          'table.departures tr:not([class=comment]) td:not([colspan]):nth-child(2), ' +
+          'table.departures tr:not([class=comment]) td:not([colspan]):nth-child(4), ' +
+          'table.departures tr:not([class=comment]) td:not([colspan]):nth-child(5), ' +
           'table.stayvovers tr:not([class=comment]) td:not([colspan]):nth-child(1), ' +
+          'table.stayvovers tr:not([class=comment]) td:not([colspan]):nth-child(2), ' +
+          'table.stayvovers tr:not([class=comment]) td:not([colspan]):nth-child(4), ' +
+          'table.stayvovers tr:not([class=comment]) td:not([colspan]):nth-child(5), ' +
           'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(1), ' +
           'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(2), ' +
+          'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(3), ' +
           'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(4), ' +
           'table.arrivals tr:not([class=comment]) td:not([colspan]):nth-child(5)'
         );
