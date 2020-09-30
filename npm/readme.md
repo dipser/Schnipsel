@@ -12,6 +12,8 @@ Zuerst einen Account anlegen auf [npmjs.com](https://www.npmjs.com/) und übers 
 
 ### Package erstellen und hochladen
 
+Die Information wie Name und Version werden aus der package.json übernommen.
+
 ```bash
 npm publish --access public
 ```
