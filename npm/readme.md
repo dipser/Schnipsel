@@ -18,6 +18,12 @@ Die Information wie Name und Version werden aus der package.json übernommen.
 npm publish --access public
 ```
 
+## Package deprecation
+
+```bash
+npm deprecate <package-name> "<message>"
+```
+
 ## Package löschen
 ```bash
 npm unpublish <package-name> -f
