@@ -57,6 +57,21 @@ if ( !function_exists('carbon') ) {
 
 
 
+use Illuminate\Mail\Markdown;
+if ( !function_exists('markdown_to_html') ) {
+    /**
+     * @param string $text
+     * @return String
+     */
+    function markdown_to_html($text = null)
+    {
+        $text = (String) ($text ?? '');
+        return Markdown::parse($text);
+    }
+}
+
+
+
 if ( !function_exists('mask_iban') ) {
     // Versteckt ein paar Zeichen innerhalb der IBAN
     function mask_iban($iban)
