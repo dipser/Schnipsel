@@ -6,6 +6,8 @@
     
     "mikestead.dotenv",
     
+    "mrmlnc.vscode-apache",
+    
     "octref.vetur",
     
     "felixfbecker.php-intellisense",
