@@ -36,6 +36,20 @@ $mysqli->insert_id;
 $mysqli->affected_rows;
 
 
+// Mysqli prepared query
+// Usage: mysqli_prepared_query($mysqli, $sql, 'sss', ['a', 'b', 'c'])
+function mysqli_prepared_query($mysqli, $sql, $bind_types = '', $bind_params = []){
+    $result = false;
+    $stmt = $mysqli->prepare($sql);
+    if ( $stmt ){
+        if ( !empty($bind_params) ) { $stmt->bind_param($bind_types, ...$bind_params); } // replace "?"
+        $stmt->execute();
+        $result = $stmt->get_result();
+    }
+    return $result;
+}
+
+
 
 
 // Wildcard (*) SELECTs
