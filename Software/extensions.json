@@ -10,6 +10,9 @@
     
     "octref.vetur",
     
+    "kumar-harsh.graphql-for-vscode",
+    "apollographql.vscode-apollo",
+    
     "felixfbecker.php-intellisense",
     "bmewburn.vscode-intelephense-client",
     "mehedidracula.php-namespace-resolver",
