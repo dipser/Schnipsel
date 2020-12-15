@@ -15,6 +15,8 @@ choco install packages.config
 * [Predator USB](https://www.predator-usb.com/predator/en/index.php?n=Main.DownloadHome)
 * [VeraCrypt](https://www.veracrypt.fr/en/Home.html)
 * [Iriun Phone Webcam](https://iriun.com/)
+* https://www.nomachine.com/de/
+* draw.io
 
 
 
