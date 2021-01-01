@@ -1,5 +1,7 @@
 {
   "recommendations": [
+    "emmanuelbeziat.vscode-great-icons",
+    
     "alefragnani.project-manager",
     
     "editorconfig.editorconfig",
