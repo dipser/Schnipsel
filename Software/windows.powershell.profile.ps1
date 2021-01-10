@@ -1,6 +1,7 @@
 
-# Setup
-# code $profile
+# Windows PowerShell Aliases
+# Setup: Open file with "code $profile" and add this content.
+# Source: https://github.com/dipser/Schnipsel/blob/master/Software/windows.powershell.profile.ps1
 
 
 $etchosts = "C:/Windows/System32/drivers/etc/hosts"
