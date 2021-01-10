@@ -69,10 +69,10 @@ function AliasGITACP {
     $ESC = [char]27
     $QUOTE = '"'
     echo "> $ESC[33mgit add .$ESC[0m"
-    echo "> $ESC[33mgit commit -m $QUOTE$ESC[0m$args$ESC[33m$QUOTE$ESC[0m"
-    echo "> $ESC[33mgit push$ESC[0m"
     git add .
+    echo "> $ESC[33mgit commit -m $QUOTE$ESC[0m$args$ESC[33m$QUOTE$ESC[0m"
     git commit -m "$args"
+    echo "> $ESC[33mgit push$ESC[0m"
     git push
 }
 Set-Alias gitacp AliasGITACP
