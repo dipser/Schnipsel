@@ -1,70 +1,70 @@
 
-# Windows PowerShell Aliases
-# Setup: Open file with "code $profile" and add this content.
+# Setup
+# code $profile
 
 
 $etchosts = "C:/Windows/System32/drivers/etc/hosts"
 
 
-function Do-PA {
+function AliasPA {
     $ESC = [char]27
     echo "> $ESC[33mphp artisan$ESC[0m $args"
     php artisan $args
 }
-Set-Alias pa Do-Pa
+Set-Alias pa AliasPa
 
-function Do-PAOC {
+function AliasPAOC {
     $ESC = [char]27
     echo "> $ESC[33mphp artisan optimize:clear$ESC[0m $args"
     php artisan optimize:clear $args
 }
-Set-Alias paoc Do-PAOC
+Set-Alias paoc AliasPAOC
 
-function Do-PAM {
+function AliasPAM {
     $ESC = [char]27
     echo "> $ESC[33mphp artisan migrate$ESC[0m $args"
     php artisan migrate $args
 }
-Set-Alias pam Do-PAM
+Set-Alias pam AliasPAM
 
-function Do-PAMF {
+function AliasPAMF {
     $ESC = [char]27
     echo "> $ESC[33mphp artisan migrate:fresh$ESC[0m $args"
     php artisan migrate:fresh $args
 }
-Set-Alias pamf Do-PAMF
+Set-Alias pamf AliasPAMF
 
-function Do-PAMFS {
+function AliasPAMFS {
     $ESC = [char]27
     echo "> $ESC[33mphp artisan migrate:fresh --seed$ESC[0m $args"
     php artisan migrate:fresh --seed $args
 }
-Set-Alias pamfs Do-PAMFS
+Set-Alias pamfs AliasPAMFS
 
 
-function Do-CDO {
+function AliasCDO {
     $ESC = [char]27
     echo "> $ESC[33mcomposer dump-autoload --optimize$ESC[0m $args"
     composer dump-autoload --optimize $args
 }
-Set-Alias cdo Do-CDO
+Set-Alias cdo AliasCDO
 
 
-function Do-GITS {
+function AliasGITS {
     $ESC = [char]27
     echo "> $ESC[33mgit status$ESC[0m $args"
     git status $args
 }
-Set-Alias gits Do-GITS
+Set-Alias gits AliasGITS
 
-function Do-GITP {
+function AliasGITP {
     $ESC = [char]27
     echo "> $ESC[33mgit pull$ESC[0m $args"
     git pull $args
 }
-Set-Alias gitp Do-GITP
+Set-Alias gitp AliasGITP
 
-function Do-GITACP {
+function AliasGITACP {
     $ESC = [char]27
     $QUOTE = '"'
     echo "> $ESC[33mgit add .$ESC[0m"
@@ -74,29 +74,29 @@ function Do-GITACP {
     git commit -m "$args"
     git push
 }
-Set-Alias gitacp Do-GITACP
+Set-Alias gitacp AliasGITACP
 
-function Do-DOTDOT {
+function AliasDOTDOT {
     $ESC = [char]27
     echo "> $ESC[33mcd ..$ESC[0m $args"
     cd ..
 }
-Set-Alias .. Do-DOTDOT
+Set-Alias .. AliasDOTDOT
 
-function Do-DOTDOTDOT {
+function AliasDOTDOTDOT {
     $ESC = [char]27
     echo "> $ESC[33mcd ../..$ESC[0m $args"
     cd ../..
 }
-Set-Alias ... Do-DOTDOTDOT
+Set-Alias ... AliasDOTDOTDOT
 
 
-function Do-CDWWW {
+function AliasCDWWW {
     $ESC = [char]27
     echo "> $ESC[33mC:/laragon/www/$ESC[0m$args"
     $www = "C:/laragon/www/$args"
     cd $www
 }
-Set-Alias cdwww Do-CDWWW
+Set-Alias cdwww AliasCDWWW
 
 
