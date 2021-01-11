@@ -50,6 +50,12 @@ function AliasCDO {
 Set-Alias cdo AliasCDO
 
 
+function AliasGITPU {
+	$CurrentBranch = Get-Git-CurrentBranch
+	git push --set-upstream origin $CurrentBranch
+}
+Set-Alias gitpu AliasGITPU
+
 function AliasGITS {
     $ESC = [char]27
     echo "> $ESC[33mgit status$ESC[0m $args"
