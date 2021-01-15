@@ -8,6 +8,10 @@
 $etchosts = "C:/Windows/System32/drivers/etc/hosts"
 
 
+#
+# PHP ARTISAN
+#
+
 function AliasPA {
     $ESC = [char]27
     echo "> $ESC[33mphp artisan$ESC[0m $args"
@@ -52,27 +56,32 @@ function AliasCDO {
 Set-Alias cdo AliasCDO
 
 
-function AliasGITPU {
-	$CurrentBranch = Get-Git-CurrentBranch
-	git push --set-upstream origin $CurrentBranch
-}
-Set-Alias gitpu AliasGITPU
+#
+# GIT
+#
 
-function AliasGITS {
+function AliasGS {
     $ESC = [char]27
     echo "> $ESC[33mgit status$ESC[0m $args"
     git status $args
 }
-Set-Alias gits AliasGITS
+Set-Alias gs AliasGS
 
-function AliasGITP {
+function AliasGP {
     $ESC = [char]27
     echo "> $ESC[33mgit pull$ESC[0m $args"
     git pull $args
 }
-Set-Alias gitp AliasGITP
+Set-Alias gp AliasGP
+Set-Alias gg AliasGP
 
-function AliasGITAC {
+function AliasGPU {
+	$CurrentBranch = Get-Git-CurrentBranch
+	git push --set-upstream origin $CurrentBranch
+}
+Set-Alias gpu AliasGPU
+
+function AliasGAC {
     $ESC = [char]27
     $QUOTE = '"'
     echo "> $ESC[33mgit add .$ESC[0m"
@@ -80,9 +89,9 @@ function AliasGITAC {
     echo "> $ESC[33mgit commit -m $QUOTE$ESC[0m$args$ESC[33m$QUOTE$ESC[0m"
     git commit -m "$args"
 }
-Set-Alias gitac AliasGITAC
+Set-Alias gac AliasGAC
 
-function AliasGITACP {
+function AliasGACP {
     $ESC = [char]27
     $QUOTE = '"'
     echo "> $ESC[33mgit add .$ESC[0m"
@@ -92,7 +101,12 @@ function AliasGITACP {
     echo "> $ESC[33mgit push$ESC[0m"
     git push
 }
-Set-Alias gitacp AliasGITACP
+Set-Alias gacp AliasGACP
+
+
+#
+# cd
+#
 
 function AliasDOTDOT {
     $ESC = [char]27
@@ -108,12 +122,11 @@ function AliasDOTDOTDOT {
 }
 Set-Alias ... AliasDOTDOTDOT
 
-
-function AliasCDWWW {
+function AliasWWW {
     $ESC = [char]27
     echo "> $ESC[33mC:/laragon/www/$ESC[0m$args"
     $www = "C:/laragon/www/$args"
     cd $www
 }
-Set-Alias cdwww AliasCDWWW
+Set-Alias www AliasWWW
 
