@@ -73,7 +73,7 @@ function AliasGP {
     echo "> $ESC[33mgit pull$ESC[0m $args"
     git pull $args
 }
-Set-Alias gp AliasGP
+#Set-Alias gp AliasGP
 Set-Alias gg AliasGP
 
 function AliasGPU {
