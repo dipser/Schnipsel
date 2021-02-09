@@ -48,12 +48,13 @@ function AliasPAMFS {
 Set-Alias pamfs AliasPAMFS
 
 
-function AliasCDO {
+function AliasCDAO {
     $ESC = [char]27
     echo "> $ESC[33mcomposer dump-autoload --optimize$ESC[0m $args"
     composer dump-autoload --optimize $args
 }
-Set-Alias cdo AliasCDO
+Set-Alias cdao AliasCDAO
+Set-Alias cdo AliasCDAO
 
 
 #
