@@ -131,3 +131,14 @@ function AliasWWW {
 }
 Set-Alias www AliasWWW
 
+function AliasCreateWWW {
+    $ESC = [char]27
+    echo "> $ESC[33mC:/laragon/www/$ESC[0m$args"
+    $www = "C:/laragon/www/"
+    $folder = "C:/laragon/www/$args"
+    #mkdir -p $folder
+    New-Item -Path $folder -ItemType Directory
+    start "C:/Program Files/Microsoft VS Code/Code.exe" $folder
+}
+Set-Alias createwww AliasCreateWWW
+Set-Alias cwww AliasCreateWWW
