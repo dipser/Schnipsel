@@ -48,6 +48,14 @@ function AliasPAMFS {
 Set-Alias pamfs AliasPAMFS
 
 
+function AliasSail {
+    $ESC = [char]27
+    echo "> $ESC[33m./vendor/bin/sail$ESC[0m $args"
+    ./vendor/bin/sail $args
+}
+Set-Alias sail AliasSail
+
+
 function AliasCDAO {
     $ESC = [char]27
     echo "> $ESC[33mcomposer dump-autoload --optimize$ESC[0m $args"
