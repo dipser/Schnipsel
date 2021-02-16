@@ -20,6 +20,9 @@
   
 ## 1. Start
 * ```wsl``` in Powershell eingeben um nach Linux zu wechseln.
-* In den Laravel Ordner wechseln
-* ```./vendor/bin/sail up``` ausführen
+* Befehl ausführen: ```echo "alias sail='bash vendor/bin/sail'" >> ~/.bash_aliases && source ~/.bash_aliases```
+* In den Laravel Ordner wechseln und Befehl ```./vendor/bin/sail up``` oder ```sail up``` ausführen zum starten
   
+## Ab dem 2. Start
+
+Die nächsten Starts sind über "Docker Desktop" möglich.
