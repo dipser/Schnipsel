@@ -18,6 +18,10 @@
 * Service "laravel.test" umbenennen in "myprojectname.test". Dies ermöglicht lokale Domains. Sollte dann auch in /etc/hosts angelegt werden.
   * Laravel: http://myprojectname.test/
   * Mailhog: http://myprojectname.test:8025/
+
+TODO:
+* Git einrichten unter Linux?
+* Weitere Aliases definieren.
   
 ## 1. Start
 * ```wsl``` in Powershell eingeben um nach Linux zu wechseln.
