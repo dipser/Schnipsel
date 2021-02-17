@@ -4,7 +4,7 @@
 
 * Im BIOS die Virtualisierung aktivieren (OC -> Features -> SVM Mode -> Activate!)
 * Unter "Windows-Features" > "Hyper-V" aktivieren
-* WSL2 installieren
+* [WSL2 installieren](https://docs.microsoft.com/de-de/windows/wsl/install-win10)
   * Unter "Windows-Insider-Programm" > "Release Preview-Kanal" (Vorschauversion)
   * Ausführen in Powershell als Admin: ```wsl --install```
   * Ausführen in Powershell als Admin: ```wsl --set-default-version 2```
