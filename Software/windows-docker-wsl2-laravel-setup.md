@@ -6,6 +6,7 @@
 * Unter "Windows-Features" > "Hyper-V" aktivieren
 * WSL2 installieren
   * Unter "Windows-Insider-Programm" > "Release Preview-Kanal" (Vorschauversion)
+  * Ausführen in Powershell als Admin: ```wsl --install```
   * Ausführen in Powershell als Admin: ```wsl --set-default-version 2```
 * Download und installiere [Linux from Microsoft Store](https://www.microsoft.com/de-de/p/ubuntu-2004-lts/9n6svws3rx71?cid=msft_web_chart&activetab=pivot:overviewtab)
 * Ausführen in Powershell als Admin: ```wsl -d ubuntu-20.04```
