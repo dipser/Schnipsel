@@ -14,7 +14,7 @@
   * [Download Docker](https://www.docker.com/products/docker-desktop)
   * Activate WSL2 under "Settings" > "General" > "Use the WSL 2 based engine"
   * Activate downloaded Linux under "Settings" > "Resources" > "WSL Integration"
-* Laravel/Docker .env Datei erweitern um "COMPOSE_PROJECT_NAME=myprojectname". Dies legt den projektnamen fest, ansonsten, wir der Ordnername genommen.
+* Laravel/Docker .env Datei erweitern um "COMPOSE_PROJECT_NAME=myprojectname". Dies legt den projektnamen fest, ansonsten, wird der Ordnername verwendet.
 * Service "laravel.test" umbenennen in "myprojectname.test". Dies ermöglicht lokale Domains. Sollte dann auch in /etc/hosts angelegt werden.
   * Laravel: http://myprojectname.test/
   * Mailhog: http://myprojectname.test:8025/
