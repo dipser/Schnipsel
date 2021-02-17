@@ -32,6 +32,8 @@ Die nächsten Starts sind über "Docker Desktop" möglich.
 
 ---
 
+## Sonstiges
+
 .env
 ```
 DB_HOST=mysql        # Docker 
