@@ -27,3 +27,13 @@
 ## Ab dem 2. Start
 
 Die nächsten Starts sind über "Docker Desktop" möglich.
+
+
+
+---
+
+.env
+```
+DB_HOST=mysql        # Docker 
+#DB_HOST=localhost   # Laragon
+```
