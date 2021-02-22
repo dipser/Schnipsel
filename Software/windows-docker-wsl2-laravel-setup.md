@@ -7,7 +7,7 @@
    [wsl2]
    memory=6GB
    #swapFile=E:\\wsl2swap.vhdw
- ```
+   ```
 * Im BIOS die Virtualisierung aktivieren (OC -> Features -> SVM Mode -> Activate!)
 * Unter "Windows-Features" > "Hyper-V" aktivieren
 * [WSL2 installieren](https://docs.microsoft.com/de-de/windows/wsl/install-win10)
