@@ -5,8 +5,8 @@
 * Erstelle eine C:\\Users\<name>\.wslconfig damit nicht bis zu 80% Arbeitsspeicher mit WSL2 genutzt wird.
   ```
   [wsl2]
-  memory=6GB
-  #swapFile=E:\\wsl2swap.vhdw
+  memory=6GB                   # Minimum 6GB
+  #swapFile=E:\\wsl2swap.vhdw  # Optionale Auslagerung auf eine externe Festplatte.
   ```
 * Im BIOS die Virtualisierung aktivieren (OC -> Features -> SVM Mode -> Activate!)
 * Unter "Windows-Features" > "Hyper-V" aktivieren
