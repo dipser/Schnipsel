@@ -1,5 +1,5 @@
 # Windows PowerShell Aliases
-# Setup: Open file with "code $profile" and add this content. Save it. Call ". profile" to refresh current session.
+# Setup: Open file with "code $profile" and add this content. Save it. Call ". $profile" to refresh current session.
 # If your Windows is restricted, call: "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned"
 # Source: https://github.com/dipser/Schnipsel/blob/master/Software/windows.powershell.profile.ps1
 # Gist: https://gist.github.com/dipser/b674e37c724577a58f08780ab460beae
