@@ -72,11 +72,11 @@ Set-Alias cdo AliasCDAO
 function AliasNPMU {
     $ESC = [char]27
     echo "> $ESC[33mnpm install -g npm-check-updates$ESC[0m"
-    git status $args
+    npm install -g npm-check-updates
     echo "> $ESC[33mncu -u$ESC[0m"
     ncu -u
 }
-Set-Alias gs AliasNPMU
+Set-Alias npmu AliasNPMU
 
 
 
