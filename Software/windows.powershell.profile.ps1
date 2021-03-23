@@ -66,6 +66,21 @@ Set-Alias cdo AliasCDAO
 
 
 #
+# NPM
+#
+
+function AliasNPMU {
+    $ESC = [char]27
+    echo "> $ESC[33mnpm install -g npm-check-updates$ESC[0m"
+    git status $args
+    echo "> $ESC[33mncu -u$ESC[0m"
+    ncu -u
+}
+Set-Alias gs AliasNPMU
+
+
+
+#
 # GIT
 #
 
