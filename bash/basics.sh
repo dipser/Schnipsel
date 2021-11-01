@@ -45,3 +45,20 @@ fi
 # VAL1 -lt VAL2  --- lower than
 # VAL1 -le VAL2  --- lower than or equal
 
+# FILE CONDITIONS
+# -f --- file is a file
+# -d --- file is a directory
+# -g --- group id is set
+# -r --- file is readable
+# -s --- file has a non-zero size
+# -u --- user id is set
+# -w --- file is writable
+# -x --- file is executable
+FILE="test.txt"
+if [ -f "$FILE" ]
+then
+  echo "$FILE is a file"
+else
+  echo "$FILE is not a file"
+fi
+
